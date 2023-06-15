@@ -1,3 +1,6 @@
 [submodule "ethir-complete"]
 	path = ethir-complete
 	url = git@github.com:costa-group/EthIR-complete.git
+[submodule "gasol-optimizer"]
+	path = gasol-optimizer
+	url = git@github.com:costa-group/gasol-optimizer.git
