@@ -1,0 +1,3 @@
+[submodule "ethir-complete"]
+	path = ethir-complete
+	url = git@github.com:costa-group/EthIR-complete.git
