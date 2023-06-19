@@ -18,7 +18,7 @@ import traceback
 def parse_args():    
     global args
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="GREEN Project")
     group = parser.add_mutually_exclusive_group(required=True)
 
     group.add_argument("-s",  "--source",    type=str, help="local source file name. Solidity by default. Use -b to process evm instead. Use stdin to read from stdin.")
@@ -39,6 +39,87 @@ def parse_args():
     parser.add_argument("-mem-analysis", "--mem-analysis",             help="Executes memory analysis. baseref runs the basic analysis where it only identifies the base refences. Offset runs baseref+offset option", choices = ["baseref","offset"])
 
 
+    output = parser.add_argument_group('Output options')
+    output.add_argument("-backend","--backend", action="store_false",
+                        help="Disables backend generation, so that only intermediate files are generated")
+    output.add_argument("-intermediate", "--intermediate", action="store_true",
+                        help="Keeps temporary intermediate files. "
+                             "These files contain the sfs representation, smt encoding...")
+    basic = parser.add_argument_group('Max-SMT solver general options',
+                                  'Basic options for solving the corresponding Max-SMT problem')
+
+    basic.add_argument("-solver", "--solver", help="Choose the solver", choices=["z3", "barcelogic", "oms"],
+                       default="oms")
+    basic.add_argument("-tout", metavar='timeout', action='store', type=int,
+                       help="Timeout in seconds. By default, set to 10s per block.", default=10)
+    basic.add_argument("-direct-tout", dest='direct_timeout', action='store_true',
+                       help="Sets the Max-SMT timeout to -tout directly, "
+                            "without considering the structure of the block")
+
+    blocks = parser.add_argument_group('Split block options', 'Options for deciding how to split blocks when optimizing')
+
+    blocks.add_argument("-storage", "--storage", help="Split using SSTORE, MSTORE and MSTORE8", action="store_true")
+    blocks.add_argument("-partition","--partition",help="It enables the partition in blocks of 24 instructions",action="store_true")
+
+    hard = parser.add_argument_group('Hard constraints', 'Options for modifying the hard constraint generation')
+
+    hard.add_argument("-memory-encoding", help="Choose the memory encoding model", choices=["l_vars", "direct"],
+                      default="direct", dest='memory_encoding')
+    hard.add_argument('-no-simplification',"--no-simplification", action='store_true', dest='no_simp',
+                      help='Disables the application of simplification rules')
+    hard.add_argument('-push-uninterpreted', action='store_true', dest='push_basic',
+                      help='Disables push instruction as uninterpreted functions')
+    hard.add_argument('-pop-uninterpreted', action='store_false', dest='pop_basic',
+                      help='Encodes pop instruction as uninterpreted functions')
+    hard.add_argument('-order-bounds', action='store_false', dest='order_bounds',
+                      help='Disables bounds on the position instructions can appear in the encoding')
+    hard.add_argument('-empty', action='store_true', dest='empty',
+                      help='Consider "empty" value as part of the encoding to reflect some stack position is empty,'
+                           'instead of using a boolean term')
+    hard.add_argument('-term-encoding', action='store', dest='encode_terms',
+                      choices=['int', 'stack_vars', 'uninterpreted_uf', 'uninterpreted_int'],
+                      help='Decides how terms are encoded in the SMT encoding: directly as numbers, using stack'
+                           'variables or introducing uninterpreted functions',default = 'uninterpreted_uf')
+    hard.add_argument('-terminal', action='store_true', dest='terminal',
+                      help='(UNSUPPORTED) Encoding for terminal blocks that end with REVERT or RETURN. '
+                           'Instead of considering the full stack order, just considers the two top elements')
+    hard.add_argument('-ac', action='store_true', dest='ac_solver',
+                      help='(UNSUPPORTED) Commutativity in operations is considered as an extension inside the solver. '
+                           'Can only be combined with Z3')
+
+    soft = parser.add_argument_group('Soft constraints', 'Options for modifying the soft constraint generation')
+    group_gasol = soft.add_mutually_exclusive_group()
+    group_gasol.add_argument("-size", "--size", action="store_true",
+                      help="It enables size cost model for optimization and disables rules that increase the size"
+                           "The simplification rules are applied only if they reduce the size")
+
+    group_gasol.add_argument("-length", "--length", action="store_true",
+                      help="It enables the #instructions cost model. Every possible simplification rule is applied")
+
+    soft.add_argument("-direct-inequalities", dest='direct', action='store_true',
+                      help="Soft constraints with inequalities instead of equalities and without grouping")
+
+    additional = parser.add_argument_group('Additional constraints',
+                                       'Constraints that can help to speed up the optimization process, but are not '
+                                       'necessary')
+    additional.add_argument('-at-most', action='store_true', dest='at_most',
+                            help='add a constraint for each uninterpreted function so that they are used at most once')
+    additional.add_argument('-pushed-once', action='store_true', dest='pushed_once',
+                            help='add a constraint to indicate that each pushed value is pushed at least once')
+    additional.add_argument("-no-output-before-pop", action='store_false', dest='no_output_before_pop',
+                            help='Remove the constraint representing the fact that the previous instruction'
+                                 'of a pop can only be a instruction that does not produce an element')
+    additional.add_argument('-order-conflicts', action='store_false', dest='order_conflicts',
+                            help='Disable the order among the uninterpreted opcodes in the encoding')
+
+    ml_options = parser.add_argument_group('ML Options', 'Options to execute the different ML modules')
+    ml_options.add_argument('-bound-model', "--bound-model", action='store_true', dest='bound_select',
+                            help="Enable bound regression model")
+    ml_options.add_argument('-opt-model', "--opt-model", action='store_true', dest='opt_select',
+                            help="Select which representation model is used for the opt classification")
+
+
+    
     args = parser.parse_args()
     
     global_params.PRINT_PATHS = 0 #1 if args.paths else 0
@@ -207,8 +288,6 @@ def run_ethir():
     else:
         exit_code = analyze_solidity()
     six.print_("The files generated by EthIR are stored in the following directory: "+global_params.costabs_path)
-
-    exit(exit_code)
 
 
 def run_gasol():
