@@ -1,18 +1,11 @@
-#python3
 import importlib
-
-ethir = importlib.import_module("ethir-complete.ethir")
-gasol = importlib.import_module("gasol-optimizer")
-
-import os
-import argparse
-import traceback
 import sys
+import os
 
+sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/ethir_complete/ethir")
+sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/gasol_optimizer")
 
 if __name__ == "__main__":
-    # import ethir.oyente_ethir as eth
-    # eth.analyze_solidity()
-    print("HOLA")
-
-    
+    print("Green Main")
+    import ethir_complete.ethir.oyente_ethir as e
+    e.analyze_solidity()
