@@ -201,7 +201,7 @@ def run_solidity_analysis(inputs,hashes):
             function_names = hashes[inp["c_name"]]
             #logging.info("contract %s:", inp['contract'])
             try:            
-                result, return_code = symExec.run(disasm_file=inp['disasm_file'], disasm_file_init = inp['disasm_file_init'], source_map=inp['source_map'], source_file=inp['source'],cfg = args.control_flow_graph,saco = args.saco,execution = i,cname = inp["c_name"],hashes = function_names,debug = args.debug,evm_version = True, svc = {}, opt_bytecode = (args.optimize_run or args.via_ir), mem_analysis = args.mem_analysis)
+                result, return_code = symExec.run(disasm_file=inp['disasm_file'], disasm_file_init = inp['disasm_file_init'], source_map=inp['source_map'], source_file=inp['source'],cfg = args.control_flow_graph,execution = i,cname = inp["c_name"],hashes = function_names,debug = args.debug,evm_version = True, svc = {}, opt_bytecode = (args.optimize_run or args.via_ir), mem_analysis = args.mem_analysis)
                 
             except Exception as e:
                 traceback.print_exc()
@@ -256,7 +256,6 @@ def run_solidity_analysis(inputs,hashes):
     return results, exit_code
 
 
-        
 def run_ethir():
     if not ethir_main.has_dependencies_installed():
         return
@@ -297,3 +296,4 @@ if __name__ == "__main__":
     print("Green Main")
     parse_args()
     run_ethir()
+    ethir_main.get_memory_opt_blocks()
