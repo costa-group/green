@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/gasol_optimizer")
 import ethir_complete.ethir.oyente_ethir as ethir_main
 import ethir_complete.ethir.symExec as symExec
 from ethir_complete.ethir.input_helper import InputHelper
-import ethir_complete.ethir.global_params as global_params
+import ethir_complete.ethir.global_params_ethir as global_params
 # import gasol_optimizer.gasol_asm as gasol_main
 from timeit import default_timer as dtimer
 import traceback
