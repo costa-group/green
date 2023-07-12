@@ -37,7 +37,7 @@ def parse_args():
     parser.add_argument( "-hashes", "--hashes",             help="Generate a file that contains the functions of the solidity file", action="store_true")
     parser.add_argument( "-out", "--out",             help="Generate a file that contains the functions of the solidity file", action="store", dest="path_out",type=str)
     parser.add_argument("-mem-analysis", "--mem-analysis",             help="Executes memory analysis. baseref runs the basic analysis where it only identifies the base refences. Offset runs baseref+offset option", choices = ["baseref","offset"])
-
+    parser.add_argument("-gasol-mem-opt", "--gasol-mem-opt",             help="Executes optimization on blocks obtained by memory analysis.", action="store_true")
 
     output = parser.add_argument_group('Output options')
     output.add_argument("-backend","--backend", action="store_false",
@@ -295,7 +295,10 @@ def run_ethir():
     return opt_blocks_mem
 
 def run_gasol(opt_blocks):
-    pass
+    if args.gasol_mem_opt:
+        print("HOLA")
+    else:
+        print("CUCU")
 
 if __name__ == "__main__":
     print("Green Main")
