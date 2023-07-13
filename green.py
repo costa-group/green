@@ -31,7 +31,7 @@ from gasol_optimizer.sfs_generator.asm_block import AsmBlock, AsmBytecode
 from gasol_optimizer.smt_encoding.block_optimizer import BlockOptimizer, OptimizeOutcome
 from gasol_optimizer.solution_generation.ids2asm import asm_from_ids
 
-import pandas
+import pandas as pd
 
 def parse_args():    
     global args
@@ -58,11 +58,22 @@ def parse_args():
     parser.add_argument("-gasol-mem-opt", "--gasol-mem-opt",             help="Executes optimization on blocks obtained by memory analysis.", action="store_true")
 
     output = parser.add_argument_group('Output options')
+    output.add_argument("-o", help="Path for storing the optimized code", dest='output_path', action='store')
+    output.add_argument("-csv", help="CSV file path", dest='csv_path', action='store')
     output.add_argument("-backend","--backend", action="store_false",
                         help="Disables backend generation, so that only intermediate files are generated")
     output.add_argument("-intermediate", "--intermediate", action="store_true",
                         help="Keeps temporary intermediate files. "
                              "These files contain the sfs representation, smt encoding...")
+
+    log_generation = parser.add_argument_group('Log generation options', 'Options for managing the log generation')
+
+    log_generation.add_argument("-log", "--generate-log", help ="Enable log file for verification",
+                                action = "store_true", dest='log')
+    log_generation.add_argument("-dest-log", help ="Log output path", action = "store", dest='log_stored_final')
+    log_generation.add_argument("-optimize-from-log", dest='log_path', action='store', metavar="log_file",
+                                help="Generates the same optimized bytecode than the one associated to the log file")
+    
     basic = parser.add_argument_group('Max-SMT solver general options',
                                   'Basic options for solving the corresponding Max-SMT problem')
 
@@ -73,7 +84,9 @@ def parse_args():
     basic.add_argument("-direct-tout", dest='direct_timeout', action='store_true',
                        help="Sets the Max-SMT timeout to -tout directly, "
                             "without considering the structure of the block")
-
+    basic.add_argument("-push0", "--push0", dest='push0_enabled', action='store_true',
+                       help="Enables reasoning for optimizations with PUSH0 opcode.")
+    
     blocks = parser.add_argument_group('Split block options', 'Options for deciding how to split blocks when optimizing')
 
     blocks.add_argument("-storage", "--storage", help="Split using SSTORE, MSTORE and MSTORE8", action="store_true")
@@ -202,7 +215,8 @@ def run_solidity_analysis(inputs,hashes):
         function_names = hashes[inp["c_name"]]
         try:
             result, return_code = symExec.run(disasm_file=inp['disasm_file'], disasm_file_init = inp['disasm_file_init'], source_map=inp['source_map'], source_file=inp['source'],cfg = args.control_flow_graph,execution = 0, cname = inp["c_name"],hashes = function_names,debug = args.debug,evm_version = True,svc = {},opt_bytecode = (args.optimize_run or args.via_ir), mem_analysis = args.mem_analysis)
-            optimized_blocks[symExec.memory_opt_blocks.get_contract_name()] = symExec.memory_opt_blocks
+            if symExec.memory_opt_blocks != None:
+                optimized_blocks[symExec.memory_opt_blocks.get_contract_name()] = symExec.memory_opt_blocks
             
         except Exception as e:
             traceback.print_exc()
@@ -224,7 +238,8 @@ def run_solidity_analysis(inputs,hashes):
             try:            
                 result, return_code = symExec.run(disasm_file=inp['disasm_file'], disasm_file_init = inp['disasm_file_init'], source_map=inp['source_map'], source_file=inp['source'],cfg = args.control_flow_graph,execution = i,cname = inp["c_name"],hashes = function_names,debug = args.debug,evm_version = True, svc = {}, opt_bytecode = (args.optimize_run or args.via_ir), mem_analysis = args.mem_analysis)
 
-                optimized_blocks[symExec.memory_opt_blocks.get_contract_name()] = symExec.memory_opt_blocks
+                if symExec.memory_opt_blocks != None:
+                    optimized_blocks[symExec.memory_opt_blocks.get_contract_name()] = symExec.memory_opt_blocks
                 
             except Exception as e:
                 traceback.print_exc()
@@ -361,18 +376,18 @@ def run_gasol(instr,output_file, csv_file):
 #     pass
 
 
-def final_file_names(parsed_args: argparse.Namespace) -> Tuple[str, str, str]:
-    input_file_name = parsed_args.input_path.split("/")[-1].split(".")[0]
+def final_file_names(parsed_args,cname,block):
+    input_file_name = cname
 
     if parsed_args.output_path is None:
-        if parsed_args.block:
-            output_file = input_file_name + "_optimized.txt"
-        elif parsed_args.sfs:
-            output_file = input_file_name + "_optimized.json"
-        elif parsed_args.log_path is not None:
-            output_file = input_file_name + "_optimized_from_log.json_solc"
-        else:
-            output_file = input_file_name + "_optimized.json_solc"
+        # if parsed_args.block:
+        output_file = input_file_name +str(block)+ "_optimized.txt"
+        # elif parsed_args.sfs:
+        #     output_file = input_file_name +str(block)+ "_optimized.json"
+        # elif parsed_args.log_path is not None:
+        #     output_file = input_file_name +str(block)+ "_optimized_from_log.json_solc"
+        # else:
+        #     output_file = input_file_name +str(block)+ "_optimized.json_solc"
     else:
         output_file = parsed_args.output_path
 
@@ -382,39 +397,28 @@ def final_file_names(parsed_args: argparse.Namespace) -> Tuple[str, str, str]:
         csv_file = parsed_args.csv_path
 
     if parsed_args.log_stored_final is None:
-        log_file = input_file_name + ".log"
+        log_file = input_file_name+str(block) + ".log"
     else:
         log_file = parsed_args.log_stored_final
 
     return output_file, csv_file, log_file
 
 
-def init():
-    global previous_gas
-    previous_gas = 0
-
-    global new_gas
-    new_gas = 0
-
-    global previous_size
-    previous_size = 0
-
-    global new_size
-    new_size = 0
-
-    global new_n_instrs
-    new_n_instrs = 0
-
-    global prev_n_instrs
-    prev_n_instrs = 0
-
 if __name__ == "__main__":
+    global args
+    
     print("Green Main")
     parse_args()
     opt_blocks_mem = run_ethir()
 
 
-    init()
+    gasol_main.init()
+    
+    # Set push0 global variable to the corresponding flag
+    constants._set_push0(args.push0_enabled)
+    args.optimized_predictor_model = None
+
+
     
     if args.gasol_mem_opt:
         run_gasol(opt_blocks_mem)
@@ -422,6 +426,10 @@ if __name__ == "__main__":
         for c in opt_blocks_mem:
             for b in opt_blocks_mem[c].optimizable_blocks:
                 print(opt_blocks_mem[c].optimizable_blocks[b].get_instructions())
-                run_gasol(" ".join(opt_blocks_mem[c].optimizable_blocks[b].get_instructions()))
+                output_file, csv_file, log_file = final_file_names(args,c,b)
+                args.input_path = c
+                args.debug_flag = args.debug
+                args.bound_model = None
+                run_gasol(" ".join(opt_blocks_mem[c].optimizable_blocks[b].get_instructions()),output_file,csv_file)
 
     
