@@ -440,33 +440,25 @@ if __name__ == "__main__":
     print("Green Main")
     parse_args()
     opt_blocks_mem = run_ethir()
-
-
-
     
     # Set push0 global variable to the corresponding flag
     constants._set_push0(args.push0_enabled)
     args.optimized_predictor_model = None
 
+    for c in opt_blocks_mem:
+        blocks = opt_blocks_mem[c].get_optimizable_blocks()
+        for b in blocks:
+            if args.debug:
+                print(blocks[b].get_instructions())
 
-    
-    if args.gasol_mem_opt:
-        run_gasol()
-    else:
-        for c in opt_blocks_mem:
-            blocks = opt_blocks_mem[c].get_optimizable_blocks()
-            for b in blocks:
-                if args.debug:
-                    print(blocks[b].get_instructions())
-
-                output_file, csv_file, log_file = final_file_names(args,c,b)
-                args.input_path = c
-                args.debug_flag = args.debug
-                args.bound_model = None
-                gasol_main.init()
-                instructions_as_plain_text = " ".join(blocks[b].get_instructions()) 
-                if not args.gasol_mem_opt:
-                    run_gasol(instructions_as_plain_text,output_file,csv_file)
-                else:
-                    run_gasol(instructions_as_plain_text,output_file,csv_file,blocks[b])
+            output_file, csv_file, log_file = final_file_names(args,c,b)
+            args.input_path = c
+            args.debug_flag = args.debug
+            args.bound_model = None
+            gasol_main.init()
+            instructions_as_plain_text = " ".join(blocks[b].get_instructions()) 
+            if not args.gasol_mem_opt:
+                run_gasol(instructions_as_plain_text,output_file,csv_file)
+            else:
+                run_gasol(instructions_as_plain_text,output_file,csv_file,blocks[b])
     
