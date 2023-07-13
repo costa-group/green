@@ -3,6 +3,7 @@ import sys
 import os
 import six
 import argparse
+import shutil
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/ethir_complete/ethir")
 sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/gasol_optimizer")
@@ -372,6 +373,35 @@ def run_gasol(instr,output_file, csv_file):
         df = pd.DataFrame(statistics_rows)
         df.to_csv(csv_file)
 
+    if parsed_args.intermediate or not parsed_args.backend:
+        print("")
+        print("Intermediate files stored at " + paths.gasol_path)
+    else:
+        shutil.rmtree(paths.gasol_path, ignore_errors=True)
+
+
+    if parsed_args.backend:
+        print("")
+        print("Optimized code stored in " + output_file)
+        print("Optimality results stored in " + csv_file)
+        print("")
+        print("Estimated initial gas: "+str(gasol_main.previous_gas))
+        print("Estimated gas optimized: " + str(gasol_main.new_gas))
+        print("")
+        print("Estimated initial size in bytes: " + str(gasol_main.previous_size))
+        print("Estimated size optimized in bytes: " + str(gasol_main.new_size))
+        print("")
+        print("Initial number of instructions: " + str(gasol_main.prev_n_instrs))
+        print("Final number of instructions: " + str(gasol_main.new_n_instrs))
+
+    else:
+        print("")
+        print("Estimated initial gas: "+str(gasol_main.previous_gas))
+        print("")
+        print("Estimated initial size in bytes: " + str(gasol_main.previous_size))
+        print("")
+        print("Initial number of instructions: " + str(gasol_main.new_n_instrs))
+        
 # def run_gasol(opt_blocks = {}):
 #     pass
 
@@ -412,7 +442,7 @@ if __name__ == "__main__":
     opt_blocks_mem = run_ethir()
 
 
-    gasol_main.init()
+
     
     # Set push0 global variable to the corresponding flag
     constants._set_push0(args.push0_enabled)
@@ -430,6 +460,7 @@ if __name__ == "__main__":
                 args.input_path = c
                 args.debug_flag = args.debug
                 args.bound_model = None
+                gasol_main.init()
                 run_gasol(" ".join(opt_blocks_mem[c].optimizable_blocks[b].get_instructions()),output_file,csv_file)
 
     
