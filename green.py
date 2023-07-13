@@ -329,7 +329,6 @@ def run_ethir():
     return opt_blocks_mem
 
 def run_gasol(instr,output_file, csv_file, dep_information = {}):
-    print("START")
     statistics_rows = []
     instructions = instr
     
@@ -340,10 +339,10 @@ def run_gasol(instr,output_file, csv_file, dep_information = {}):
     asm_blocks = []
 
     for old_block in blocks:
-        asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args)
+        asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information)
         statistics_rows.extend(statistics_csv)
 
-        eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args)
+        eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information)
          
         if not eq:
             print("Comparison failed, so initial block is kept")
@@ -458,7 +457,9 @@ if __name__ == "__main__":
             gasol_main.init()
             instructions_as_plain_text = " ".join(blocks[b].get_instructions()) 
             if not args.gasol_mem_opt:
+                print("NORMAL EXECUTION")
                 run_gasol(instructions_as_plain_text,output_file,csv_file)
             else:
+                print("ADDITIONAL EXECUTION")
                 run_gasol(instructions_as_plain_text,output_file,csv_file,blocks[b])
     
