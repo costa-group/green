@@ -454,13 +454,16 @@ if __name__ == "__main__":
         run_gasol(opt_blocks_mem)
     else:
         for c in opt_blocks_mem:
-            for b in opt_blocks_mem[c].optimizable_blocks:
-                print(opt_blocks_mem[c].optimizable_blocks[b].get_instructions())
+            blocks = opt_blocks_mem[c].get_optimizable_blocks()
+            for b in blocks:
+                if args.debug:
+                    print(blocks[b].get_instructions())
+
                 output_file, csv_file, log_file = final_file_names(args,c,b)
                 args.input_path = c
                 args.debug_flag = args.debug
                 args.bound_model = None
                 gasol_main.init()
-                run_gasol(" ".join(opt_blocks_mem[c].optimizable_blocks[b].get_instructions()),output_file,csv_file)
+                run_gasol(" ".join(blocks[b].get_instructions()),output_file,csv_file)
 
     
