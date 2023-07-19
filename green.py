@@ -11,6 +11,7 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/gasol_optimizer")
 import ethir_complete.ethir.oyente_ethir as ethir_main
 import ethir_complete.ethir.symExec as symExec
 from ethir_complete.ethir.input_helper import InputHelper
+from ethir_complete.ethir.memory_optimizer_connector import OptimizableBlockInfo
 import ethir_complete.ethir.global_params_ethir as global_params
 import gasol_optimizer.gasol_asm as gasol_main
 from timeit import default_timer as dtimer
@@ -344,7 +345,7 @@ def run_gasol(instr,output_file, csv_file, dep_information = {}):
 
         eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information)
          
-        if not eq:
+        if not eq and dep_information == {}:
             print("Comparison failed, so initial block is kept")
             print("\t[REASON]: "+reason)
             print(old_block.to_plain())
@@ -433,11 +434,107 @@ def final_file_names(parsed_args,cname,block):
     return output_file, csv_file, log_file
 
 
+
+def run_gasol_test(dep_information = {}):
+    statistics_rows = []
+    instructions = "SWAP2 SWAP1 MSTORE MLOAD PUSH 5 SSTORE"
+    
+    timeout = 50
+
+    output_file = "out.txt"
+    csv_file = "csv.csv"
+    constants._set_push0(args.push0_enabled)
+    args.optimized_predictor_model = None
+
+
+    dep_information = OptimizableBlockInfo("block0",instructions.split())
+    dep_information.add_pair("block0:2","block0:3","!=")
+    
+    args.input_path = "test"
+    args.debug_flag = args.debug
+    args.bound_model = None
+    
+    parsed_args = args
+    
+    blocks = parse_blocks_from_plain_instructions(instructions)
+    asm_blocks = []
+
+    for old_block in blocks:
+        asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information)
+        statistics_rows.extend(statistics_csv)
+
+        
+        eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information)
+         
+        if not eq and dep_information == {}:
+            print("Comparison failed, so initial block is kept")
+            print("\t[REASON]: "+reason)
+            print(old_block.to_plain())
+            print(asm_block.to_plain())
+            print("")
+            asm_block = old_block
+
+        gasol_main.update_gas_count(old_block, asm_block)
+        gasol_main.update_length_count(old_block, asm_block)
+        gasol_main.update_size_count(old_block, asm_block)
+        asm_blocks.append(asm_block)
+
+    if parsed_args.backend:
+        df = pd.DataFrame(statistics_rows)
+        df.to_csv(csv_file)
+        print("")
+        print("Initial sequence (basic block per line):")
+        print('\n'.join([old_block.to_plain_with_byte_number() for old_block in blocks]))
+        print("")
+        print("Optimized sequence (basic block per line):")
+        print('\n'.join([asm_block.to_plain_with_byte_number() for asm_block in asm_blocks]))
+        with open("out.txt", 'w') as f:
+            f.write('\n'.join([asm_block.to_plain_with_byte_number() for asm_block in asm_blocks]))
+
+        df = pd.DataFrame(statistics_rows)
+        df.to_csv(csv_file)
+
+    if parsed_args.intermediate or not parsed_args.backend:
+        print("")
+        print("Intermediate files stored at " + paths.gasol_path)
+    else:
+        shutil.rmtree(paths.gasol_path, ignore_errors=True)
+
+
+    if parsed_args.backend:
+        print("")
+        print("Optimized code stored in " + output_file)
+        print("Optimality results stored in " + csv_file)
+        print("")
+        print("Estimated initial gas: "+str(gasol_main.previous_gas))
+        print("Estimated gas optimized: " + str(gasol_main.new_gas))
+        print("")
+        print("Estimated initial size in bytes: " + str(gasol_main.previous_size))
+        print("Estimated size optimized in bytes: " + str(gasol_main.new_size))
+        print("")
+        print("Initial number of instructions: " + str(gasol_main.prev_n_instrs))
+        print("Final number of instructions: " + str(gasol_main.new_n_instrs))
+
+    else:
+        print("")
+        print("Estimated initial gas: "+str(gasol_main.previous_gas))
+        print("")
+        print("Estimated initial size in bytes: " + str(gasol_main.previous_size))
+        print("")
+        print("Initial number of instructions: " + str(gasol_main.new_n_instrs))
+
+
+
+
 if __name__ == "__main__":
     global args
     
     print("Green Main")
     parse_args()
+    
+    # gasol_main.init()
+    # run_gasol_test()
+    
     opt_blocks_mem = run_ethir()
     
     # Set push0 global variable to the corresponding flag
@@ -455,7 +552,9 @@ if __name__ == "__main__":
             args.debug_flag = args.debug
             args.bound_model = None
             gasol_main.init()
-            instructions_as_plain_text = " ".join(blocks[b].get_instructions()) 
+            instructions_as_plain_text = " ".join(blocks[b].get_instructions())
+            # print(blocks[b])
+            # print(type(blocks[b]))
             if not args.gasol_mem_opt:
                 print("NORMAL EXECUTION")
                 run_gasol(instructions_as_plain_text,output_file,csv_file)
