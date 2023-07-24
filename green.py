@@ -434,15 +434,15 @@ def final_file_names(parsed_args,cname,block):
         # else:
         #     output_file = input_file_name +str(block)+ "_optimized.json_solc"
     else:
-        output_file = parsed_args.output_path
+        output_file = parsed_args.output_path+input_file_name+"_"+str(block)+"_optimized.txt"
 
     if parsed_args.csv_path is None:
-        csv_file = input_file_name + "_statistics.csv"
+        csv_file = parsed_args.output_path+input_file_name +"_"+str(block)+ "_statistics.csv"
     else:
         csv_file = parsed_args.csv_path
 
     if parsed_args.log_stored_final is None:
-        log_file = input_file_name+str(block) + ".log"
+        log_file = parsed_args.output_path+input_file_name+"_"+str(block) + ".log"
     else:
         log_file = parsed_args.log_stored_final
 
