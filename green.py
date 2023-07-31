@@ -341,14 +341,21 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     blocks = parse_blocks_from_plain_instructions(instructions)
     asm_blocks = []
 
+    is_timeout = False
+    
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information)
+        print(statistics_csv)
         statistics_rows.extend(statistics_csv)
 
         real_timeout = statistics_csv[0]["timeout"]
         
         eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information)
-         
+
+        tout = statistics_csv[0]["outcome"] == "no_model"
+
+        is_timeout = is_timeout or tout
+        
         if not eq and dep_information == {}:
             print("Comparison failed, so initial block is kept")
             print("\t[REASON]: "+reason)
@@ -403,8 +410,8 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         dif_gas =gasol_main.previous_gas-gasol_main.new_gas
         dif_size = gasol_main.previous_size-gasol_main.new_size 
         dif_n_instrs = gasol_main.prev_n_instrs-gasol_main.new_n_instrs
-
-        greenres = [args.source,contract_name,block_id,real_timeout,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs]
+        
+        greenres = [args.source+contract_name+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs]
 
         green_res_str = list(map(lambda x: str(x), greenres))
 
@@ -439,12 +446,16 @@ def final_file_names(parsed_args,cname,block):
         output_file = parsed_args.output_path+input_file_name+"_"+str(block)+"_optimized.txt"
 
     if parsed_args.csv_path is None:
-        csv_file = parsed_args.output_path+input_file_name +"_"+str(block)+ "_statistics.csv"
-    else:
-        csv_file = parsed_args.csv_path
+        if parsed_args.output_path is None:
+            csv_file = input_file_name +"_"+str(block)+ "_statistics.csv"
+        else:
+            csv_file = parsed_args.output_path+input_file_name +"_"+str(block)+ "_statistics.csv"
 
     if parsed_args.log_stored_final is None:
-        log_file = parsed_args.output_path+input_file_name+"_"+str(block) + ".log"
+        if parsed_args.output_path is None:
+            log_file = input_file_name+"_"+str(block) + ".log"
+        else:
+            log_file = parsed_args.output_path+input_file_name+"_"+str(block) + ".log"
     else:
         log_file = parsed_args.log_stored_final
 
