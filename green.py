@@ -345,7 +345,6 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information)
-        print(statistics_csv)
         statistics_rows.extend(statistics_csv)
 
         real_timeout = statistics_csv[0]["timeout"]
