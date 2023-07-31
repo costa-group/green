@@ -578,8 +578,7 @@ if __name__ == "__main__":
             args.bound_model = None
             gasol_main.init()
             instructions_as_plain_text = " ".join(blocks[b].get_instructions())
-            # print(blocks[b])
-            # print(type(blocks[b]))
+
             if not args.gasol_mem_opt:
                 print("\nNORMAL EXECUTION\n")
                 run_gasol(instructions_as_plain_text,c,b,output_file,csv_file)
