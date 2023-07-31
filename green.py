@@ -411,7 +411,7 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         dif_size = gasol_main.previous_size-gasol_main.new_size 
         dif_n_instrs = gasol_main.prev_n_instrs-gasol_main.new_n_instrs
         
-        greenres = [args.source+contract_name+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs]
+        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs]
 
         green_res_str = list(map(lambda x: str(x), greenres))
 
