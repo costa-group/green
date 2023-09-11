@@ -360,8 +360,10 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         
         eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information)
 
-        tout = statistics_csv[0]["outcome"] == "no_model"
-
+        tout1 = statistics_csv[0]["outcome"] == "no_model"
+        tout2 = model and not optimal
+        tout = tout1 or tout2
+        
         is_timeout = is_timeout or tout
         
         if not eq and dep_information == {}:
