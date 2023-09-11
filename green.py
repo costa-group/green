@@ -342,12 +342,21 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     asm_blocks = []
 
     is_timeout = False
+    model_found = True
+    shown_optimal = True
     
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information)
         statistics_rows.extend(statistics_csv)
 
         real_timeout = statistics_csv[0]["timeout"]
+
+        model = statistics_csv[0]["model_found"]
+        optimal = statistics_csv[0]["shown_optimal"]
+
+        model_found = model_found and model
+        shown_optimal = shown_optimal and optimal
+        
         
         eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information)
 
@@ -410,7 +419,7 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         dif_size = gasol_main.previous_size-gasol_main.new_size 
         dif_n_instrs = gasol_main.prev_n_instrs-gasol_main.new_n_instrs
         
-        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs]
+        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,model_found,shown_optimal,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs]
 
         green_res_str = list(map(lambda x: str(x), greenres))
 
