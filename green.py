@@ -19,8 +19,6 @@ import gasol_optimizer.gasol_asm as gasol_main
 from timeit import default_timer as dtimer
 import traceback
 
-
-
 import gasol_optimizer.global_params.constants as constants
 import gasol_optimizer.global_params.paths as paths
 import gasol_optimizer.sfs_generator.ir_block as ir_block
@@ -219,9 +217,10 @@ def run_solidity_analysis(inputs,hashes):
         function_names = hashes[inp["c_name"]]
         try:
             result, return_code = symExec.run(disasm_file=inp['disasm_file'], disasm_file_init = inp['disasm_file_init'], source_map=inp['source_map'], source_file=inp['source'],cfg = args.control_flow_graph,execution = 0, cname = inp["c_name"],hashes = function_names,debug = args.debug,evm_version = True,svc = {},opt_bytecode = (args.optimize_run or args.via_ir), mem_analysis = args.mem_analysis)
-            if symExec.memory_opt_blocks != None:
-                optimized_blocks[symExec.memory_opt_blocks.get_contract_name()] = symExec.memory_opt_blocks
-            
+
+            if symExec.opt_blocks != None:
+                optimized_blocks[symExec.opt_blocks.get_contract_name()] = symExec.opt_blocks
+                
         except Exception as e:
             traceback.print_exc()
 
@@ -242,8 +241,8 @@ def run_solidity_analysis(inputs,hashes):
             try:            
                 result, return_code = symExec.run(disasm_file=inp['disasm_file'], disasm_file_init = inp['disasm_file_init'], source_map=inp['source_map'], source_file=inp['source'],cfg = args.control_flow_graph,execution = i,cname = inp["c_name"],hashes = function_names,debug = args.debug,evm_version = True, svc = {}, opt_bytecode = (args.optimize_run or args.via_ir), mem_analysis = args.mem_analysis)
 
-                if symExec.memory_opt_blocks != None:
-                    optimized_blocks[symExec.memory_opt_blocks.get_contract_name()] = symExec.memory_opt_blocks
+                if symExec.opt_blocks != None:
+                    optimized_blocks[symExec.opt_blocks.get_contract_name()] = symExec.opt_blocks
                 
             except Exception as e:
                 traceback.print_exc()
@@ -294,6 +293,11 @@ def run_solidity_analysis(inputs,hashes):
         exit_code = 6
 
     symExec.print_daos()
+
+    # print(optimized_blocks)
+    # for b in optimized_blocks:
+    #     print(optimized_blocks[b].print_blocks())
+    # raise Exception
     
     return results, exit_code, optimized_blocks
 
@@ -570,14 +574,18 @@ if __name__ == "__main__":
     print("Green Main")
     parse_args()
     
-    opt_blocks_mem = run_ethir()
+    opt_blocks = run_ethir()
     
     # Set push0 global variable to the corresponding flag
     constants._set_push0(args.push0_enabled)
     args.optimized_predictor_model = None
 
-    for c in opt_blocks_mem:
-        blocks = opt_blocks_mem[c].get_optimizable_blocks()
+    for c in opt_blocks:
+        blocks = opt_blocks[c].get_optimizable_blocks()
+        print(opt_blocks[c])
+        print(type(opt_blocks[c]))
+        print(blocks)
+        print(type(blocks))
         for b in blocks:
             if args.debug:
                 print(blocks[b].get_instructions())
