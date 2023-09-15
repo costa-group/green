@@ -15,7 +15,7 @@ import ethir_complete.ethir.symExec as symExec
 from ethir_complete.ethir.input_helper import InputHelper
 from ethir_complete.ethir.memory_optimizer_connector import OptimizableBlockInfo
 import ethir_complete.ethir.global_params_ethir as global_params
-import gasol_optimizer.gasol_asm as gasol_main
+import gasol_asm as gasol_main
 from timeit import default_timer as dtimer
 import traceback
 
@@ -90,6 +90,7 @@ def parse_args():
                             "without considering the structure of the block")
     basic.add_argument("-push0", "--push0", dest='push0_enabled', action='store_true',
                        help="Enables reasoning for optimizations with PUSH0 opcode.")
+    basic.add_argument('-greedy', '--greedy', dest='greedy', help='Uses greedy directly to generate the results', action='store_true')
     
     blocks = parser.add_argument_group('Split block options', 'Options for deciding how to split blocks when optimizing')
 
