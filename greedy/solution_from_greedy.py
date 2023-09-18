@@ -3,7 +3,7 @@ Adapted from /private_gasol_with_ml/smt_encoding. Remove transformation from min
 
 """
 from  gasol_optimizer.smt_encoding.complete_encoding.synthesis_full_encoding import SMS_T
-from  gasol_optimizer.smt_encoding.solver.solver import OptimizeOutcome
+from  gasol_asm import OptimizeOutcome
 from .algorithm import greedy_from_json
 import resource
 from typing import List, Tuple
