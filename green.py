@@ -241,7 +241,6 @@ def run_solidity_analysis(inputs,hashes):
             #logging.info("contract %s:", inp['contract'])
             try:            
                 result, return_code = symExec.run(disasm_file=inp['disasm_file'], disasm_file_init = inp['disasm_file_init'], source_map=inp['source_map'], source_file=inp['source'],cfg = args.control_flow_graph,execution = i,cname = inp["c_name"],hashes = function_names,debug = args.debug,evm_version = True, svc = {}, opt_bytecode = (args.optimize_run or args.via_ir), mem_analysis = args.mem_analysis)
-
                 if symExec.opt_blocks != None:
                     optimized_blocks[symExec.opt_blocks.get_contract_name()] = symExec.opt_blocks
                 
@@ -277,7 +276,9 @@ def run_solidity_analysis(inputs,hashes):
     5- SACO Error
     6- C Error
     '''
-        
+
+    
+    
     if (1 in returns):
         exit_code = 1
     elif (2 in returns):
@@ -293,7 +294,12 @@ def run_solidity_analysis(inputs,hashes):
     elif (6 in returns):
         exit_code = 6
 
-    symExec.print_daos()
+    if symExec.file_info != {}:
+        for k in symExec.file_info:
+            r = "FILERES: "+args.source+"_"+k
+            info = symExec.file_info[k]
+            r+=";"+str(info["num_blocks"])+";"+str(info["num_blocks_cloning"])+";"+str(info["optimizable_blocks"])+";"+str(info["memory_blocks"])+";"+str(info["storage_blocks"])+";"+str(info["memsto_blocks"])
+            print(r)
 
     # print(optimized_blocks)
     # for b in optimized_blocks:
@@ -351,6 +357,7 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     shown_optimal = True
     
     for old_block in blocks:
+        print(timeout)
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information)
         statistics_rows.extend(statistics_csv)
 
