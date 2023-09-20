@@ -83,7 +83,7 @@ def create_ml_models(parsed_args: Namespace) -> None:
         parsed_args.optimized_predictor_model = None
 
 
-def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: Namespace, dep_mem_info: Dict = {}, useless_info: bool = False):
+def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: Namespace, dep_mem_info: Dict = {}, opt_info: Dict = {}):
     stack_size = block.source_stack
     block_name = block.block_name
     block_id = block.block_id
@@ -104,13 +104,13 @@ def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: Name
     block_data = {"instructions": instructions_to_optimize, "input": stack_size}
 
     fname = parsed_args.input_path.split("/")[-1].split(".")[0]
-
+    
     exit_code, subblocks_list = \
         ir_block.evm2rbr_compiler(file_name=fname, block=block_data, block_name=block_name, block_id=block_id,
                                   simplification=not parsed_args.no_simp, storage=parsed_args.storage,
                                   size=parsed_args.size, part=parsed_args.partition,
                                   pop=not parsed_args.pop_basic, push=not parsed_args.push_basic, revert=revert_flag,
-                                  extra_dependences_info=dep_mem_info,extra_useless_info=useless_info,debug_info=parsed_args.debug_flag)
+                                  extra_dependences_info=dep_mem_info,extra_opt_info=opt_info,debug_info=parsed_args.debug_flag)
 
     sfs_dict = get_sfs_dict()
 
@@ -443,11 +443,11 @@ def block_has_been_optimized(original_block: AsmBlock, optimized_block: AsmBlock
 
 
 # Given an asm_block and its contract name, returns the asm block after the optimization
-def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: Namespace, dep_mem_info: Dict = {}, useless_info: bool = False) -> \
+def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: Namespace, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> \
 Tuple[AsmBlock, Dict, List[Dict]]:
     csv_statistics = []
     new_block = deepcopy(block)
-
+    
     # Optimized blocks. When a block is not optimized, None is pushed to the list.
     optimized_blocks = {}
 
@@ -492,7 +492,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
 
             else:
                 try:
-                    contracts_dict, _ = compute_original_sfs_with_simplifications(new_block, parsed_args, dep_mem_info,useless_info)
+                    contracts_dict, _ = compute_original_sfs_with_simplifications(new_block, parsed_args, dep_mem_info,opt_info)
                 except Exception as e:
                     failed_row = {'instructions': instructions, 'exception': str(e)}
                     return new_block, {}, []
@@ -502,7 +502,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
 
     else:
         try:
-            contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,useless_info)
+            contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,opt_info)
         except Exception as e:
             failed_row = {'instructions': instructions, 'exception': str(e)}
             return new_block, {}, []
@@ -539,13 +539,13 @@ Tuple[AsmBlock, Dict, List[Dict]]:
 
 
 def compare_asm_block_asm_format(old_block: AsmBlock, new_block: AsmBlock, parsed_args: Namespace,
-                                 dep_mem_info: Dict = {}, useless_info: bool = False) -> Tuple[bool, str]:
+                                 dep_mem_info: Dict = {}, opt_info: Dict = {}) -> Tuple[bool, str]:
     new_block.set_block_name("alreadyOptimized_" + new_block.get_block_name())
     new_sfs_information, _ = compute_original_sfs_with_simplifications(new_block, parsed_args, dep_mem_info)
 
     new_sfs_dict = new_sfs_information["syrup_contract"]
 
-    old_sfs_information, _ = compute_original_sfs_with_simplifications(old_block, parsed_args, dep_mem_info, useless_info)
+    old_sfs_information, _ = compute_original_sfs_with_simplifications(old_block, parsed_args, dep_mem_info, opt_info)
 
     old_sfs_dict = old_sfs_information["syrup_contract"]
 
