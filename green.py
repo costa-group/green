@@ -186,7 +186,6 @@ def analyze_solidity(input_type='solidity'):
     compiler_opt["via-ir"] = args.via_ir
 
     if input_type == 'solidity':
-        print(args)
         helper = InputHelper(InputHelper.SOLIDITY, source=args.source,evm =args.evm,runtime=is_runtime,opt_options = compiler_opt)
 
     inputs = helper.get_inputs()
@@ -359,8 +358,6 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     shown_optimal = True
     
     for old_block in blocks:
-        print(timeout)
-        print(opt_info)
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information, opt_info)
         statistics_rows.extend(statistics_csv)
 
@@ -371,8 +368,7 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
 
         model_found = model_found and model
         shown_optimal = shown_optimal and optimal
-        
-        
+
         eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information, opt_info)
 
         tout1 = statistics_csv[0]["outcome"] == "no_model"
@@ -616,9 +612,11 @@ if __name__ == "__main__":
 
             opt_dict = {}
             opt_dict["useless"] = args.useless_info
-            opt_dict["relations"] = args.gasol_mem_opt
+            opt_dict["dependences"] = args.gasol_mem_opt
+
+            optimize = args.gasol_mem_opt or args.useless_info
             
-            if not args.gasol_mem_opt:
+            if not optimize:
                 print("\nNORMAL EXECUTION\n")
                 run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
             else:
