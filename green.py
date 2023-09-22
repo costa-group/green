@@ -495,9 +495,18 @@ def final_file_names(parsed_args,cname,block):
 
 def run_gasol_test(dep_information = {}):
     statistics_rows = []
-    instructions = "SWAP2 SWAP1 MSTORE MLOAD PUSH 5 SSTORE"
+    # instructions = "SWAP2 SWAP1 MSTORE MLOAD PUSH 5 SSTORE"
+    instructions = "JUMPDEST SWAP1 PUSH1 0x01 DUP1 PUSH1 0xa0 SHL SUB AND PUSH0 MSTORE PUSH1 0x20 MSTORE PUSH1 0x40 PUSH0 KECCAK256 SWAP1 JUMP"
+
+#     Block: 6906_0
+# Instr:<< ['JUMPDEST', 'SWAP1', 'PUSH1 0x01', 'DUP1', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'MSTORE', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'PUSH0', 'KECCAK256', 'SWAP1', 'JUMP']>> 
+# Equals Mem:<< [<9,14>, <9,11>, <11,14>]>> 
+# NonEquals Mem: << []>> 
+# Equals Sto:<< []>> 
+# NonEquals Sto: << []>> 
+# Useless: []
     
-    timeout = 50
+    timeout = 75
 
     output_file = "out.txt"
     csv_file = "csv.csv"
@@ -506,7 +515,7 @@ def run_gasol_test(dep_information = {}):
 
 
     dep_information = OptimizableBlockInfo("block0",instructions.split())
-    dep_information.add_pair("block0:2","block0:3","!=")
+    dep_information.add_pair("block0:9","block0:11","!=","memory")
     
     args.input_path = "test"
     args.debug_flag = args.debug
@@ -517,21 +526,29 @@ def run_gasol_test(dep_information = {}):
     blocks = parse_blocks_from_plain_instructions(instructions)
     asm_blocks = []
 
+
+    opt_dict = {}
+    opt_dict["useless"] = False
+    opt_dict["dependences"] = False
+    
     for old_block in blocks:
-        asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information)
+        asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information,opt_dict)
         statistics_rows.extend(statistics_csv)
 
-        
-        eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information)
-         
-        if not eq and dep_information == {}:
-            print("Comparison failed, so initial block is kept")
-            print("\t[REASON]: "+reason)
-            print(old_block.to_plain())
-            print(asm_block.to_plain())
-            print("")
-            asm_block = old_block
 
+        # print("COMPARE")
+        # eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information,opt_dict)
+         
+        # if not eq and dep_information == {}:
+        #     print("Comparison failed, so initial block is kept")
+        #     print("\t[REASON]: "+reason)
+        #     print(old_block.to_plain())
+        #     print(asm_block.to_plain())
+        #     print("")
+        #     asm_block = old_block
+
+
+            
         gasol_main.update_gas_count(old_block, asm_block)
         gasol_main.update_length_count(old_block, asm_block)
         gasol_main.update_size_count(old_block, asm_block)
@@ -589,6 +606,11 @@ if __name__ == "__main__":
     
     print("Green Main")
     parse_args()
+
+    #For testing
+    # gasol_main.init()
+    # run_gasol_test()
+    # raise Exception
     
     opt_blocks = run_ethir()
     
@@ -596,6 +618,8 @@ if __name__ == "__main__":
     constants._set_push0(args.push0_enabled)
     args.optimized_predictor_model = None
 
+    
+    
     for c in opt_blocks:
         blocks = opt_blocks[c].get_optimizable_blocks()
         for b in blocks:
