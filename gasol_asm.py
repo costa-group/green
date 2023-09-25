@@ -147,7 +147,7 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
         if parsed_args.direct_timeout:
             tout = parsed_args.tout
         else:
-            tout = 2.5*parsed_args.tout * (1 + len([True for instr in sfs_block['user_instrs'] if instr["storage"]]))
+            tout = parsed_args.tout * (1 + len([True for instr in sfs_block['user_instrs'] if instr["storage"]]))
 
         optimizer = BlockOptimizer(block_name, sfs_block, parsed_args, tout)
         print(f"Optimizing {block_name}... Timeout:{str(tout)}")
