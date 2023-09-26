@@ -384,8 +384,10 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         tout = tout1 or tout2
         
         is_timeout = is_timeout or tout
+
+        has_info = (opt_info["useless"] or opt_info["dependences"])
         
-        if not eq and dep_information == {}:
+        if not eq and not has_info:
             print("Comparison failed, so initial block is kept")
             print("\t[REASON]: "+reason)
             print(old_block.to_plain())
@@ -443,8 +445,10 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         has_memory = False
         has_storage = False
         has_useless = False
+
+        has_info = (opt_info["useless"] or opt_info["dependences"])
         
-        if dep_information != {}:
+        if has_info:
             has_memory = (dep_information.get_equal_pairs_memory()!= []) or (dep_information.get_nonequal_pairs_memory() != [])
             has_storage = (dep_information.get_equal_pairs_storage()!= []) or (dep_information.get_nonequal_pairs_storage() != [])
             has_useless = opt_info["useless"] and (dep_information.get_useless_info() != [])
