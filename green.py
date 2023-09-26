@@ -358,6 +358,7 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     timeout = args.tout
     parsed_args = args
 
+    print(instructions)
     blocks = parse_blocks_from_plain_instructions(instructions)
     asm_blocks = []
 
@@ -377,7 +378,7 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         model_found = model_found and model
         shown_optimal = shown_optimal and optimal
 
-        eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information, opt_info)
+
 
         tout1 = statistics_csv[0]["outcome"] == "no_model"
         tout2 = model and not optimal
@@ -385,15 +386,19 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         
         is_timeout = is_timeout or tout
 
-        has_info = (opt_info["useless"] or opt_info["dependences"])
         
-        if not eq and not has_info:
-            print("Comparison failed, so initial block is kept")
-            print("\t[REASON]: "+reason)
-            print(old_block.to_plain())
-            print(asm_block.to_plain())
-            print("")
-            asm_block = old_block
+        has_info = (opt_info["useless"] or opt_info["dependences"])
+
+        if not has_info:
+            eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information, opt_info)
+        
+            if not eq:
+                print("Comparison failed, so initial block is kept")
+                print("\t[REASON]: "+reason)
+                print(old_block.to_plain())
+                print(asm_block.to_plain())
+                print("")
+                asm_block = old_block
 
         gasol_main.update_gas_count(old_block, asm_block)
         gasol_main.update_length_count(old_block, asm_block)
@@ -658,6 +663,15 @@ if __name__ == "__main__":
                 print("\nNORMAL EXECUTION\n")
                 run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
             else:
-                print("\nADDITIONAL EXECUTION\n")
-                run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
-    
+                if (opt_dict["useless"] and opt_dict["dependences"]):
+                    if (blocks[b].has_dependences_info() and blocks[b].get_useless_info()!=[]):
+                        print("\nADDITIONAL EXECUTION WITH BOTH\n")
+                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
+                elif opt_dict["useless"]:
+                    if (blocks[b].get_useless_info()!=[]):
+                        print("\nADDITIONAL EXECUTION WITH USELESS\n")
+                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
+                elif opt_dict["dependences"] :
+                    if (blocks[b].has_dependences_info()):
+                        print("\nADDITIONAL EXECUTION WITH ALIASING\n")
+                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
