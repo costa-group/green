@@ -120,7 +120,7 @@ def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: Name
 # Given the sequence of bytecodes, the initial stack size, the contract name and the
 # block id, returns the output given by the solver, the name given to that block and current gas associated
 # to that sequence.
-def optimize_block(sfs_dict, timeout, parsed_args: Namespace) -> List[Tuple[AsmBlock, OptimizeOutcome, float,
+def optimize_block(sfs_dict, timeout, parsed_args: Namespace, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> List[Tuple[AsmBlock, OptimizeOutcome, float,
 List[AsmBytecode], int, int, List[str], List[str]]]:
     block_solutions = []
     # SFS dict of syrup contract contains all sub-blocks derived from a block after splitting
@@ -147,7 +147,11 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
         if parsed_args.direct_timeout:
             tout = parsed_args.tout
         else:
-            tout = parsed_args.tout * (1 + len([True for instr in sfs_block['user_instrs'] if instr["storage"]]))
+            if opt_info.get("dependences",False):
+                taux = 1.5*(len(dep_mem_info.get_equal_pairs_memory())+len(dep_mem_info.get_nonequal_pairs_memory()))
+            else:
+                taux = 0
+            tout = parsed_args.tout * (1 + len([True for instr in sfs_block['user_instrs'] if instr["storage"]])+taux)
 
         optimizer = BlockOptimizer(block_name, sfs_block, parsed_args, tout)
         print(f"Optimizing {block_name}... Timeout:{str(tout)}")
@@ -510,11 +514,11 @@ Tuple[AsmBlock, Dict, List[Dict]]:
         sfs_dict = contracts_dict["syrup_contract"]
 
     if not parsed_args.backend:
-        optimize_block(sfs_dict, timeout, parsed_args)
+        optimize_block(sfs_dict, timeout, parsed_args,dep_mem_info, opt_info)
         return new_block, {}, []
 
     for sub_block, optimization_outcome, solver_time, optimized_asm, tout, initial_solver_bound, rules, optimized_log_rep in optimize_block(
-            sfs_dict, timeout, parsed_args):
+            sfs_dict, timeout, parsed_args,dep_mem_info, opt_info):
 
         optimal_block = AsmBlock('optimized', sub_block.block_id, sub_block.block_name, sub_block.is_init_block)
         optimal_block.instructions = optimized_asm
