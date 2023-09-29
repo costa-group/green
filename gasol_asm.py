@@ -148,7 +148,7 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
             tout = parsed_args.tout
         else:
             if opt_info.get("dependences",False):
-                taux = 1.5*(len(dep_mem_info.get_equal_pairs_memory())+len(dep_mem_info.get_nonequal_pairs_memory()))
+                taux = 2*(len(dep_mem_info.get_equal_pairs_memory())+len(dep_mem_info.get_nonequal_pairs_memory()))
             else:
                 taux = 0
             tout = parsed_args.tout * (1 + len([True for instr in sfs_block['user_instrs'] if instr["storage"]])+taux)
@@ -507,6 +507,13 @@ Tuple[AsmBlock, Dict, List[Dict]]:
     else:
         try:
             contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,opt_info)
+            if opt_info["dependences"]:
+                contracts_dict_init, sub_block_list_init = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,{})
+                sfs_dict_extra = contracts_dict_init["syrup_contract"]
+                sfs_dict_origin = contracts_dict["syrup_contract"]
+                if sfs_dict_extra == sfs_dict_origin:
+                    raise Exception
+                
         except Exception as e:
             failed_row = {'instructions': instructions, 'exception': str(e)}
             return new_block, {}, []
