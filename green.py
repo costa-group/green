@@ -530,17 +530,12 @@ def run_gasol_test(dep_information = {}):
     # instructions = "SWAP2 SWAP1 MSTORE MLOAD PUSH 5 SSTORE"
     #instructions = "DUP2 DUP2 MSTORE DUP3 PUSH1 20 PUSH 5 MSTORE DUP2 ADD DUP5 MSTORE"
     # instructions = "JUMPDEST PUSH1 0x11 DUP2 MSTORE ADD PUSH1 0x0e DUP2 MSTORE DUP2 MLOAD SWAP1 PUSH1 0x11 DUP3 MSTORE MLOAD PUSH1 0x20 DUP3 ADD MSTORE RETURN"
-    instructions = "ADD PUSH 40 MSTORE PUSH 20 MSTORE DUP2 ISZERO PUSH 40 PUSH 20 KECCAK256"
+    #instructions = "ADD PUSH 40 MSTORE PUSH 20 MSTORE DUP2 ISZERO PUSH 40 PUSH 20 KECCAK256"
     # instructions = "DUP1 MLOAD SWAP2 MLOAD"
     #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1"
     #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1"
-# Block: 6906_0
-# Instr:<< ['JUMPDEST', 'SWAP1', 'PUSH1 0x01', 'DUP1', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'MSTORE', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'PUSH0', 'KECCAK256', 'SWAP1', 'JUMP']>> 
-# Equals Mem:<< [<9,14>, <9,11>, <11,14>]>> 
-# NonEquals Mem: << []>> 
-# Equals Sto:<< []>> 
-# NonEquals Sto: << []>> 
-# Useless: []
+    # instructions = "DUP2 DUP5 ISZERO DUP2 PUSH 20 ADD"
+    instructions = "DUP1 ISZERO PUSH 0x10 PUSH 0x10 ADD"
     
     timeout = 75
 
@@ -550,15 +545,16 @@ def run_gasol_test(dep_information = {}):
     args.optimized_predictor_model = None
 
     
-    dep_information = OptimizableBlockInfo("block0",instructions.split(),2)
-    dep_information.add_pair("block0:2","block0:4","!=","memory")
+    dep_information = OptimizableBlockInfo("block0",instructions.split(),1)
+    #dep_information.add_pair("block0:2","block0:4","!=","memory")
     # dep_information.add_pair("block0:2","block0:5","!=","memory")
     # dep_information.add_pair("block0:5","block0:6","!=","memory") 
     # dep_information.add_pair("block0:2","block0:5","==","memory")q
-    dep_information._add_context_pair((0,1))
+    #dep_information._add_context_pair((1,1))
+    dep_information._add_constancy_pair((0,32))
     # dep_information.add_pair("block0:11","block0:14","!=","memory")
     # dep_information.add_pair("block0:9","block0:18","==","memory")
-    dep_information.add_useless_info([7])
+    #dep_information.add_useless_info([7])
     args.input_path = "test"
     args.debug_flag = args.debug
     args.bound_model = None
@@ -571,8 +567,8 @@ def run_gasol_test(dep_information = {}):
 
     opt_dict = {}
     opt_dict["useless"] = False
-    opt_dict["dependences"] = True
-    opt_dict["context"] = False
+    opt_dict["dependences"] = False
+    opt_dict["context"] = True
     
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information,opt_dict)
@@ -657,9 +653,9 @@ if __name__ == "__main__":
     parse_args()
 
     #For testing
-    # gasol_main.init()
-    # run_gasol_test()
-    # raise Exception
+    gasol_main.init()
+    run_gasol_test()
+    raise Exception
     
     opt_blocks = run_ethir()
     
@@ -697,9 +693,9 @@ if __name__ == "__main__":
                 print(blocks[b])
 
                 if (opt_dict["useless"] and opt_dict["dependences"] and opt_dict["context"]):
-                    if (blocks[b].has_dependences_info() and blocks[b].get_useless_info()!=[] and blocks[b].has_context_info()):
-                        print("\nADDITIONAL EXECUTION WITH THREE\n")
-                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
+                    # if (blocks[b].has_dependences_info()  blocks[b].get_useless_info()!=[] and blocks[b].has_context_info()):
+                    print("\nADDITIONAL EXECUTION WITH THREE\n")
+                    run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
                 elif (opt_dict["useless"] and opt_dict["context"]):
                     if (blocks[b].has_context_info() and blocks[b].get_useless_info()!=[]):
                         print("\nADDITIONAL EXECUTION WITH USELESS AND CONTEXT\n")
