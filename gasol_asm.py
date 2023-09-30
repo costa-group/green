@@ -48,6 +48,9 @@ def init():
     global prev_n_instrs
     prev_n_instrs = 0
 
+    global equal_aliasing
+    equal_aliasing = False
+    
 
 def select_model_and_config(model: str, criteria: str, i: int) -> Tuple[str, int]:
     configurations = {"bound_size": ("bound_size.pyt", 4), "bound_gas": ("bound_gas.pyt", 4),
@@ -449,6 +452,8 @@ def block_has_been_optimized(original_block: AsmBlock, optimized_block: AsmBlock
 # Given an asm_block and its contract name, returns the asm block after the optimization
 def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: Namespace, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> \
 Tuple[AsmBlock, Dict, List[Dict]]:
+    global equal_aliasing
+    
     csv_statistics = []
     new_block = deepcopy(block)
     
@@ -512,12 +517,13 @@ Tuple[AsmBlock, Dict, List[Dict]]:
                 sfs_dict_extra = contracts_dict_init["syrup_contract"]
                 sfs_dict_origin = contracts_dict["syrup_contract"]
                 if sfs_dict_extra == sfs_dict_origin:
-                    raise Exception
-                
+                    equal_aliasing = True
+                    return new_block, {}, [] 
         except Exception as e:
             failed_row = {'instructions': instructions, 'exception': str(e)}
             return new_block, {}, []
 
+        
         sfs_dict = contracts_dict["syrup_contract"]
 
     if not parsed_args.backend:
