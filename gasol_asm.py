@@ -512,7 +512,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
     else:
         try:
             contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,opt_info)
-            if opt_info["dependences"]:
+            if opt_info["dependences"] or opt_info["context"]:
                 contracts_dict_init, sub_block_list_init = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,{})
                 sfs_dict_extra = contracts_dict_init["syrup_contract"]
                 sfs_dict_origin = contracts_dict["syrup_contract"]
