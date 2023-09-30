@@ -369,6 +369,14 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information, opt_info)
+
+        if gasol_main.equal_aliasing:
+            print("BLOCK "+args.source+"_"+contract_name+"_"+str(block_id)+" FILTERED WITH EQUAL SFS WITH AND WITHOUT ALIASING")
+            return 0
+        
+        statistics_rows.extend(statistics_csv)
+
+
         statistics_rows.extend(statistics_csv)
 
         if statistics_csv !=[]:
@@ -520,7 +528,9 @@ def final_file_names(parsed_args,cname,block):
 def run_gasol_test(dep_information = {}):
     statistics_rows = []
     # instructions = "SWAP2 SWAP1 MSTORE MLOAD PUSH 5 SSTORE"
-    instructions = "DUP2 DUP2 MSTORE DUP3 PUSH1 20 PUSH 5 MSTORE DUP2 ADD DUP5 MSTORE"
+    #instructions = "DUP2 DUP2 MSTORE DUP3 PUSH1 20 PUSH 5 MSTORE DUP2 ADD DUP5 MSTORE"
+    # instructions = "JUMPDEST PUSH1 0x11 DUP2 MSTORE ADD PUSH1 0x0e DUP2 MSTORE DUP2 MLOAD SWAP1 PUSH1 0x11 DUP3 MSTORE MLOAD PUSH1 0x20 DUP3 ADD MSTORE RETURN"
+    instructions = "ADD PUSH 40 MSTORE PUSH 20 MSTORE DUP2 ISZERO PUSH 40 PUSH 20 KECCAK256"
     # instructions = "DUP1 MLOAD SWAP2 MLOAD"
     #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1"
     #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1"
@@ -541,7 +551,7 @@ def run_gasol_test(dep_information = {}):
 
     
     dep_information = OptimizableBlockInfo("block0",instructions.split(),2)
-    dep_information.add_pair("block0:2","block0:6","==","memory")
+    dep_information.add_pair("block0:2","block0:4","!=","memory")
     # dep_information.add_pair("block0:2","block0:5","!=","memory")
     # dep_information.add_pair("block0:5","block0:6","!=","memory") 
     # dep_information.add_pair("block0:2","block0:5","==","memory")q
@@ -566,8 +576,14 @@ def run_gasol_test(dep_information = {}):
     
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information,opt_dict)
-        statistics_rows.extend(statistics_csv)
 
+        if gasol_main.equal_aliasing:
+            print("-----------------------------------------------")
+            print("Equal SFS with and without aliasing information")
+            print("-----------------------------------------------")
+            return 0
+        
+        statistics_rows.extend(statistics_csv)
 
         # print("COMPARE")
         # eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information,opt_dict)
@@ -586,7 +602,7 @@ def run_gasol_test(dep_information = {}):
         gasol_main.update_length_count(old_block, asm_block)
         gasol_main.update_size_count(old_block, asm_block)
         asm_blocks.append(asm_block)
-
+        
     if parsed_args.backend:
         df = pd.DataFrame(statistics_rows)
         df.to_csv(csv_file)
