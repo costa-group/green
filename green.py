@@ -59,6 +59,7 @@ def parse_args():
     parser.add_argument("-mem-analysis", "--mem-analysis",             help="Executes memory analysis. baseref runs the basic analysis where it only identifies the base refences. Offset runs baseref+offset option", choices = ["baseref","offset"])
     parser.add_argument("-aliasing-info", "--aliasing-info",             help="Executes optimization on blocks obtained by memory analysis.", action="store_true")
     parser.add_argument("-useless-info", "--useless-info",             help="Uses useless info from memory analysis.", action="store_true")
+    parser.add_argument("-context-info", "--context-info",             help="Uses context info from memory analysis.", action="store_true")
 
     output = parser.add_argument_group('Output options')
     output.add_argument("-o", help="Path for storing the optimized code", dest='output_path', action='store')
@@ -370,22 +371,28 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information, opt_info)
         statistics_rows.extend(statistics_csv)
 
-        real_timeout = statistics_csv[0]["timeout"]
+        if statistics_csv !=[]:
+            real_timeout = statistics_csv[0].get("timeout",0)
 
-        model = statistics_csv[0]["model_found"]
-        optimal = statistics_csv[0]["shown_optimal"]
-
+            model = statistics_csv[0].get("model_found",False)
+            optimal = statistics_csv[0].get("shown_optimal",False)
+        else:
+            real_timeout = 0
+            model = False
+            optimal = False
+            
         model_found = model_found and model
         shown_optimal = shown_optimal and optimal
 
-
-
-        tout1 = statistics_csv[0]["outcome"] == "no_model"
+        if statistics_csv != []:
+            tout1 = statistics_csv[0]["outcome"] == "no_model"
+        else:
+            tout1 = False
+            
         tout2 = model and not optimal
         tout = tout1 or tout2
         
         is_timeout = is_timeout or tout
-
         
         has_info = (opt_info["useless"] or opt_info["dependences"])
 
@@ -513,8 +520,10 @@ def final_file_names(parsed_args,cname,block):
 def run_gasol_test(dep_information = {}):
     statistics_rows = []
     # instructions = "SWAP2 SWAP1 MSTORE MLOAD PUSH 5 SSTORE"
-    instructions = "PUSH1 0x40 MSTORE PUSH0 PUSH1 0x40 DUP4 DUP3 DUP2 MSTORE DUP3 PUSH1 0x20 DUP3 ADD MSTORE ADD MSTORE JUMP"
-
+    instructions = "DUP2 DUP2 MSTORE DUP3 PUSH1 20 PUSH 5 MSTORE DUP2 ADD DUP5 MSTORE"
+    # instructions = "DUP1 MLOAD SWAP2 MLOAD"
+    #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1"
+    #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1"
 # Block: 6906_0
 # Instr:<< ['JUMPDEST', 'SWAP1', 'PUSH1 0x01', 'DUP1', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'MSTORE', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'PUSH0', 'KECCAK256', 'SWAP1', 'JUMP']>> 
 # Equals Mem:<< [<9,14>, <9,11>, <11,14>]>> 
@@ -531,11 +540,15 @@ def run_gasol_test(dep_information = {}):
     args.optimized_predictor_model = None
 
     
-    dep_information = OptimizableBlockInfo("block0",instructions.split())
-    dep_information.add_pair("block0:9","block0:11","!=","memory")
-    dep_information.add_pair("block0:11","block0:14","!=","memory")
-    dep_information.add_pair("block0:9","block0:18","==","memory")
-    dep_information.add_useless_info([7,14])
+    dep_information = OptimizableBlockInfo("block0",instructions.split(),2)
+    dep_information.add_pair("block0:2","block0:6","==","memory")
+    # dep_information.add_pair("block0:2","block0:5","!=","memory")
+    # dep_information.add_pair("block0:5","block0:6","!=","memory") 
+    # dep_information.add_pair("block0:2","block0:5","==","memory")q
+    dep_information._add_context_pair((0,1))
+    # dep_information.add_pair("block0:11","block0:14","!=","memory")
+    # dep_information.add_pair("block0:9","block0:18","==","memory")
+    dep_information.add_useless_info([7])
     args.input_path = "test"
     args.debug_flag = args.debug
     args.bound_model = None
@@ -547,8 +560,9 @@ def run_gasol_test(dep_information = {}):
 
 
     opt_dict = {}
-    opt_dict["useless"] = True
-    opt_dict["dependences"] = False
+    opt_dict["useless"] = False
+    opt_dict["dependences"] = True
+    opt_dict["context"] = False
     
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information,opt_dict)
@@ -656,13 +670,29 @@ if __name__ == "__main__":
             opt_dict = {}
             opt_dict["useless"] = args.useless_info
             opt_dict["dependences"] = args.aliasing_info
+            opt_dict["context"] = args.context_info
 
-            optimize = args.aliasing_info or args.useless_info
+            optimize = args.aliasing_info or args.useless_info or args.context_info
             
             if not optimize:
                 print("\nNORMAL EXECUTION\n")
                 run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
             else:
+                print(blocks[b])
+
+                if (opt_dict["useless"] and opt_dict["dependences"] and opt_dict["context"]):
+                    if (blocks[b].has_dependences_info() and blocks[b].get_useless_info()!=[] and blocks[b].has_context_info()):
+                        print("\nADDITIONAL EXECUTION WITH THREE\n")
+                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
+                elif (opt_dict["useless"] and opt_dict["context"]):
+                    if (blocks[b].has_context_info() and blocks[b].get_useless_info()!=[]):
+                        print("\nADDITIONAL EXECUTION WITH USELESS AND CONTEXT\n")
+                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
+                elif (opt_dict["context"] and opt_dict["dependences"]):
+                    if (blocks[b].has_dependences_info() and blocks[b].has_context_info()):
+                        print("\nADDITIONAL EXECUTION WITH ALIASING AND CONTEXT\n")
+                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
+                        
                 if (opt_dict["useless"] and opt_dict["dependences"]):
                     if (blocks[b].has_dependences_info() and blocks[b].get_useless_info()!=[]):
                         print("\nADDITIONAL EXECUTION WITH BOTH\n")
@@ -674,4 +704,8 @@ if __name__ == "__main__":
                 elif opt_dict["dependences"] :
                     if (blocks[b].has_dependences_info()):
                         print("\nADDITIONAL EXECUTION WITH ALIASING\n")
+                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
+                elif opt_dict["context"] :
+                    if (blocks[b].has_context_info()):
+                        print("\nADDITIONAL EXECUTION WITH CONTEXT\n")
                         run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
