@@ -60,6 +60,8 @@ def parse_args():
     parser.add_argument("-aliasing-info", "--aliasing-info",             help="Executes optimization on blocks obtained by memory analysis.", action="store_true")
     parser.add_argument("-useless-info", "--useless-info",             help="Uses useless info from memory analysis.", action="store_true")
     parser.add_argument("-context-info", "--context-info",             help="Uses context info from memory analysis.", action="store_true")
+    parser.add_argument("-compact-clones", "--compact-clones",             help="Intersect blocks cloned before invoking GASOL superoptimizer", action="store_true")
+
 
     output = parser.add_argument_group('Output options')
     output.add_argument("-o", help="Path for storing the optimized code", dest='output_path', action='store')
@@ -218,7 +220,20 @@ def run_solidity_analysis(inputs,hashes):
         inp = inputs[0]
         function_names = hashes[inp["c_name"]]
         try:
-            result, return_code = symExec.run(disasm_file=inp['disasm_file'], disasm_file_init = inp['disasm_file_init'], source_map=inp['source_map'], source_file=inp['source'],cfg = args.control_flow_graph,execution = 0, cname = inp["c_name"],hashes = function_names,debug = args.debug,evm_version = True,svc = {},opt_bytecode = (args.optimize_run or args.via_ir), mem_analysis = args.mem_analysis)
+            result, return_code = symExec.run(disasm_file=inp['disasm_file'], 
+                                              disasm_file_init = inp['disasm_file_init'], 
+                                              source_map=inp['source_map'], 
+                                              source_file=inp['source'],
+                                              cfg = args.control_flow_graph,
+                                              execution = 0, 
+                                              cname = inp["c_name"],
+                                              hashes = function_names,
+                                              debug = args.debug,
+                                              evm_version = True,
+                                              svc = {},
+                                              opt_bytecode = (args.optimize_run or args.via_ir), 
+                                              mem_analysis = args.mem_analysis,
+                                              compact_clones = args.compact_clones)
 
             if symExec.opt_blocks != None:
                 optimized_blocks[symExec.opt_blocks.get_contract_name()] = symExec.opt_blocks
@@ -241,7 +256,20 @@ def run_solidity_analysis(inputs,hashes):
             function_names = hashes[inp["c_name"]]
             #logging.info("contract %s:", inp['contract'])
             try:            
-                result, return_code = symExec.run(disasm_file=inp['disasm_file'], disasm_file_init = inp['disasm_file_init'], source_map=inp['source_map'], source_file=inp['source'],cfg = args.control_flow_graph,execution = i,cname = inp["c_name"],hashes = function_names,debug = args.debug,evm_version = True, svc = {}, opt_bytecode = (args.optimize_run or args.via_ir), mem_analysis = args.mem_analysis)
+                result, return_code = symExec.run(disasm_file=inp['disasm_file'], 
+                                                  disasm_file_init = inp['disasm_file_init'], 
+                                                  source_map=inp['source_map'], 
+                                                  source_file=inp['source'],
+                                                  cfg = args.control_flow_graph,
+                                                  execution = i,
+                                                  cname = inp["c_name"],
+                                                  hashes = function_names,
+                                                  debug = args.debug,
+                                                  evm_version = True, 
+                                                  svc = {}, 
+                                                  opt_bytecode = (args.optimize_run or args.via_ir), 
+                                                  mem_analysis = args.mem_analysis, 
+                                                  compact_clones = args.compact_clones)
                 if symExec.opt_blocks != None:
                     optimized_blocks[symExec.opt_blocks.get_contract_name()] = symExec.opt_blocks
                 
@@ -654,8 +682,8 @@ if __name__ == "__main__":
 
     #For testing
     gasol_main.init()
-    run_gasol_test()
-    raise Exception
+    # run_gasol_test()
+    # raise Exception
     
     opt_blocks = run_ethir()
     
