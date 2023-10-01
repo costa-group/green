@@ -733,7 +733,7 @@ if __name__ == "__main__":
                         print("\nADDITIONAL EXECUTION WITH ALIASING AND CONTEXT\n")
                         run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
                         
-                if (opt_dict["useless"] and opt_dict["dependences"]):
+                elif (opt_dict["useless"] and opt_dict["dependences"]):
                     if (blocks[b].has_dependences_info() and blocks[b].get_useless_info()!=[]):
                         print("\nADDITIONAL EXECUTION WITH BOTH\n")
                         run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
