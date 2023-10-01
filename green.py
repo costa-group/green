@@ -653,9 +653,9 @@ if __name__ == "__main__":
     parse_args()
 
     #For testing
-    gasol_main.init()
-    run_gasol_test()
-    raise Exception
+    # gasol_main.init()
+    # run_gasol_test()
+    # raise Exception
     
     opt_blocks = run_ethir()
     
@@ -703,9 +703,8 @@ if __name__ == "__main__":
                 elif (opt_dict["context"] and opt_dict["dependences"]):
                     if (blocks[b].has_dependences_info() and blocks[b].has_context_info()):
                         print("\nADDITIONAL EXECUTION WITH ALIASING AND CONTEXT\n")
-                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
-                        
-                if (opt_dict["useless"] and opt_dict["dependences"]):
+                        run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)      
+                elif (opt_dict["useless"] and opt_dict["dependences"]):
                     if (blocks[b].has_dependences_info() and blocks[b].get_useless_info()!=[]):
                         print("\nADDITIONAL EXECUTION WITH BOTH\n")
                         run_gasol(instructions_as_plain_text,c,b,output_file,csv_file,blocks[b],opt_dict)
