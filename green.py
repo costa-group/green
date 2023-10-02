@@ -493,7 +493,8 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         has_memory = False
         has_storage = False
         has_useless = False
-
+        has_context = False
+        
         has_info = (opt_info["useless"] or opt_info["dependences"] or opt_info["context"])
         
         if has_info:
