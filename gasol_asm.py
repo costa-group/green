@@ -154,6 +154,8 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
                 taux = 5.5*(len(dep_mem_info.get_equal_pairs_memory())+len(dep_mem_info.get_nonequal_pairs_memory()))
             elif opt_info.get("context",False):
                 taux = 4.5*(len(dep_mem_info.get_aliasing_context())+len(dep_mem_info.get_constancy_context()))
+            elif opt_info.get("useless",False):
+                taux = len(dep_mem_info.get_useless_info())
             else:
                 taux = 0
             tout = parsed_args.tout * (1 + len([True for instr in sfs_block['user_instrs'] if instr["storage"]])+taux)
