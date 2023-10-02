@@ -494,14 +494,16 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         has_storage = False
         has_useless = False
 
-        has_info = (opt_info["useless"] or opt_info["dependences"])
+        has_info = (opt_info["useless"] or opt_info["dependences"] or opt_info["context"])
         
         if has_info:
             has_memory = (dep_information.get_equal_pairs_memory()!= []) or (dep_information.get_nonequal_pairs_memory() != [])
             has_storage = (dep_information.get_equal_pairs_storage()!= []) or (dep_information.get_nonequal_pairs_storage() != [])
             has_useless = opt_info["useless"] and (dep_information.get_useless_info() != [])
-        
-        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,model_found,shown_optimal,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs,has_memory,has_storage,has_useless]
+            has_context = opt_info["context"] and dep_information.has_context_info()
+
+            
+        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,model_found,shown_optimal,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs,has_memory,has_storage,has_useless,has_context]
 
         green_res_str = list(map(lambda x: str(x), greenres))
 
