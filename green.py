@@ -684,7 +684,7 @@ if __name__ == "__main__":
     parse_args()
 
     #For testing
-    gasol_main.init()
+    # gasol_main.init()
     # run_gasol_test()
     # raise Exception
     
