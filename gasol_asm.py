@@ -50,7 +50,9 @@ def init():
 
     global equal_aliasing
     equal_aliasing = False
-    
+
+    global sfs_information
+    sfs_information = {}
 
 def select_model_and_config(model: str, criteria: str, i: int) -> Tuple[str, int]:
     configurations = {"bound_size": ("bound_size.pyt", 4), "bound_gas": ("bound_gas.pyt", 4),
@@ -457,6 +459,7 @@ def block_has_been_optimized(original_block: AsmBlock, optimized_block: AsmBlock
 def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: Namespace, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> \
 Tuple[AsmBlock, Dict, List[Dict]]:
     global equal_aliasing
+    global sfs_information
     
     csv_statistics = []
     new_block = deepcopy(block)
@@ -534,7 +537,12 @@ Tuple[AsmBlock, Dict, List[Dict]]:
 
         
         sfs_dict = contracts_dict["syrup_contract"]
-
+        sfs_information = {}
+        for s in sfs_dict:
+            sfs_information[s] = {}
+            sfs_information[s]["rules"]= sfs_dict[s]["rules"]
+            sfs_information[s]["deps"]= sfs_dict[s]["memory_dependences"]
+            
     if not parsed_args.backend:
         optimize_block(sfs_dict, timeout, parsed_args,dep_mem_info, opt_info)
         return new_block, {}, []
@@ -560,7 +568,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
                 optimized_blocks[sub_block_name] = None
 
     new_block = rebuild_optimized_asm_block(block, sub_block_list, optimized_blocks)
-
+    
     return new_block, log_dicts, csv_statistics
 
 
