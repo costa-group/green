@@ -394,6 +394,8 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     is_timeout = False
     model_found = True
     shown_optimal = True
+
+    init_time = dtimer()
     
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information, opt_info)
@@ -448,6 +450,8 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         gasol_main.update_size_count(old_block, asm_block)
         asm_blocks.append(asm_block)
 
+    end_time = dtimer()
+        
     if parsed_args.backend:
         df = pd.DataFrame(statistics_rows)
         df.to_csv(csv_file)
@@ -504,7 +508,7 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
             has_context = opt_info["context"] and dep_information.has_context_info()
 
             
-        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,model_found,shown_optimal,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs,has_memory,has_storage,has_useless,has_context]
+        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,model_found,shown_optimal,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs,has_memory,has_storage,has_useless,has_context,(end_time-init_time)]
 
         green_res_str = list(map(lambda x: str(x), greenres))
 
