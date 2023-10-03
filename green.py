@@ -396,10 +396,13 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     shown_optimal = True
 
     init_time = dtimer()
+
+    storage_gas = 0
     
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information, opt_info)
 
+        storage_gas += asm_block.gas_spent_by_storage()
         if gasol_main.equal_aliasing:
             print("BLOCK "+args.source+"_"+contract_name+"_"+str(block_id)+" FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION")
             return 0
@@ -513,7 +516,7 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         for s in sfs_applied:
             rules+=sfs_applied[s]["rules"]
             deps+=sfs_applied[s]["deps"]
-        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,model_found,shown_optimal,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs,has_memory,has_storage,has_useless,has_context,(end_time-init_time), len(rules), len(deps)]
+        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,model_found,shown_optimal,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs,has_memory,has_storage,has_useless,has_context,(end_time-init_time), len(rules), len(deps),storage_gas]
 
         green_res_str = list(map(lambda x: str(x), greenres))
 
