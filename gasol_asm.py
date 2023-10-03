@@ -153,7 +153,7 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
             tout = parsed_args.tout
         else:
             if opt_info.get("dependences",False):
-                taux = 3.5*(len(dep_mem_info.get_equal_pairs_memory())+len(dep_mem_info.get_nonequal_pairs_memory()))
+                taux = 2.5*(len(dep_mem_info.get_equal_pairs_memory())+len(dep_mem_info.get_nonequal_pairs_memory()))
             elif opt_info.get("context",False):
                 taux = 2*(len(dep_mem_info.get_aliasing_context())+len(dep_mem_info.get_constancy_context()))
             elif opt_info.get("useless",False):
