@@ -327,7 +327,7 @@ def run_solidity_analysis(inputs,hashes):
         for k in symExec.file_info:
             r = "FILERES: "+args.source+"_"+k
             info = symExec.file_info[k]
-            r+=";"+str(info["num_blocks"])+";"+str(info["num_blocks_cloning"])+";"+str(info["optimizable_blocks"])+";"+str(info["memory_blocks"])+";"+str(info["storage_blocks"])+";"+str(info["memsto_blocks"])
+            r+=";"+str(info["num_blocks"])+";"+str(info["num_blocks_cloning"])+";"+str(info["optimizable_blocks"])+";"+str(info["memory_blocks"])+";"+str(info["memory_blocks2"])+";"+str(info["storage_blocks"])+";"+str(info["time"])
             print(r)
     print("\n")
     
