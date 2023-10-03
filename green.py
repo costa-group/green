@@ -58,6 +58,7 @@ def parse_args():
     parser.add_argument( "-out", "--out",             help="Generate a file that contains the functions of the solidity file", action="store", dest="path_out",type=str)
     parser.add_argument("-mem-analysis", "--mem-analysis",             help="Executes memory analysis. baseref runs the basic analysis where it only identifies the base refences. Offset runs baseref+offset option", choices = ["baseref","offset"])
     parser.add_argument("-aliasing-info", "--aliasing-info",             help="Executes optimization on blocks obtained by memory analysis.", action="store_true")
+    parser.add_argument("-non-aliasing-disabled", "--non-aliasing-disabled",             help="It only uses the information of aliasing.", action="store_true")
     parser.add_argument("-useless-info", "--useless-info",             help="Uses useless info from memory analysis.", action="store_true")
     parser.add_argument("-context-info", "--context-info",             help="Uses context info from memory analysis.", action="store_true")
     parser.add_argument("-compact-clones", "--compact-clones",             help="Intersect blocks cloned before invoking GASOL superoptimizer", action="store_true")
@@ -729,7 +730,8 @@ if __name__ == "__main__":
             opt_dict["useless"] = args.useless_info
             opt_dict["dependences"] = args.aliasing_info
             opt_dict["context"] = args.context_info
-
+            opt_dict["non_aliasing_disabled"] = args.non_aliasing_disabled and args.aliasing_info
+            
             optimize = args.aliasing_info or args.useless_info or args.context_info
             
             if not optimize:
