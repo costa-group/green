@@ -517,9 +517,12 @@ Tuple[AsmBlock, Dict, List[Dict]]:
         try:
             contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,opt_info)
             if opt_info["dependences"] or opt_info["context"]:
+                old_val = parsed_args.debug_flag
+                parsed_args.debug_flag = False
                 if parsed_args.debug_flag:
                     print("COMPUTING SFS WIITHUT HEAP INFO")
                 contracts_dict_init, sub_block_list_init = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,{})
+                parsed_args.debug_flag = old_val
                 sfs_dict_extra = contracts_dict_init["syrup_contract"]
                 sfs_dict_origin = contracts_dict["syrup_contract"]
                 if sfs_dict_extra == sfs_dict_origin:
@@ -564,12 +567,17 @@ Tuple[AsmBlock, Dict, List[Dict]]:
 def compare_asm_block_asm_format(old_block: AsmBlock, new_block: AsmBlock, parsed_args: Namespace,
                                  dep_mem_info: Dict = {}, opt_info: Dict = {}) -> Tuple[bool, str]:
     new_block.set_block_name("alreadyOptimized_" + new_block.get_block_name())
+
+    old_val = parsed_args.debug_flag
+    parsed_args.debug_flag = False
     new_sfs_information, _ = compute_original_sfs_with_simplifications(new_block, parsed_args, dep_mem_info, opt_info)
 
     new_sfs_dict = new_sfs_information["syrup_contract"]
 
     old_sfs_information, _ = compute_original_sfs_with_simplifications(old_block, parsed_args, dep_mem_info, opt_info)
 
+    parsed_args.debug_flag = old_val
+    
     old_sfs_dict = old_sfs_information["syrup_contract"]
 
     final_comparison, reason = verify_block_from_list_of_sfs(old_sfs_dict, new_sfs_dict)
