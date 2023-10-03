@@ -152,7 +152,7 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
         if parsed_args.direct_timeout:
             tout = parsed_args.tout
         else:
-            if opt_info.get("dependences",False):
+            if opt_info.get("dependences",False) and not opt_info.get("non_aliasing_disabled",False):
                 taux = 2.5*(len(dep_mem_info.get_equal_pairs_memory())+len(dep_mem_info.get_nonequal_pairs_memory()))
             elif opt_info.get("context",False):
                 taux = 2*(len(dep_mem_info.get_aliasing_context())+len(dep_mem_info.get_constancy_context()))
@@ -519,7 +519,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
     else:
         try:
             contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,opt_info)
-            if opt_info["dependences"] or opt_info["context"]:
+            if (opt_info.get("dependences",False) and not opt_info.get("non_aliasing_disabled",False)) or opt_info.get("context",False):
                 old_val = parsed_args.debug_flag
                 parsed_args.debug_flag = False
                 if parsed_args.debug_flag:
