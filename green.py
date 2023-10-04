@@ -582,8 +582,10 @@ def run_gasol_test(dep_information = {}):
     #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1"
     #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE MLOAD SWAP1 DUP2 SWAP1 SUB PUSH1 0x20 ADD SWAP1"
     # instructions = "DUP2 DUP5 ISZERO DUP2 PUSH 20 ADD"
-    instructions = "DUP1 ISZERO PUSH 0x10 PUSH 0x10 ADD"
-    
+    #instructions = "DUP1 ISZERO PUSH 0x10 PUSH 0x10 ADD"
+    #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE POP SWAP1 DUP2 SWAP1 MSTORE SUB PUSH1 0x20 ADD SWAP1"
+    #instructions = "JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP1 DUP6 AND PUSH1 0x00 SWAP1 DUP2 MSTORE PUSH1 0x01 PUSH1 0x20 MSTORE PUSH1 0x40 DUP1 DUP3 KECCAK256 SWAP4 SWAP1 SWAP4 SSTORE SWAP1 DUP5 AND DUP2 MSTORE KECCAK256 SLOAD PUSH2 0x1197 SWAP1 DUP3 PUSH2 0x0ec2 JUMP"
+    instructions = "JUMPDEST PUSH1 0x03 SLOAD PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND PUSH0 SWAP1 DUP2 MSTORE PUSH1 0x07 PUSH1 0x20 MSTORE PUSH1 0x40 DUP2 KECCAK256 SLOAD PUSH2 0x09f1 SWAP1 PUSH1 0x02 SLOAD PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND PUSH0 SWAP1 DUP2 MSTORE PUSH1 0x07 PUSH1 0x20 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD PUSH2 0x09eb SWAP1 PUSH1 0x04 SLOAD SWAP1 PUSH2 0x14a7 JUMP"
     timeout = 75
 
     output_file = "out.txt"
@@ -594,11 +596,24 @@ def run_gasol_test(dep_information = {}):
     
     dep_information = OptimizableBlockInfo("block0",instructions.split(),1)
     #dep_information.add_pair("block0:2","block0:4","!=","memory")
-    # dep_information.add_pair("block0:2","block0:5","!=","memory")
-    # dep_information.add_pair("block0:5","block0:6","!=","memory") 
-    # dep_information.add_pair("block0:2","block0:5","==","memory")q
+    dep_information.add_pair("block0:12","block0:33","==","memory")
+    dep_information.add_pair("block0:15","block0:36","==","memory")
+    dep_information.add_pair("block0:19","block0:40","==","storage")
+    dep_information.add_pair("block0:12","block0:15","!=","memory")
+    dep_information.add_pair("block0:12","block0:36","!=","memory")
+    dep_information.add_pair("block0:15","block0:33","!=","memory")
+    dep_information.add_pair("block0:33","block0:36","!=","memory")
+    dep_information.add_pair("block0:2","block0:19","!=","storage")
+    dep_information.add_pair("block0:2","block0:23","!=","storage")
+    dep_information.add_pair("block0:2","block0:40","!=","storage")
+    dep_information.add_pair("block0:2","block0:44","!=","storage")
+    dep_information.add_pair("block0:19","block0:23","!=","storage")
+    dep_information.add_pair("block0:19","block0:44","!=","storage")
+    dep_information.add_pair("block0:23","block0:40","!=","storage")
+    dep_information.add_pair("block0:23","block0:44","!=","storage")
+    dep_information.add_pair("block0:40","block0:44","!=","storage")
     #dep_information._add_context_pair((1,1))
-    dep_information._add_constancy_pair((0,32))
+    # dep_information._add_constancy_pair((0,32))
     # dep_information.add_pair("block0:11","block0:14","!=","memory")
     # dep_information.add_pair("block0:9","block0:18","==","memory")
     #dep_information.add_useless_info([7])
@@ -614,8 +629,8 @@ def run_gasol_test(dep_information = {}):
 
     opt_dict = {}
     opt_dict["useless"] = False
-    opt_dict["dependences"] = False
-    opt_dict["context"] = True
+    opt_dict["dependences"] = True
+    opt_dict["context"] = False
     
     for old_block in blocks:
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information,opt_dict)
