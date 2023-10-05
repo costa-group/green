@@ -399,6 +399,8 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
 
     storage_gas = 0
     storage_gas_original = 0
+    discount_op = 0
+
     
     for old_block in blocks:
 
@@ -516,11 +518,14 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
 
         rules = []
         deps = []
+        discount_op = 0
         sfs_applied = gasol_main.sfs_information
         for s in sfs_applied:
             rules+=sfs_applied[s]["rules"]
             deps+=sfs_applied[s]["deps"]
-        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,model_found,shown_optimal,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs,has_memory,has_storage,has_useless,has_context,(end_time-init_time), len(rules), len(deps),storage_gas_original,storage_gas]
+            discount_op+=sfs_applied[s]["discount_op"]
+
+        greenres = [args.source+"_"+contract_name+"_"+str(block_id),args.source,contract_name,block_id,real_timeout,is_timeout,model_found,shown_optimal,instructions,opt_instructions,gasol_main.previous_gas,gasol_main.previous_size,gasol_main.prev_n_instrs,gasol_main.new_gas,gasol_main.new_size,gasol_main.new_n_instrs,dif_gas,dif_size,dif_n_instrs,has_memory,has_storage,has_useless,has_context,(end_time-init_time), len(rules), len(deps),storage_gas_original,storage_gas,discount_op]
 
         green_res_str = list(map(lambda x: str(x), greenres))
 
@@ -585,7 +590,7 @@ def run_gasol_test(dep_information = {}):
     #instructions = "DUP1 ISZERO PUSH 0x10 PUSH 0x10 ADD"
     #instructions = "PUSH1 0x40 DUP1 MLOAD SWAP2 DUP3 MSTORE POP SWAP1 DUP2 SWAP1 MSTORE SUB PUSH1 0x20 ADD SWAP1"
     #instructions = "JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP1 DUP6 AND PUSH1 0x00 SWAP1 DUP2 MSTORE PUSH1 0x01 PUSH1 0x20 MSTORE PUSH1 0x40 DUP1 DUP3 KECCAK256 SWAP4 SWAP1 SWAP4 SSTORE SWAP1 DUP5 AND DUP2 MSTORE KECCAK256 SLOAD PUSH2 0x1197 SWAP1 DUP3 PUSH2 0x0ec2 JUMP"
-    instructions = "JUMPDEST PUSH1 0x03 SLOAD PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND PUSH0 SWAP1 DUP2 MSTORE PUSH1 0x07 PUSH1 0x20 MSTORE PUSH1 0x40 DUP2 KECCAK256 SLOAD PUSH2 0x09f1 SWAP1 PUSH1 0x02 SLOAD PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND PUSH0 SWAP1 DUP2 MSTORE PUSH1 0x07 PUSH1 0x20 MSTORE PUSH1 0x40 SWAP1 KECCAK256 SLOAD PUSH2 0x09eb SWAP1 PUSH1 0x04 SLOAD SWAP1 PUSH2 0x14a7 JUMP"
+    instructions = "SWAP1 PUSH1 0x1f NOT DUP4 AND SWAP4 PUSH2 0x03b6 PUSH1 0x02 PUSH0 MSTORE PUSH32 0x405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace SWAP1"
     timeout = 75
 
     output_file = "out.txt"
@@ -596,22 +601,22 @@ def run_gasol_test(dep_information = {}):
     
     dep_information = OptimizableBlockInfo("block0",instructions.split(),1)
     #dep_information.add_pair("block0:2","block0:4","!=","memory")
-    dep_information.add_pair("block0:12","block0:33","==","memory")
-    dep_information.add_pair("block0:15","block0:36","==","memory")
-    dep_information.add_pair("block0:19","block0:40","==","storage")
-    dep_information.add_pair("block0:12","block0:15","!=","memory")
-    dep_information.add_pair("block0:12","block0:36","!=","memory")
-    dep_information.add_pair("block0:15","block0:33","!=","memory")
-    dep_information.add_pair("block0:33","block0:36","!=","memory")
-    dep_information.add_pair("block0:2","block0:19","!=","storage")
-    dep_information.add_pair("block0:2","block0:23","!=","storage")
-    dep_information.add_pair("block0:2","block0:40","!=","storage")
-    dep_information.add_pair("block0:2","block0:44","!=","storage")
-    dep_information.add_pair("block0:19","block0:23","!=","storage")
-    dep_information.add_pair("block0:19","block0:44","!=","storage")
-    dep_information.add_pair("block0:23","block0:40","!=","storage")
-    dep_information.add_pair("block0:23","block0:44","!=","storage")
-    dep_information.add_pair("block0:40","block0:44","!=","storage")
+    # dep_information.add_pair("block0:12","block0:33","==","memory")
+    # dep_information.add_pair("block0:15","block0:36","==","memory")
+    # dep_information.add_pair("block0:19","block0:40","==","storage")
+    # dep_information.add_pair("block0:12","block0:15","!=","memory")
+    # dep_information.add_pair("block0:12","block0:36","!=","memory")
+    # dep_information.add_pair("block0:15","block0:33","!=","memory")
+    # dep_information.add_pair("block0:33","block0:36","!=","memory")
+    # dep_information.add_pair("block0:2","block0:19","!=","storage")
+    # dep_information.add_pair("block0:2","block0:23","!=","storage")
+    # dep_information.add_pair("block0:2","block0:40","!=","storage")
+    # dep_information.add_pair("block0:2","block0:44","!=","storage")
+    # dep_information.add_pair("block0:19","block0:23","!=","storage")
+    # dep_information.add_pair("block0:19","block0:44","!=","storage")
+    # dep_information.add_pair("block0:23","block0:40","!=","storage")
+    # dep_information.add_pair("block0:23","block0:44","!=","storage")
+    # dep_information.add_pair("block0:40","block0:44","!=","storage")
     #dep_information._add_context_pair((1,1))
     # dep_information._add_constancy_pair((0,32))
     # dep_information.add_pair("block0:11","block0:14","!=","memory")
@@ -629,7 +634,7 @@ def run_gasol_test(dep_information = {}):
 
     opt_dict = {}
     opt_dict["useless"] = False
-    opt_dict["dependences"] = True
+    opt_dict["dependences"] = False
     opt_dict["context"] = False
     
     for old_block in blocks:
