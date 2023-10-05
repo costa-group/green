@@ -519,7 +519,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
     else:
         try:
             contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,opt_info)
-            if (opt_info.get("dependences",False) and not opt_info.get("non_aliasing_disabled",False)) or opt_info.get("context",False):
+            if (opt_info.get("dependences",False) or opt_info.get("context",False)):
                 old_val = parsed_args.debug_flag
                 parsed_args.debug_flag = False
                 if parsed_args.debug_flag:
