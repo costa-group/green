@@ -1,1 +1,0 @@
-JUMPDEST SWAP3 PUSH32 0xffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff SWAP6 DUP4 MLOAD SWAP3 PUSH22 0x1000000000000000000000000000000000000000000 PUSH32 0xffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff PUSH1 0x13 SLOAD AND OR PUSH1 0x13 SSTORE PUSH2 0x5b5 DUP5 PUSH2 0xc63 JUMP

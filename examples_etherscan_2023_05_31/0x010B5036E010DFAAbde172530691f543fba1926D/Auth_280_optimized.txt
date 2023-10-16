@@ -1,1 +1,0 @@
-SLOAD PUSH1 0x40 MLOAD PUSH1 0x20 SWAP2 PUSH20 0xffffffffffffffffffffffffffffffffffffffff AND DUP2 MSTORE RETURN

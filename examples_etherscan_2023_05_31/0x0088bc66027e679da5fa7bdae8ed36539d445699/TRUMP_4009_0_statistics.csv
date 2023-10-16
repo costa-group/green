@@ -1,2 +1,0 @@
-,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
-0,isolated_block_0_0,PUSH c SLOAD SWAP1 PUSH d SLOAD SWAP2 PUSH fbb SWAP1 DUP3 PUSH 16e0,10,10,16,4224,,10,2,0.07,2,6,True,True,DUP1 PUSH fbb PUSH c SLOAD PUSH d SLOAD SWAP4 PUSH 16e0,8,8,14,4218,model

@@ -1,2 +1,0 @@
-,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
-0,isolated_block_0_0,ADDRESS DUP4 MSTORE PUSH 20 PUSH 2 DUP2 MSTORE PUSH 593 DUP3 DUP6 KECCAK256 SLOAD PUSH cf7,30,13,19,2162,,13,0,0.15,-1,0,True,True,PUSH 20 ADDRESS DUP5 MSTORE PUSH 2 PUSH 20 MSTORE PUSH 593 DUP3 DUP6 KECCAK256 SLOAD PUSH cf7,13,13,20,2162,model

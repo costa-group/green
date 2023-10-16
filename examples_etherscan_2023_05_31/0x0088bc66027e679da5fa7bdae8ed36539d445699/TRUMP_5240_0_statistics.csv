@@ -1,2 +1,0 @@
-,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,model_found,shown_optimal,solver_time_in_sec,saved_size,saved_gas,outcome
-0,isolated_block_0_0,SWAP2 POP POP DUP11 DUP10 MSTORE PUSH 5 DUP7 MSTORE DUP7 DUP1 DUP7 DUP12 KECCAK256 SLOAD AND ISZERO SWAP2 PUSH f5c,30,19,22,2179,,19,0,False,False,30.1,0,0,no_model

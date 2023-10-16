@@ -1,2 +1,0 @@
-,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
-0,isolated_block_0_0,DUP13 DUP5 MSTORE PUSH 2 DUP11 MSTORE DUP3 DUP5 KECCAK256 SSTORE PUSH 113c PUSH 175b,40,12,17,5060,,12,0,0.08,0,0,True,True,PUSH 2 DUP11 MSTORE DUP13 DUP5 MSTORE DUP3 DUP5 KECCAK256 SSTORE PUSH 113c PUSH 175b,12,12,17,5060,model

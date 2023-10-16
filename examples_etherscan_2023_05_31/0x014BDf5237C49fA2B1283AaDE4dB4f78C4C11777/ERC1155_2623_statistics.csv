@@ -1,3 +1,0 @@
-,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
-0,isolated_block_0_0,PUSH 20 SWAP1 DUP2 MUL SWAP2 SWAP1 SWAP2 ADD ADD MSTORE SWAP3 SWAP2 POP POP,2,11,15,42,"EVAL ('32', 's(6)', '*'),ADD(X,0)",14,6,0.18,6,21,True,True,POP PUSH 20 ADD MSTORE SWAP2 POP POP SWAP1,8,8,9,21,model
-1,isolated_block_0_0,PUSH 20 SWAP1 DUP2 MUL SWAP2 SWAP1 SWAP2 ADD ADD MSTORE SWAP3 SWAP2 POP POP,2,11,15,42,"EVAL ('32', 's(6)', '*'),ADD(X,0)",14,6,0.18,6,21,True,True,POP PUSH 20 ADD MSTORE SWAP2 POP POP SWAP1,8,8,9,21,model

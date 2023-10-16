@@ -1,2 +1,0 @@
-,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
-0,isolated_block_0_0,DUP6 PUSH c SSTORE PUSH 10 SLOAD DUP1 ISZERO DUP1 PUSH0 EQ PUSH 149f,20,10,15,7126,"EQ(0,X)",11,1,0.07,1,2,True,True,PUSH 10 SLOAD DUP7 PUSH c SSTORE DUP1 ISZERO DUP1 ISZERO PUSH 149f,10,10,14,7124,model

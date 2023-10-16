@@ -1,2 +1,0 @@
-,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
-0,isolated_block_0_0,AND DUP2 MSTORE PUSH 6 DUP6 MSTORE KECCAK256 SLOAD AND SWAP1 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE,40,16,17,2172,,16,1,0.51,1,3,True,True,AND PUSH 6 DUP7 MSTORE DUP2 MSTORE KECCAK256 SLOAD AND ISZERO ISZERO DUP2 MLOAD MSTORE MLOAD,15,15,16,2169,model

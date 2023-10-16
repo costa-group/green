@@ -1,2 +1,0 @@
-,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,model_found,shown_optimal,solver_time_in_sec,saved_size,saved_gas,outcome
-0,isolated_block_0_0,POP AND SWAP1 PUSH 13 SLOAD AND OR PUSH 13 SSTORE DUP1 PUSH 12 SLOAD AND PUSH 60 SELFBALANCE ADDRESS DUP9 MSTORE PUSH 2 DUP7 MSTORE PUSH c4 PUSH 2c8 DUP7 DUP11 KECCAK256 SLOAD PUSH cf7,55.0,28,38,9299,,28,0,False,False,55.2,0,0,no_model
