@@ -1,7 +1,7 @@
 # green
 
 Green is a superoptimization tool for Ethereum smart contracts. We have integrated in the superoptimizer GASOL a global heap analysis that allows us to infer useless write heap accesses, aliasing and non-aliasing properties, and calling-contexts for EVM bytecode sequences.
-Green is built on top of two tools, [EthIR](https://github.com/costa-group/EthIR), a decompiler of EVM bytecode that generates a complete and sounf CFG of the smart contract under analysis, and [GASOL](https://github.com/costa-group/gasol-optimizer/tree/main), a superoptmization tool of EVM bytecode. In order to install Green, you have to check the requirements of each of these tools in the corresponding README files. After that, once you have cloned this repository, execute the following command to finish the installation:
+Green is built on top of two tools, [EthIR](https://github.com/costa-group/EthIR), a decompiler of EVM bytecode that generates a complete and sounf CFG of the smart contract under analysis, and [GASOL](https://github.com/costa-group/gasol-optimizer/tree/main), a superoptmization tool of EVM bytecode. In order to install Green, you have to check the requirements of each of these tools in their corresponding README files. After that, once you have cloned this repository, execute the following command to finish the installation:
 
 ```
 git submodule init
