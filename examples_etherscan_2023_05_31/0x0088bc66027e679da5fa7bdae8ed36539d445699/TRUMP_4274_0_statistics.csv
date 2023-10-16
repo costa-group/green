@@ -1,0 +1,2 @@
+,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
+0,isolated_block_0_0,DUP8 DUP2 MSTORE DUP9 DUP13 DUP3 ADD MSTORE PUSH 10c5 SWAP1 DUP8 DUP5 PUSH cc9,30,13,17,39,,13,0,0.35,0,0,True,True,PUSH 10c5 DUP9 DUP3 MSTORE SWAP1 DUP10 DUP2 DUP15 ADD MSTORE DUP8 DUP5 PUSH cc9,13,13,17,39,model

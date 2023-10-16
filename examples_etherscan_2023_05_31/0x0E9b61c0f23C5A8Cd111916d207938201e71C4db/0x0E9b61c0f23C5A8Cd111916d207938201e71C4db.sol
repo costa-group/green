@@ -1,0 +1,43 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+import "openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/introspection/IERC165Upgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/math/MathUpgradeable.sol";
+import "solvprotocol/contracts-v3-address-resolver/contracts/IAddressResolver.sol";
+import "solvprotocol/contracts-v3-address-resolver/contracts/ResolverCache.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/issuable/ISFTIssuableConcrete.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/issuable/ISFTIssuableDelegate.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/issuable/SFTIssuableDelegate.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/multi-repayable/IMultiRepayableConcrete.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/multi-repayable/IMultiRepayableDelegate.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/multi-repayable/MultiRepayableDelegate.sol";
+import "solvprotocol/contracts-v3-sft-core/contracts/BaseSFTDelegateUpgradeable.sol";
+import "solvprotocol/contracts-v3-sft-core/contracts/interface/IBaseSFTConcrete.sol";
+import "solvprotocol/contracts-v3-sft-core/contracts/interface/IBaseSFTDelegate.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/access/AdminControl.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/access/ISFTConcreteControl.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/access/ISFTDelegateControl.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/access/OwnControl.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/access/SFTDelegateControl.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/helpers/ERC20TransferHelper.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/misc/Constants.sol";
+import "solvprotocol/erc-3525/ERC3525SlotEnumerableUpgradeable.sol";
+import "solvprotocol/erc-3525/ERC3525Upgradeable.sol";
+import "solvprotocol/erc-3525/IERC3525ReceiverUpgradeable.sol";
+import "solvprotocol/erc-3525/IERC3525Upgradeable.sol";
+import "solvprotocol/erc-3525/IERC721ReceiverUpgradeable.sol";
+import "solvprotocol/erc-3525/IERC721Upgradeable.sol";
+import "solvprotocol/erc-3525/extensions/IERC3525MetadataUpgradeable.sol";
+import "solvprotocol/erc-3525/extensions/IERC3525SlotEnumerableUpgradeable.sol";
+import "solvprotocol/erc-3525/extensions/IERC721EnumerableUpgradeable.sol";
+import "solvprotocol/erc-3525/extensions/IERC721MetadataUpgradeable.sol";
+import "solvprotocol/erc-3525/periphery/interface/IERC3525MetadataDescriptorUpgradeable.sol";
+import "contracts/EarnDelegate.sol";
+import "contracts/IEarnConcrete.sol";

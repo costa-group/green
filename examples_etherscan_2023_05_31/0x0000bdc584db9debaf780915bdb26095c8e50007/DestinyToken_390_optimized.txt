@@ -1,0 +1,1 @@
+JUMPDEST PUSH1 0x40 MLOAD SWAP1 PUSH20 0xffffffffffffffffffffffffffffffffffffffff AND DUP2 MSTORE PUSH1 0x20 ADD PUSH2 0x11a JUMP

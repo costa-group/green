@@ -1,0 +1,2 @@
+,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
+0,isolated_block_0_0,PUSH 20 SWAP1 PUSH a SLOAD SWAP1 MLOAD SWAP1 DUP2 MSTORE,20,9,11,2124,,9,2,0.02,2,6,True,True,PUSH 20 SWAP1 MLOAD PUSH a SLOAD DUP2 MSTORE,7,7,9,2118,model

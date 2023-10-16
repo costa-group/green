@@ -1,0 +1,2 @@
+,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
+0,isolated_block_0_0,DUP6 DUP2 ADD DUP4 ADD MLOAD DUP6 DUP3 ADD PUSH 40 ADD MSTORE DUP3 ADD PUSH d12,20,15,18,45,,15,0,0.64,0,0,True,True,DUP3 DUP4 DUP3 DUP9 ADD ADD MLOAD PUSH 40 DUP8 DUP5 ADD ADD MSTORE ADD PUSH d12,15,15,18,45,model

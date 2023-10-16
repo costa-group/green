@@ -1,0 +1,2 @@
+,block_id,previous_solution,timeout,initial_n_instrs,initial_estimated_size,initial_estimated_gas,rules,initial_length,saved_length,solver_time_in_sec,saved_size,saved_gas,model_found,shown_optimal,solution_found,optimized_n_instrs,optimized_length,optimized_estimated_size,optimized_estimated_gas,outcome
+0,isolated_block_0_0,POP PUSH 13 SLOAD AND PUSH 13 SSTORE SELFBALANCE PUSH 12b9,20,8,12,5019,,8,0,0.02,0,0,True,True,POP PUSH 13 SLOAD AND PUSH 13 SSTORE SELFBALANCE PUSH 12b9,8,8,12,5019,model

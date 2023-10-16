@@ -1,0 +1,41 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity ^0.8.0;
+
+import "openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/introspection/IERC165Upgradeable.sol";
+import "openzeppelin/contracts-upgradeable/utils/math/MathUpgradeable.sol";
+import "openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
+import "openzeppelin/contracts/utils/Context.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/issuable/ISFTIssuableConcrete.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/issuable/ISFTIssuableDelegate.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/issuable/SFTIssuableConcrete.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/multi-rechargeable/IMultiRechargeableConcrete.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/multi-rechargeable/MultiRechargeableConcrete.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/multi-repayable/IMultiRepayableConcrete.sol";
+import "solvprotocol/contracts-v3-sft-abilities/contracts/multi-repayable/MultiRepayableConcrete.sol";
+import "solvprotocol/contracts-v3-sft-core/contracts/BaseSFTConcreteUpgradeable.sol";
+import "solvprotocol/contracts-v3-sft-core/contracts/interface/IBaseSFTConcrete.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/access/AdminControl.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/access/ISFTConcreteControl.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/access/OwnControl.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/access/SFTConcreteControl.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/helpers/ERC20TransferHelper.sol";
+import "solvprotocol/contracts-v3-solidity-utils/contracts/misc/Constants.sol";
+import "solvprotocol/erc-3525/ERC3525Upgradeable.sol";
+import "solvprotocol/erc-3525/IERC3525ReceiverUpgradeable.sol";
+import "solvprotocol/erc-3525/IERC3525Upgradeable.sol";
+import "solvprotocol/erc-3525/IERC721ReceiverUpgradeable.sol";
+import "solvprotocol/erc-3525/IERC721Upgradeable.sol";
+import "solvprotocol/erc-3525/extensions/IERC3525MetadataUpgradeable.sol";
+import "solvprotocol/erc-3525/extensions/IERC721EnumerableUpgradeable.sol";
+import "solvprotocol/erc-3525/extensions/IERC721MetadataUpgradeable.sol";
+import "solvprotocol/erc-3525/periphery/interface/IERC3525MetadataDescriptorUpgradeable.sol";
+import "contracts/EarnConcrete.sol";
+import "contracts/IEarnConcrete.sol";

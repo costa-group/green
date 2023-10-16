@@ -1,0 +1,2156 @@
+incomplete push instruction at 2834
+Green Main
+*************************************************************
+Compilation time: 0.2260645410278812s
+*************************************************************
+File: MemeKaisen
+Build CFG: 0.05946943099843338s
+Slots analysis started!
+Slots analysis finished!
+Constants analysis finished!
+Starting offset memory analysis MemeKaisen
+Memory accesess analysis finished!
+
+
+GASOL: Useless accesses found: {}
+Free memory analyss finished
+
+
+SLOTS Contract MemeKaisen: 29
+Memory read accesses ContractMemeKaisen: 88
+Memory write accesses ContractMemeKaisen: 154
+********************************** INIT
+CONTEXT: Detected context equality 12 <slot9,0> 14 <slot9,0>
+CONTEXT: Detected context equality 12 <slot9,0> 15 <slot9,0>
+CONTEXT: Detected context equality 12 <slot9,0> 15 <slot9,0>
+CONTEXT: Detected context equality 13 <slot23,0> 15 <slot23,0>
+CONTEXT: Detected context equality 13 <slot23,0> 16 <slot23,0>
+CONTEXT: Detected context equality 13 <slot23,0> 16 <slot23,0>
+CONTEXT: Detected context equality 12 <slot25,0> 14 <slot25,0>
+CONTEXT: Detected context equality 12 <slot25,0> 15 <slot25,0>
+CONTEXT: Detected context equality 12 <slot25,0> 15 <slot25,0>
+COMPACT CLONES: True
+CONTRACT: MemeKaisen
+-----
+Block: 1247
+1247Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x1b', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x736574207468652063616c6c20746f2074686520656e74657265640000000000', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1247-Stack size: 5 
+1247-Equals Mem:<< []>> 
+1247-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>]>> 
+1247-Equals Sto:<< []>> 
+1247-NonEquals Sto: << []>> 
+1247-Useless: []
+1247-Constancy: []
+1247-ContextAliasing: []
+
+.....
+-----
+Block: 1331
+1331Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x2b', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x416d6f756e74206f6620726563697069656e747320616e642076616c75657320', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH11 0x0c8dedc4ee840dac2e8c6d', 'PUSH1 0xab', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1331-Stack size: 5 
+1331-Equals Mem:<< []>> 
+1331-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1331-Equals Sto:<< []>> 
+1331-NonEquals Sto: << []>> 
+1331-Useless: []
+1331-Constancy: []
+1331-ContextAliasing: []
+
+.....
+-----
+Block: 2695_2
+2695_2Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+2695_2-Stack size: 10 
+2695_2-Equals Mem:<< []>> 
+2695_2-NonEquals Mem: << [<4,7>]>> 
+2695_2-Equals Sto:<< []>> 
+2695_2-NonEquals Sto: << []>> 
+2695_2-Useless: []
+2695_2-Constancy: [(4, 0), (2, 0)]
+2695_2-ContextAliasing: []
+
+.....
+-----
+Block: 1433
+1433Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP1', 'SWAP5', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP4', 'SSTORE', 'POP', 'POP', 'POP', 'JUMP']>> 
+1433-Stack size: 7 
+1433-Equals Mem:<< []>> 
+1433-NonEquals Mem: << [<12,15>]>> 
+1433-Equals Sto:<< []>> 
+1433-NonEquals Sto: << []>> 
+1433-Useless: []
+1433-Constancy: [(1, 0)]
+1433-ContextAliasing: []
+
+.....
+-----
+Block: 1044
+1044Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1044-Stack size: 3 
+1044-Equals Mem:<< []>> 
+1044-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+1044-Equals Sto:<< []>> 
+1044-NonEquals Sto: << []>> 
+1044-Useless: []
+1044-Constancy: []
+1044-ContextAliasing: []
+
+.....
+-----
+Block: 1130
+1130Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x646472657373', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1130-Stack size: 3 
+1130-Equals Mem:<< []>> 
+1130-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1130-Equals Sto:<< []>> 
+1130-NonEquals Sto: << []>> 
+1130-Useless: []
+1130-Constancy: []
+1130-ContextAliasing: []
+
+.....
+-----
+Block: 492
+492Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+492-Stack size: 4 
+492-Equals Mem:<< [<12,27>, <17,31>]>> 
+492-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+492-Equals Sto:<< []>> 
+492-NonEquals Sto: << []>> 
+492-Useless: []
+492-Constancy: []
+492-ContextAliasing: []
+
+.....
+-----
+Block: 302
+302Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x00fe', 'JUMP']>> 
+302-Stack size: 2 
+302-Equals Mem:<< []>> 
+302-NonEquals Mem: << [<5,2>]>> 
+302-Equals Sto:<< []>> 
+302-NonEquals Sto: << []>> 
+302-Useless: []
+302-Constancy: []
+302-ContextAliasing: []
+
+.....
+-----
+Block: 1776_0
+1776_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a207472616e736665722066726f6d20746865207a65726f2061', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x646472657373', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1776_0-Stack size: 9 
+1776_0-Equals Mem:<< []>> 
+1776_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1776_0-Equals Sto:<< []>> 
+1776_0-NonEquals Sto: << []>> 
+1776_0-Useless: []
+1776_0-Constancy: [(4, 0)]
+1776_0-ContextAliasing: []
+
+.....
+-----
+Block: 1877_0
+1877_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a207472616e7366657220746f20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1877_0-Stack size: 9 
+1877_0-Equals Mem:<< []>> 
+1877_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1877_0-Equals Sto:<< []>> 
+1877_0-NonEquals Sto: << []>> 
+1877_0-Useless: []
+1877_0-Constancy: [(4, 0)]
+1877_0-ContextAliasing: []
+
+.....
+-----
+Block: 2160_1
+2160_1Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x04', 'ADD', 'PUSH2 0x03d3', 'SWAP2', 'SWAP1', 'PUSH2 0x08f1', 'JUMP']>> 
+2160_1-Stack size: 15 
+2160_1-Equals Mem:<< []>> 
+2160_1-NonEquals Mem: << [<6,1>]>> 
+2160_1-Equals Sto:<< []>> 
+2160_1-NonEquals Sto: << []>> 
+2160_1-Useless: []
+2160_1-Constancy: [(10, 0), (1, 0)]
+2160_1-ContextAliasing: [(2, 14)]
+
+.....
+-----
+Block: 2289_2
+2289_2Instr:<<['JUMPDEST', 'PUSH0', 'PUSH1 0x20', 'DUP1', 'DUP4', 'MSTORE', 'DUP4', 'MLOAD', 'DUP1', 'DUP3', 'DUP6', 'ADD', 'MSTORE', 'PUSH0']>> 
+2289_2-Stack size: 17 
+2289_2-Equals Mem:<< []>> 
+2289_2-NonEquals Mem: << [<5,7>, <12,7>]>> 
+2289_2-Equals Sto:<< []>> 
+2289_2-NonEquals Sto: << []>> 
+2289_2-Useless: []
+2289_2-Constancy: [(12, 0), (3, 0)]
+2289_2-ContextAliasing: [(4, 15)]
+
+.....
+-----
+Block: 2313_2
+2313_2Instr:<<['DUP6', 'DUP2', 'ADD', 'DUP4', 'ADD', 'MLOAD', 'DUP6', 'DUP3', 'ADD', 'PUSH1 0x40', 'ADD', 'MSTORE', 'DUP3', 'ADD', 'PUSH2 0x0900', 'JUMP']>> 
+2313_2-Stack size: 21 
+2313_2-Equals Mem:<< []>> 
+2313_2-NonEquals Mem: << [<11,5>]>> 
+2313_2-Equals Sto:<< []>> 
+2313_2-NonEquals Sto: << []>> 
+2313_2-Useless: []
+2313_2-Constancy: [(16, 0), (7, 0), (3, 0), (2, 32)]
+2313_2-ContextAliasing: [(8, 15)]
+
+.....
+-----
+Block: 2020_0
+2020_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP6', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP3', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP4', 'SSTORE', 'SWAP1', 'DUP5', 'AND', 'DUP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'PUSH2 0x0812', 'SWAP1', 'DUP3', 'PUSH2 0x0890', 'JUMP']>> 
+2020_0-Stack size: 10 
+2020_0-Equals Mem:<< [<12,28>]>> 
+2020_0-NonEquals Mem: << [<12,15>, <15,28>]>> 
+2020_0-Equals Sto:<< [<23,30>]>> 
+2020_0-NonEquals Sto: << []>> 
+2020_0-Useless: []
+2020_0-Constancy: [(5, 0)]
+2020_0-ContextAliasing: []
+
+.....
+-----
+Block: 2695_1
+2695_1Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+2695_1-Stack size: 17 
+2695_1-Equals Mem:<< []>> 
+2695_1-NonEquals Mem: << [<4,7>]>> 
+2695_1-Equals Sto:<< []>> 
+2695_1-NonEquals Sto: << []>> 
+2695_1-Useless: []
+2695_1-Constancy: [(12, 0), (4, 0)]
+2695_1-ContextAliasing: []
+
+.....
+-----
+Block: 2066_0
+2066_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP5', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'DUP2', 'SWAP1', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP4', 'SSTORE', 'SWAP2', 'MLOAD', 'SWAP1', 'DUP6', 'AND', 'SWAP1', 'PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef', 'SWAP1', 'PUSH2 0x06d4', 'SWAP1', 'DUP6', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'SWAP1', 'JUMP']>> 
+2066_0-Stack size: 10 
+2066_0-Equals Mem:<< []>> 
+2066_0-NonEquals Mem: << [<12,26>, <12,15>, <12,37>, <15,26>, <15,37>, <37,20>, <37,26>, <20,26>]>> 
+2066_0-Equals Sto:<< []>> 
+2066_0-NonEquals Sto: << []>> 
+2066_0-Useless: []
+2066_0-Constancy: [(5, 0)]
+2066_0-ContextAliasing: []
+
+.....
+-----
+Block: 282
+282Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'ISZERO', 'ISZERO', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x00fe', 'JUMP']>> 
+282-Stack size: 2 
+282-Equals Mem:<< []>> 
+282-NonEquals Mem: << [<7,2>]>> 
+282-Equals Sto:<< []>> 
+282-NonEquals Sto: << []>> 
+282-Useless: []
+282-Constancy: []
+282-ContextAliasing: []
+
+.....
+-----
+Block: 2658_0
+2658_0Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+2658_0-Stack size: 8 
+2658_0-Equals Mem:<< []>> 
+2658_0-NonEquals Mem: << [<4,7>]>> 
+2658_0-Equals Sto:<< []>> 
+2658_0-NonEquals Sto: << []>> 
+2658_0-Useless: []
+2658_0-Constancy: [(5, 96)]
+2658_0-ContextAliasing: []
+
+.....
+-----
+Block: 587
+587Instr:<<['JUMPDEST', 'DUP1', 'PUSH1 0x1f', 'ADD', 'PUSH1 0x20', 'DUP1', 'SWAP2', 'DIV', 'MUL', 'PUSH1 0x20', 'ADD', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'ADD', 'PUSH1 0x40', 'MSTORE', 'DUP1', 'SWAP3', 'SWAP2', 'SWAP1', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'DUP3', 'DUP1', 'SLOAD', 'PUSH2 0x0277', 'SWAP1', 'PUSH2 0x0a43', 'JUMP']>> 
+587-Stack size: 5 
+587-Equals Mem:<< [<17,12>]>> 
+587-NonEquals Mem: << [<17,24>, <24,12>]>> 
+587-Equals Sto:<< []>> 
+587-NonEquals Sto: << []>> 
+587-Useless: []
+587-Constancy: [(2, 96)]
+587-ContextAliasing: []
+
+.....
+-----
+Block: 2658
+2658Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+2658-Stack size: 12 
+2658-Equals Mem:<< []>> 
+2658-NonEquals Mem: << [<4,7>]>> 
+2658-Equals Sto:<< []>> 
+2658-NonEquals Sto: << []>> 
+2658-Useless: []
+2658-Constancy: [(9, 96)]
+2658-ContextAliasing: []
+
+.....
+-----
+Block: 2289
+2289Instr:<<['JUMPDEST', 'PUSH0', 'PUSH1 0x20', 'DUP1', 'DUP4', 'MSTORE', 'DUP4', 'MLOAD', 'DUP1', 'DUP3', 'DUP6', 'ADD', 'MSTORE', 'PUSH0']>> 
+2289-Stack size: 4 
+2289-Equals Mem:<< []>> 
+2289-NonEquals Mem: << [<5,7>, <5,12>, <12,7>]>> 
+2289-Equals Sto:<< []>> 
+2289-NonEquals Sto: << []>> 
+2289-Useless: []
+2289-Constancy: []
+2289-ContextAliasing: []
+
+.....
+-----
+Block: 2313
+2313Instr:<<['DUP6', 'DUP2', 'ADD', 'DUP4', 'ADD', 'MLOAD', 'DUP6', 'DUP3', 'ADD', 'PUSH1 0x40', 'ADD', 'MSTORE', 'DUP3', 'ADD', 'PUSH2 0x0900', 'JUMP']>> 
+2313-Stack size: 8 
+2313-Equals Mem:<< []>> 
+2313-NonEquals Mem: << [<11,5>]>> 
+2313-Equals Sto:<< []>> 
+2313-NonEquals Sto: << []>> 
+2313-Useless: []
+2313-Constancy: [(3, 0), (2, 32)]
+2313-ContextAliasing: []
+
+.....
+-----
+Block: 425
+425Instr:<<['JUMPDEST', 'PUSH0', 'SLOAD', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP1', 'SWAP2', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x00fe', 'JUMP']>> 
+425-Stack size: 1 
+425-Equals Mem:<< []>> 
+425-NonEquals Mem: << [<14,4>]>> 
+425-Equals Sto:<< []>> 
+425-NonEquals Sto: << []>> 
+425-Useless: []
+425-Constancy: []
+425-ContextAliasing: []
+
+.....
+-----
+Block: 912
+912Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD']>> 
+912-Stack size: 2 
+912-Equals Mem:<< []>> 
+912-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+912-Equals Sto:<< []>> 
+912-NonEquals Sto: << []>> 
+912-Useless: []
+912-Constancy: []
+912-ContextAliasing: []
+
+.....
+-----
+Block: 389
+389Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+389-Stack size: 3 
+389-Equals Mem:<< []>> 
+389-NonEquals Mem: << [<10,13>]>> 
+389-Equals Sto:<< []>> 
+389-NonEquals Sto: << []>> 
+389-Useless: []
+389-Constancy: []
+389-ContextAliasing: []
+
+.....
+-----
+Block: 841
+841Instr:<<['JUMPDEST', 'CALLER', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP8', 'AND', 'DUP5', 'MSTORE', 'SWAP1', 'SWAP2', 'MSTORE', 'DUP2', 'KECCAK256', 'SLOAD', 'SWAP1', 'SWAP2', 'PUSH2 0x02d8', 'SWAP2', 'DUP6', 'SWAP1', 'PUSH2 0x033a', 'SWAP1', 'DUP7', 'PUSH2 0x0890', 'JUMP']>> 
+841-Stack size: 4 
+841-Equals Mem:<< [<5,23>, <10,26>]>> 
+841-NonEquals Mem: << [<5,10>, <5,26>, <10,23>, <23,26>]>> 
+841-Equals Sto:<< []>> 
+841-NonEquals Sto: << []>> 
+841-Useless: []
+841-Constancy: []
+841-ContextAliasing: []
+
+.....
+-----
+Block: 2695_0
+2695_0Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+2695_0-Stack size: 16 
+2695_0-Equals Mem:<< []>> 
+2695_0-NonEquals Mem: << [<4,7>]>> 
+2695_0-Equals Sto:<< []>> 
+2695_0-NonEquals Sto: << []>> 
+2695_0-Useless: []
+2695_0-Constancy: [(11, 0), (4, 0)]
+2695_0-ContextAliasing: []
+
+.....
+-----
+Block: 1481
+1481Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a20617070726f76652066726f6d20746865207a65726f206164', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x6472657373', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1481-Stack size: 9 
+1481-Equals Mem:<< []>> 
+1481-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1481-Equals Sto:<< []>> 
+1481-NonEquals Sto: << []>> 
+1481-Useless: []
+1481-Constancy: [(4, 0)]
+1481-ContextAliasing: []
+
+.....
+-----
+Block: 1581
+1581Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x23', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a20617070726f766520746f20746865207a65726f2061646472', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH3 0x657373', 'PUSH1 0xe8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1581-Stack size: 9 
+1581-Equals Mem:<< []>> 
+1581-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1581-Equals Sto:<< []>> 
+1581-NonEquals Sto: << []>> 
+1581-Useless: []
+1581-Constancy: [(4, 0)]
+1581-ContextAliasing: []
+
+.....
+-----
+Block: 1664
+1664Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'DUP2', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP5', 'DUP8', 'AND', 'DUP1', 'DUP5', 'MSTORE', 'SWAP5', 'DUP3', 'MSTORE', 'SWAP2', 'DUP3', 'SWAP1', 'KECCAK256', 'DUP6', 'SWAP1', 'SSTORE', 'SWAP1', 'MLOAD', 'DUP5', 'DUP2', 'MSTORE', 'PUSH32 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925', 'SWAP2', 'ADD']>> 
+1664-Stack size: 9 
+1664-Equals Mem:<< [<12,27>, <17,30>]>> 
+1664-NonEquals Mem: << [<12,39>, <12,17>, <12,30>, <12,42>, <17,39>, <17,27>, <17,42>, <27,39>, <27,30>, <27,42>, <30,39>, <30,42>, <42,21>, <42,34>, <42,39>, <21,39>, <34,39>]>> 
+1664-Equals Sto:<< []>> 
+1664-NonEquals Sto: << []>> 
+1664-Useless: []
+1664-Constancy: [(4, 0)]
+1664-ContextAliasing: []
+
+.....
+-----
+Block: 335
+335Instr:<<['JUMPDEST', 'PUSH1 0x06', 'SLOAD', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0xff', 'SWAP1', 'SWAP2', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x00fe', 'JUMP']>> 
+335-Stack size: 1 
+335-Equals Mem:<< []>> 
+335-NonEquals Mem: << [<10,4>]>> 
+335-Equals Sto:<< []>> 
+335-NonEquals Sto: << []>> 
+335-Useless: []
+335-Constancy: []
+335-ContextAliasing: []
+
+.....
+-----
+Block: 1776
+1776Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a207472616e736665722066726f6d20746865207a65726f2061', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x646472657373', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1776-Stack size: 10 
+1776-Equals Mem:<< []>> 
+1776-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1776-Equals Sto:<< []>> 
+1776-NonEquals Sto: << []>> 
+1776-Useless: []
+1776-Constancy: [(4, 0)]
+1776-ContextAliasing: []
+
+.....
+-----
+Block: 1877
+1877Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a207472616e7366657220746f20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1877-Stack size: 10 
+1877-Equals Mem:<< []>> 
+1877-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1877-Equals Sto:<< []>> 
+1877-NonEquals Sto: << []>> 
+1877-Useless: []
+1877-Constancy: [(4, 0)]
+1877-ContextAliasing: []
+
+.....
+-----
+Block: 2160_0
+2160_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x04', 'ADD', 'PUSH2 0x03d3', 'SWAP2', 'SWAP1', 'PUSH2 0x08f1', 'JUMP']>> 
+2160_0-Stack size: 16 
+2160_0-Equals Mem:<< []>> 
+2160_0-NonEquals Mem: << [<6,1>]>> 
+2160_0-Equals Sto:<< []>> 
+2160_0-NonEquals Sto: << []>> 
+2160_0-Useless: []
+2160_0-Constancy: [(10, 0), (1, 0)]
+2160_0-ContextAliasing: [(2, 15)]
+
+.....
+-----
+Block: 2289_1
+2289_1Instr:<<['JUMPDEST', 'PUSH0', 'PUSH1 0x20', 'DUP1', 'DUP4', 'MSTORE', 'DUP4', 'MLOAD', 'DUP1', 'DUP3', 'DUP6', 'ADD', 'MSTORE', 'PUSH0']>> 
+2289_1-Stack size: 18 
+2289_1-Equals Mem:<< []>> 
+2289_1-NonEquals Mem: << [<5,7>, <12,7>]>> 
+2289_1-Equals Sto:<< []>> 
+2289_1-NonEquals Sto: << []>> 
+2289_1-Useless: []
+2289_1-Constancy: [(12, 0), (3, 0)]
+2289_1-ContextAliasing: [(4, 16)]
+
+.....
+-----
+Block: 2313_1
+2313_1Instr:<<['DUP6', 'DUP2', 'ADD', 'DUP4', 'ADD', 'MLOAD', 'DUP6', 'DUP3', 'ADD', 'PUSH1 0x40', 'ADD', 'MSTORE', 'DUP3', 'ADD', 'PUSH2 0x0900', 'JUMP']>> 
+2313_1-Stack size: 22 
+2313_1-Equals Mem:<< []>> 
+2313_1-NonEquals Mem: << [<11,5>]>> 
+2313_1-Equals Sto:<< []>> 
+2313_1-NonEquals Sto: << []>> 
+2313_1-Useless: []
+2313_1-Constancy: [(16, 0), (7, 0), (3, 0), (2, 32)]
+2313_1-ContextAliasing: [(8, 16)]
+
+.....
+-----
+Block: 2020
+2020Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP6', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP3', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP4', 'SSTORE', 'SWAP1', 'DUP5', 'AND', 'DUP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'PUSH2 0x0812', 'SWAP1', 'DUP3', 'PUSH2 0x0890', 'JUMP']>> 
+2020-Stack size: 11 
+2020-Equals Mem:<< [<12,28>]>> 
+2020-NonEquals Mem: << [<12,15>, <15,28>]>> 
+2020-Equals Sto:<< [<23,30>]>> 
+2020-NonEquals Sto: << []>> 
+2020-Useless: []
+2020-Constancy: [(5, 0)]
+2020-ContextAliasing: []
+
+.....
+-----
+Block: 2695
+2695Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+2695-Stack size: 18 
+2695-Equals Mem:<< []>> 
+2695-NonEquals Mem: << [<4,7>]>> 
+2695-Equals Sto:<< []>> 
+2695-NonEquals Sto: << []>> 
+2695-Useless: []
+2695-Constancy: [(12, 0), (4, 0)]
+2695-ContextAliasing: []
+
+.....
+-----
+Block: 2066
+2066Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP5', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'DUP2', 'SWAP1', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP4', 'SSTORE', 'SWAP2', 'MLOAD', 'SWAP1', 'DUP6', 'AND', 'SWAP1', 'PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef', 'SWAP1', 'PUSH2 0x06d4', 'SWAP1', 'DUP6', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'SWAP1', 'JUMP']>> 
+2066-Stack size: 11 
+2066-Equals Mem:<< []>> 
+2066-NonEquals Mem: << [<12,26>, <12,15>, <12,37>, <15,26>, <15,37>, <37,20>, <37,26>, <20,26>]>> 
+2066-Equals Sto:<< []>> 
+2066-NonEquals Sto: << []>> 
+2066-Useless: []
+2066-Constancy: [(5, 0)]
+2066-ContextAliasing: []
+
+.....
+-----
+Block: 2160
+2160Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x04', 'ADD', 'PUSH2 0x03d3', 'SWAP2', 'SWAP1', 'PUSH2 0x08f1', 'JUMP']>> 
+2160-Stack size: 15 
+2160-Equals Mem:<< []>> 
+2160-NonEquals Mem: << [<6,1>]>> 
+2160-Equals Sto:<< []>> 
+2160-NonEquals Sto: << []>> 
+2160-Useless: []
+2160-Constancy: [(9, 0), (1, 0)]
+2160-ContextAliasing: [(2, 14)]
+
+.....
+-----
+Block: 2289_0
+2289_0Instr:<<['JUMPDEST', 'PUSH0', 'PUSH1 0x20', 'DUP1', 'DUP4', 'MSTORE', 'DUP4', 'MLOAD', 'DUP1', 'DUP3', 'DUP6', 'ADD', 'MSTORE', 'PUSH0']>> 
+2289_0-Stack size: 17 
+2289_0-Equals Mem:<< []>> 
+2289_0-NonEquals Mem: << [<5,7>, <12,7>]>> 
+2289_0-Equals Sto:<< []>> 
+2289_0-NonEquals Sto: << []>> 
+2289_0-Useless: []
+2289_0-Constancy: [(11, 0), (3, 0)]
+2289_0-ContextAliasing: [(4, 15)]
+
+.....
+-----
+Block: 2313_0
+2313_0Instr:<<['DUP6', 'DUP2', 'ADD', 'DUP4', 'ADD', 'MLOAD', 'DUP6', 'DUP3', 'ADD', 'PUSH1 0x40', 'ADD', 'MSTORE', 'DUP3', 'ADD', 'PUSH2 0x0900', 'JUMP']>> 
+2313_0-Stack size: 21 
+2313_0-Equals Mem:<< []>> 
+2313_0-NonEquals Mem: << [<11,5>]>> 
+2313_0-Equals Sto:<< []>> 
+2313_0-NonEquals Sto: << []>> 
+2313_0-Useless: []
+2313_0-Constancy: [(15, 0), (7, 0), (3, 0), (2, 32)]
+2313_0-ContextAliasing: [(8, 15)]
+
+.....
+-----
+Block: 1481_0
+1481_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a20617070726f76652066726f6d20746865207a65726f206164', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x6472657373', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1481_0-Stack size: 10 
+1481_0-Equals Mem:<< []>> 
+1481_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1481_0-Equals Sto:<< []>> 
+1481_0-NonEquals Sto: << []>> 
+1481_0-Useless: []
+1481_0-Constancy: [(4, 0)]
+1481_0-ContextAliasing: []
+
+.....
+-----
+Block: 1581_0
+1581_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x23', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a20617070726f766520746f20746865207a65726f2061646472', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH3 0x657373', 'PUSH1 0xe8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1581_0-Stack size: 10 
+1581_0-Equals Mem:<< []>> 
+1581_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1581_0-Equals Sto:<< []>> 
+1581_0-NonEquals Sto: << []>> 
+1581_0-Useless: []
+1581_0-Constancy: [(4, 0)]
+1581_0-ContextAliasing: []
+
+.....
+-----
+Block: 1664_0
+1664_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'DUP2', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP5', 'DUP8', 'AND', 'DUP1', 'DUP5', 'MSTORE', 'SWAP5', 'DUP3', 'MSTORE', 'SWAP2', 'DUP3', 'SWAP1', 'KECCAK256', 'DUP6', 'SWAP1', 'SSTORE', 'SWAP1', 'MLOAD', 'DUP5', 'DUP2', 'MSTORE', 'PUSH32 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925', 'SWAP2', 'ADD']>> 
+1664_0-Stack size: 10 
+1664_0-Equals Mem:<< [<12,27>, <17,30>]>> 
+1664_0-NonEquals Mem: << [<12,39>, <12,17>, <12,30>, <12,42>, <17,39>, <17,27>, <17,42>, <27,39>, <27,30>, <27,42>, <30,39>, <30,42>, <42,21>, <42,34>, <42,39>, <21,39>, <34,39>]>> 
+1664_0-Equals Sto:<< []>> 
+1664_0-NonEquals Sto: << []>> 
+1664_0-Useless: []
+1664_0-Constancy: [(4, 0)]
+1664_0-ContextAliasing: []
+
+.....
+-----
+Block: 979_7
+979_7Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979_7-Stack size: 6 
+979_7-Equals Mem:<< []>> 
+979_7-NonEquals Mem: << []>> 
+979_7-Equals Sto:<< []>> 
+979_7-NonEquals Sto: << []>> 
+979_7-Useless: []
+979_7-Constancy: []
+979_7-ContextAliasing: []
+
+.....
+-----
+Block: 979_6
+979_6Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979_6-Stack size: 4 
+979_6-Equals Mem:<< []>> 
+979_6-NonEquals Mem: << []>> 
+979_6-Equals Sto:<< []>> 
+979_6-NonEquals Sto: << []>> 
+979_6-Useless: []
+979_6-Constancy: []
+979_6-ContextAliasing: []
+
+.....
+-----
+Block: 254
+254Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'RETURN']>> 
+254-Stack size: 2 
+254-Equals Mem:<< []>> 
+254-NonEquals Mem: << []>> 
+254-Equals Sto:<< []>> 
+254-NonEquals Sto: << []>> 
+254-Useless: []
+254-Constancy: []
+254-ContextAliasing: []
+
+.....
+-----
+Block: 979
+979Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979-Stack size: 10 
+979-Equals Mem:<< []>> 
+979-NonEquals Mem: << []>> 
+979-Equals Sto:<< []>> 
+979-NonEquals Sto: << []>> 
+979-Useless: []
+979-Constancy: [(5, 0)]
+979-ContextAliasing: []
+
+.....
+-----
+Block: 979_5
+979_5Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979_5-Stack size: 15 
+979_5-Equals Mem:<< []>> 
+979_5-NonEquals Mem: << []>> 
+979_5-Equals Sto:<< []>> 
+979_5-NonEquals Sto: << []>> 
+979_5-Useless: []
+979_5-Constancy: [(10, 0), (1, 0)]
+979_5-ContextAliasing: []
+
+.....
+-----
+Block: 979_4
+979_4Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979_4-Stack size: 3 
+979_4-Equals Mem:<< []>> 
+979_4-NonEquals Mem: << []>> 
+979_4-Equals Sto:<< []>> 
+979_4-NonEquals Sto: << []>> 
+979_4-Useless: []
+979_4-Constancy: []
+979_4-ContextAliasing: []
+
+.....
+-----
+Block: 979_3
+979_3Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979_3-Stack size: 11 
+979_3-Equals Mem:<< []>> 
+979_3-NonEquals Mem: << []>> 
+979_3-Equals Sto:<< []>> 
+979_3-NonEquals Sto: << []>> 
+979_3-Useless: []
+979_3-Constancy: [(5, 0)]
+979_3-ContextAliasing: []
+
+.....
+-----
+Block: 979_2
+979_2Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979_2-Stack size: 16 
+979_2-Equals Mem:<< []>> 
+979_2-NonEquals Mem: << []>> 
+979_2-Equals Sto:<< []>> 
+979_2-NonEquals Sto: << []>> 
+979_2-Useless: []
+979_2-Constancy: [(10, 0), (1, 0)]
+979_2-ContextAliasing: []
+
+.....
+-----
+Block: 979_1
+979_1Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979_1-Stack size: 15 
+979_1-Equals Mem:<< []>> 
+979_1-NonEquals Mem: << []>> 
+979_1-Equals Sto:<< []>> 
+979_1-NonEquals Sto: << []>> 
+979_1-Useless: []
+979_1-Constancy: [(9, 0), (1, 0)]
+979_1-ContextAliasing: []
+
+.....
+-----
+Block: 979_0
+979_0Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979_0-Stack size: 11 
+979_0-Equals Mem:<< []>> 
+979_0-NonEquals Mem: << []>> 
+979_0-Equals Sto:<< []>> 
+979_0-NonEquals Sto: << []>> 
+979_0-Useless: []
+979_0-Constancy: [(5, 0)]
+979_0-ContextAliasing: []
+
+.....
+********************************** END
+Memory Analysis: 0.05682694504503161s
+
+*************************************************************
+File: SafeMath
+Build CFG: 0.0005916149821132421s
+Slots analysis started!
+Slots analysis finished!
+Constants analysis finished!
+Starting offset memory analysis SafeMath
+Memory accesess analysis finished!
+
+
+GASOL: Useless accesses found: {}
+Free memory analyss finished
+
+
+SLOTS Contract SafeMath: 0
+Memory read accesses ContractSafeMath: 0
+Memory write accesses ContractSafeMath: 1
+********************************** INIT
+COMPACT CLONES: True
+CONTRACT: SafeMath
+********************************** END
+Memory Analysis: 0.0009869910427369177s
+
+*************************************************************
+FILERES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen;143;245;28;72;48;4;0.11781684099696577
+FILERES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_SafeMath;1;1;0;1;0;0;0.001592662010807544
+
+
+Aux path: /tmp/0x00//ethir_3a14c134b05f4c12abaab6628f86a6ee
+The files generated by EthIR are stored in the following directory: /tmp/0x00/costabs/
+Block: 1247
+1247Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x1b', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x736574207468652063616c6c20746f2074686520656e74657265640000000000', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1247-Stack size: 5 
+1247-Equals Mem:<< []>> 
+1247-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>]>> 
+1247-Equals Sto:<< []>> 
+1247-NonEquals Sto: << []>> 
+1247-Useless: []
+1247-Constancy: []
+1247-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '27', 'mstore'), 2), (('s(10)', '52195230618171943990529522291489994817610932857547708457779633201642477715456', 'mstore'), 2)]
+Memory dep: [(3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2)]
+Memory dep simplified: [(3, 4), (2, 3), (1, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x1b PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x736574207468652063616c6c20746f2074686520656e74657265640000000000 PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD PUSH2 0x03d3 JUMP
+
+Optimized sequence (basic block per line):
+PUSH1 0x64 PUSH1 0x40 MLOAD PUSH1 0x20 PUSH32 0x8c379a000000000000000000000000000000000000000000000000000000000 DUP3 MSTORE DUP2 PUSH1 0x4 ADD MSTORE PUSH1 0x1b PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x736574207468652063616c6c20746f2074686520656e74657265640000000000 PUSH1 0x44 DUP3 ADD MSTORE ADD PUSH2 0x3d3 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_1247_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_1247_statistics.csv
+
+Estimated initial gas: 83
+Estimated gas optimized: 77
+
+Estimated initial size in bytes: 71
+Estimated size optimized in bytes: 97
+
+Initial number of instructions: 26
+Final number of instructions: 24
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1247;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;1247;2;True;True;False;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x1b PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x736574207468652063616c6c20746f2074686520656e74657265640000000000 PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD PUSH2 0x03d3 JUMP;PUSH1 0x64 PUSH1 0x40 MLOAD PUSH1 0x20 PUSH32 0x8c379a000000000000000000000000000000000000000000000000000000000 DUP3 MSTORE DUP2 PUSH1 0x4 ADD MSTORE PUSH1 0x1b PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x736574207468652063616c6c20746f2074686520656e74657265640000000000 PUSH1 0x44 DUP3 ADD MSTORE ADD PUSH2 0x3d3 JUMP;83;71;26;77;97;24;6;-26;2;True;False;False;False;2.100264847977087;1;3;0;0
+
+Block: 1331
+1331Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x2b', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x416d6f756e74206f6620726563697069656e747320616e642076616c75657320', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH11 0x0c8dedc4ee840dac2e8c6d', 'PUSH1 0xab', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1331-Stack size: 5 
+1331-Equals Mem:<< []>> 
+1331-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1331-Equals Sto:<< []>> 
+1331-NonEquals Sto: << []>> 
+1331-Useless: []
+1331-Constancy: []
+1331-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('171', '15177349578230309384522861', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '43', 'mstore'), 2), (('s(10)', '29593690747763536782379366015906332519821433181947289248350076816502471095072', 'mstore'), 2), (('s(12)', '45428165138282672116798460675529205664095151166830073110500713742616523440128', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x2b PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x416d6f756e74206f6620726563697069656e747320616e642076616c75657320 PUSH1 0x44 DUP3 ADD MSTORE PUSH11 0x0c8dedc4ee840dac2e8c6d PUSH1 0xab SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x2b PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x416d6f756e74206f6620726563697069656e747320616e642076616c75657320 PUSH1 0x44 DUP3 ADD MSTORE PUSH11 0x0c8dedc4ee840dac2e8c6d PUSH1 0xab SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_1331_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_1331_statistics.csv
+
+Estimated initial gas: 104
+Estimated gas optimized: 104
+
+Estimated initial size in bytes: 91
+Estimated size optimized in bytes: 91
+
+Initial number of instructions: 33
+Final number of instructions: 33
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1331;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;1331;2;True;False;False;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x2b PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x416d6f756e74206f6620726563697069656e747320616e642076616c75657320 PUSH1 0x44 DUP3 ADD MSTORE PUSH11 0x0c8dedc4ee840dac2e8c6d PUSH1 0xab SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x2b PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x416d6f756e74206f6620726563697069656e747320616e642076616c75657320 PUSH1 0x44 DUP3 ADD MSTORE PUSH11 0x0c8dedc4ee840dac2e8c6d PUSH1 0xab SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;104;91;33;104;91;33;0;0;0;True;False;False;False;2.120500321034342;2;4;0;0
+
+Block: 1433
+1433Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP1', 'SWAP5', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP4', 'SSTORE', 'POP', 'POP', 'POP', 'JUMP']>> 
+1433-Stack size: 7 
+1433-Equals Mem:<< []>> 
+1433-NonEquals Mem: << [<12,15>]>> 
+1433-Equals Sto:<< []>> 
+1433-NonEquals Sto: << []>> 
+1433-Useless: []
+1433-Constancy: [(1, 0)]
+1433-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<11,14>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<11,14>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{21: ((('s(8)', 's(4)', 'sstore'), 2), 1)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(8)', 's(4)', 'sstore'), 2)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(5)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+SFS with rule: isolated_block_0_0_input.json
+{21: ((('s(8)', 's(4)', 'sstore'), 2), 1)}
+BLOCK 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1433 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 1044
+1044Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1044-Stack size: 3 
+1044-Equals Mem:<< []>> 
+1044-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+1044-Equals Sto:<< []>> 
+1044-NonEquals Sto: << []>> 
+1044-Useless: []
+1044-Constancy: []
+1044-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,13>, <1,17>, <1,22>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,13>, <1,17>, <1,22>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '32', 'mstore'), 2), (('s(10)', '35943731656364841964516503116990081338611484598491072354577564874054038349170', 'mstore'), 2)]
+Memory dep: [(3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2)]
+Memory dep simplified: [(3, 4), (2, 3), (1, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD DUP2 SWAP1 MSTORE PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572 PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD PUSH2 0x03d3 JUMP
+
+Optimized sequence (basic block per line):
+PUSH1 0x64 PUSH1 0x40 MLOAD PUSH32 0x8c379a000000000000000000000000000000000000000000000000000000000 DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x20 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572 PUSH1 0x44 DUP3 ADD MSTORE ADD PUSH2 0x3d3 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_1044_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_1044_statistics.csv
+
+Estimated initial gas: 86
+Estimated gas optimized: 77
+
+Estimated initial size in bytes: 71
+Estimated size optimized in bytes: 97
+
+Initial number of instructions: 27
+Final number of instructions: 24
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1044;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;1044;2;True;True;False;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD DUP2 SWAP1 MSTORE PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572 PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD PUSH2 0x03d3 JUMP;PUSH1 0x64 PUSH1 0x40 MLOAD PUSH32 0x8c379a000000000000000000000000000000000000000000000000000000000 DUP2 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x20 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572 PUSH1 0x44 DUP3 ADD MSTORE ADD PUSH2 0x3d3 JUMP;86;71;27;77;97;24;9;-26;3;True;False;False;False;2.1986828459776007;1;3;0;0
+
+Block: 1130
+1130Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x646472657373', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1130-Stack size: 3 
+1130-Equals Mem:<< []>> 
+1130-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1130-Equals Sto:<< []>> 
+1130-NonEquals Sto: << []>> 
+1130-Useless: []
+1130-Constancy: []
+1130-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('208', '110382578758515', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '38', 'mstore'), 2), (('s(10)', '35943731656364841964517558219894961445653631979235167635064085396828900499553', 'mstore'), 2), (('s(12)', '45408759099000846574684193736602357774271237157169010951590501707763511459840', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061 PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x646472657373 PUSH1 0xd0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061 PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x646472657373 PUSH1 0xd0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_1130_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_1130_statistics.csv
+
+Estimated initial gas: 104
+Estimated gas optimized: 104
+
+Estimated initial size in bytes: 86
+Estimated size optimized in bytes: 86
+
+Initial number of instructions: 33
+Final number of instructions: 33
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1130;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;1130;2;True;False;False;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061 PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x646472657373 PUSH1 0xd0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061 PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x646472657373 PUSH1 0xd0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;104;86;33;104;86;33;0;0;0;True;False;False;False;2.117805571993813;2;4;0;0
+
+Block: 492
+492Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+492-Stack size: 4 
+492-Equals Mem:<< [<12,27>, <17,31>]>> 
+492-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+492-Equals Sto:<< []>> 
+492-NonEquals Sto: << []>> 
+492-Useless: []
+492-Constancy: []
+492-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [<11,26>, <16,30>], 'memory_deps_noneqs': [<11,16>, <11,30>, <16,26>, <26,30>]}
+{'memory_deps_eqs': [<11,26>, <16,30>], 'memory_deps_noneqs': [<11,16>, <11,30>, <16,26>, <26,30>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{32: ((('s(3)', 'sload0'), 1), 2)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('0', '64', 'keccak2561'), 2), (('s(3)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+[OPT]: Removed mstore mstore with KECCAK
+[OPT]: Removed mstore mstore with KECCAK
+Memory order: [(('0', 's(5)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+(('s(11)', 'sload0'), 1)
+sload0
+[(('s(11)', 'sload0'), 1), (('1461501637330902918203684832716283019655932542975', 's(1)', 'and'), 2), (('1461501637330902918203684832716283019655932542975', 's(2)', 'and'), 2), (('0', '64', 'keccak2560'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{32: ((('s(3)', 'sload0'), 1), 2)}
+(('s(3)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2561'), 2), (('s(3)', 'sload0'), 1), (('1461501637330902918203684832716283019655932542975', 's(1)', 'and'), 2), (('1461501637330902918203684832716283019655932542975', 's(2)', 'and'), 2), (('0', '64', 'keccak2560'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB SWAP2 DUP3 AND PUSH0 SWAP1 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 SWAP4 SWAP1 SWAP5 AND DUP3 MSTORE SWAP2 SWAP1 SWAP2 MSTORE KECCAK256 SLOAD SWAP1 JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST DUP3 DUP1 SWAP2 POP POP POP DUP2 PUSH1 0x2 DUP3 SWAP3 POP PUSH1 0x20 MSTORE SWAP1 PUSH20 0xffffffffffffffffffffffffffffffffffffffff AND PUSH1 0x0 PUSH1 0x40 SWAP3 POP MSTORE PUSH1 0x0 KECCAK256 DUP2 SWAP2 POP SLOAD SWAP1 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_492_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_492_statistics.csv
+
+Estimated initial gas: 2261
+Estimated gas optimized: 2211
+
+Estimated initial size in bytes: 42
+Estimated size optimized in bytes: 55
+
+Initial number of instructions: 36
+Final number of instructions: 30
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_492;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;492;2;True;True;False;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB SWAP2 DUP3 AND PUSH0 SWAP1 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 SWAP4 SWAP1 SWAP5 AND DUP3 MSTORE SWAP2 SWAP1 SWAP2 MSTORE KECCAK256 SLOAD SWAP1 JUMP;JUMPDEST DUP3 DUP1 SWAP2 POP POP POP DUP2 PUSH1 0x2 DUP3 SWAP3 POP PUSH1 0x20 MSTORE SWAP1 PUSH20 0xffffffffffffffffffffffffffffffffffffffff AND PUSH1 0x0 PUSH1 0x40 SWAP3 POP MSTORE PUSH1 0x0 KECCAK256 DUP2 SWAP2 POP SLOAD SWAP1 JUMP;2261;42;36;2211;55;30;50;-13;6;True;False;False;False;2.123808812990319;4;2;2100;2100
+
+Block: 302
+302Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x00fe', 'JUMP']>> 
+302-Stack size: 2 
+302-Equals Mem:<< []>> 
+302-NonEquals Mem: << [<5,2>]>> 
+302-Equals Sto:<< []>> 
+302-NonEquals Sto: << []>> 
+302-Useless: []
+302-Constancy: []
+302-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,4>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,4>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', 's(0)', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2)]
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x40 MLOAD SWAP1 DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x00fe JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x40 MLOAD SWAP1 DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x00fe JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_302_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_302_statistics.csv
+
+Estimated initial gas: 33
+Estimated gas optimized: 33
+
+Estimated initial size in bytes: 13
+Estimated size optimized in bytes: 13
+
+Initial number of instructions: 10
+Final number of instructions: 10
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_302;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;302;2;False;True;True;JUMPDEST PUSH1 0x40 MLOAD SWAP1 DUP2 MSTORE PUSH1 0x20 ADD PUSH2 0x00fe JUMP;JUMPDEST PUSH1 0x40 MLOAD SWAP1 DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x00fe JUMP;33;13;10;33;13;10;0;0;0;True;False;False;False;0.01994874799856916;0;0;0;0
+
+Block: 282
+282Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'ISZERO', 'ISZERO', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x00fe', 'JUMP']>> 
+282-Stack size: 2 
+282-Equals Mem:<< []>> 
+282-NonEquals Mem: << [<7,2>]>> 
+282-Equals Sto:<< []>> 
+282-NonEquals Sto: << []>> 
+282-Useless: []
+282-Constancy: []
+282-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', 's(6)', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('s(0)', 'iszero'), 1), (('s(5)', 'iszero'), 1)]
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('s(0)', 'iszero'), 1), (('s(5)', 'iszero'), 1)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x00fe JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x00fe JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_282_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_282_statistics.csv
+
+Estimated initial gas: 39
+Estimated gas optimized: 39
+
+Estimated initial size in bytes: 15
+Estimated size optimized in bytes: 15
+
+Initial number of instructions: 12
+Final number of instructions: 12
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_282;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;282;2;False;True;True;JUMPDEST PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE PUSH1 0x20 ADD PUSH2 0x00fe JUMP;JUMPDEST PUSH1 0x40 MLOAD SWAP1 ISZERO ISZERO DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x00fe JUMP;39;15;12;39;15;12;0;0;0;True;False;False;False;0.049917386029846966;0;0;0;0
+
+Block: 587
+587Instr:<<['JUMPDEST', 'DUP1', 'PUSH1 0x1f', 'ADD', 'PUSH1 0x20', 'DUP1', 'SWAP2', 'DIV', 'MUL', 'PUSH1 0x20', 'ADD', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'ADD', 'PUSH1 0x40', 'MSTORE', 'DUP1', 'SWAP3', 'SWAP2', 'SWAP1', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'DUP3', 'DUP1', 'SLOAD', 'PUSH2 0x0277', 'SWAP1', 'PUSH2 0x0a43', 'JUMP']>> 
+587-Stack size: 5 
+587-Equals Mem:<< [<17,12>]>> 
+587-NonEquals Mem: << [<17,24>, <24,12>]>> 
+587-Equals Sto:<< []>> 
+587-NonEquals Sto: << []>> 
+587-Useless: []
+587-Constancy: [(2, 96)]
+587-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [<11,16>], 'memory_deps_noneqs': [<16,23>, <11,23>]}
+{'memory_deps_eqs': [<11,16>], 'memory_deps_noneqs': [<16,23>, <11,23>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+{28: ((('s(0)', 'sload0'), 1), 0)}
+Storage order: [(('s(0)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('64', 's(12)', 'mstore'), 2), (('s(10)', 's(1)', 'mstore'), 2)]
+Memory dep: [(0, 1)]
+Memory dep simplified: [(0, 1)]
+********************IT*********************
+(('s(0)', 'sload0'), 1)
+sload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+{28: ((('s(0)', 'sload0'), 1), 0)}
+(('s(0)', 'sload0'), 1)
+sload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST DUP1 PUSH1 0x1f ADD PUSH1 0x20 DUP1 SWAP2 DIV MUL PUSH1 0x20 ADD PUSH1 0x40 MLOAD SWAP1 DUP2 ADD PUSH1 0x40 MSTORE DUP1 SWAP3 SWAP2 SWAP1 DUP2 DUP2 MSTORE PUSH1 0x20 ADD DUP3 DUP1 SLOAD PUSH2 0x0277 SWAP1 PUSH2 0x0a43 JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST DUP1 PUSH1 0x1f ADD PUSH1 0x20 DUP1 SWAP2 DIV MUL PUSH1 0x20 ADD PUSH1 0x40 MLOAD SWAP1 DUP2 ADD PUSH1 0x40 MSTORE DUP1 SWAP3 SWAP2 SWAP1 DUP2 DUP2 MSTORE PUSH1 0x20 ADD DUP3 DUP1 SLOAD PUSH2 0x0277 SWAP1 PUSH2 0x0a43 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_587_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_587_statistics.csv
+
+Estimated initial gas: 2206
+Estimated gas optimized: 2206
+
+Estimated initial size in bytes: 44
+Estimated size optimized in bytes: 44
+
+Initial number of instructions: 34
+Final number of instructions: 34
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_587;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;587;2;True;False;False;JUMPDEST DUP1 PUSH1 0x1f ADD PUSH1 0x20 DUP1 SWAP2 DIV MUL PUSH1 0x20 ADD PUSH1 0x40 MLOAD SWAP1 DUP2 ADD PUSH1 0x40 MSTORE DUP1 SWAP3 SWAP2 SWAP1 DUP2 DUP2 MSTORE PUSH1 0x20 ADD DUP3 DUP1 SLOAD PUSH2 0x0277 SWAP1 PUSH2 0x0a43 JUMP;JUMPDEST DUP1 PUSH1 0x1f ADD PUSH1 0x20 DUP1 SWAP2 DIV MUL PUSH1 0x20 ADD PUSH1 0x40 MLOAD SWAP1 DUP2 ADD PUSH1 0x40 MSTORE DUP1 SWAP3 SWAP2 SWAP1 DUP2 DUP2 MSTORE PUSH1 0x20 ADD DUP3 DUP1 SLOAD PUSH2 0x0277 SWAP1 PUSH2 0x0a43 JUMP;2206;44;34;2206;44;34;0;0;0;True;False;False;False;2.1887417850084603;0;1;2100;2100
+
+Block: 2658
+2658Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+2658-Stack size: 8 
+2658-Equals Mem:<< []>> 
+2658-NonEquals Mem: << [<4,7>]>> 
+2658-Equals Sto:<< []>> 
+2658-NonEquals Sto: << []>> 
+2658-Useless: []
+2658-Constancy: []
+2658-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<4,7>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<4,7>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('224', '1313373041', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', '35408467139433450592217433187231851964531694900788300625387963629091585785856', 'mstore'), 2), (('4', '34', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+SFS with rule: isolated_block_0_0_input.json
+{}
+BLOCK 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_2658 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2289
+2289Instr:<<['JUMPDEST', 'PUSH0', 'PUSH1 0x20', 'DUP1', 'DUP4', 'MSTORE', 'DUP4', 'MLOAD', 'DUP1', 'DUP3', 'DUP6', 'ADD', 'MSTORE', 'PUSH0']>> 
+2289-Stack size: 4 
+2289-Equals Mem:<< []>> 
+2289-NonEquals Mem: << [<12,7>, <5,7>]>> 
+2289-Equals Sto:<< []>> 
+2289-NonEquals Sto: << []>> 
+2289-Useless: []
+2289-Constancy: []
+2289-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<6,11>, <4,6>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<6,11>, <4,6>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('s(1)', '32', 'mstore'), 2), (('s(0)', 'mload0'), 1), (('s(7)', 's(6)', 'mstore'), 2)]
+Memory dep: [(0, 2)]
+Memory dep simplified: [(0, 2)]
+********************IT*********************
+(('s(0)', 'mload0'), 1)
+mload0
+[(('s(0)', 'mload0'), 1), (('s(1)', '32', '+'), 2)]
+{}
+(('s(0)', 'mload0'), 1)
+mload0
+[(('s(0)', 'mload0'), 1), (('s(1)', '32', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH0 PUSH1 0x20 DUP1 DUP4 MSTORE DUP4 MLOAD DUP1 DUP3 DUP6 ADD MSTORE PUSH0
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH0 PUSH1 0x20 DUP1 DUP4 MSTORE DUP4 MLOAD DUP1 DUP3 DUP6 ADD MSTORE PUSH0
+
+Optimized code stored in /tmp/0x00/MemeKaisen_2289_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_2289_statistics.csv
+
+Estimated initial gas: 38
+Estimated gas optimized: 38
+
+Estimated initial size in bytes: 15
+Estimated size optimized in bytes: 15
+
+Initial number of instructions: 14
+Final number of instructions: 14
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_2289;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;2289;2;False;True;True;JUMPDEST PUSH0 PUSH1 0x20 DUP1 DUP4 MSTORE DUP4 MLOAD DUP1 DUP3 DUP6 ADD MSTORE PUSH0;JUMPDEST PUSH0 PUSH1 0x20 DUP1 DUP4 MSTORE DUP4 MLOAD DUP1 DUP3 DUP6 ADD MSTORE PUSH0;38;15;14;38;15;14;0;0;0;True;False;False;False;0.1484387000091374;0;1;0;0
+
+Block: 2313
+2313Instr:<<['DUP6', 'DUP2', 'ADD', 'DUP4', 'ADD', 'MLOAD', 'DUP6', 'DUP3', 'ADD', 'PUSH1 0x40', 'ADD', 'MSTORE', 'DUP3', 'ADD', 'PUSH2 0x0900', 'JUMP']>> 
+2313-Stack size: 8 
+2313-Equals Mem:<< []>> 
+2313-NonEquals Mem: << [<11,5>]>> 
+2313-Equals Sto:<< []>> 
+2313-NonEquals Sto: << []>> 
+2313-Useless: []
+2313-Constancy: [(2, 32), (3, 0)]
+2313-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<5,11>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<5,11>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('s(10)', 'mload0'), 1), (('s(8)', 's(12)', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+(('s(10)', 'mload0'), 1)
+mload0
+[(('s(3)', 's(5)', '+'), 2), (('s(5)', 's(1)', '+'), 2), (('64', 's(9)', '+'), 2), (('s(5)', 's(0)', '+'), 2), (('s(3)', 's(11)', '+'), 2), (('s(10)', 'mload0'), 1)]
+{}
+(('s(10)', 'mload0'), 1)
+mload0
+[(('s(3)', 's(5)', '+'), 2), (('s(5)', 's(1)', '+'), 2), (('64', 's(9)', '+'), 2), (('s(5)', 's(0)', '+'), 2), (('s(3)', 's(11)', '+'), 2), (('s(10)', 'mload0'), 1)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+DUP6 DUP2 ADD DUP4 ADD MLOAD DUP6 DUP3 ADD PUSH1 0x40 ADD MSTORE DUP3 ADD PUSH2 0x0900 JUMP
+
+Optimized sequence (basic block per line):
+DUP6 DUP2 ADD DUP4 ADD MLOAD DUP6 DUP3 ADD PUSH1 0x40 ADD MSTORE DUP3 ADD PUSH2 0x0900 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_2313_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_2313_statistics.csv
+
+Estimated initial gas: 53
+Estimated gas optimized: 53
+
+Estimated initial size in bytes: 19
+Estimated size optimized in bytes: 19
+
+Initial number of instructions: 16
+Final number of instructions: 16
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_2313;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;2313;2;False;True;True;DUP6 DUP2 ADD DUP4 ADD MLOAD DUP6 DUP3 ADD PUSH1 0x40 ADD MSTORE DUP3 ADD PUSH2 0x0900 JUMP;DUP6 DUP2 ADD DUP4 ADD MLOAD DUP6 DUP3 ADD PUSH1 0x40 ADD MSTORE DUP3 ADD PUSH2 0x0900 JUMP;53;19;16;53;19;16;0;0;0;True;False;False;False;0.6735931749572046;0;0;0;0
+
+Block: 425
+425Instr:<<['JUMPDEST', 'PUSH0', 'SLOAD', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP1', 'SWAP2', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x00fe', 'JUMP']>> 
+425-Stack size: 1 
+425-Equals Mem:<< []>> 
+425-NonEquals Mem: << [<14,4>]>> 
+425-Equals Sto:<< []>> 
+425-NonEquals Sto: << []>> 
+425-Useless: []
+425-Constancy: []
+425-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<3,13>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<3,13>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{1: ((('0', 'sload0'), 1), 0)}
+Storage order: [(('0', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', 's(5)', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+(('0', 'sload0'), 1)
+sload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('0', 'sload0'), 1), (('s(6)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('0', 'sload0'), 1), (('s(6)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{1: ((('0', 'sload0'), 1), 0)}
+(('0', 'sload0'), 1)
+sload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('0', 'sload0'), 1), (('s(6)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('0', 'sload0'), 1), (('s(6)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH0 SLOAD PUSH1 0x40 MLOAD PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB SWAP1 SWAP2 AND DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x00fe JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x20 PUSH1 0x40 MLOAD PUSH20 0xffffffffffffffffffffffffffffffffffffffff PUSH1 0x0 SLOAD AND DUP2 MSTORE ADD PUSH1 0xfe JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_425_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_425_statistics.csv
+
+Estimated initial gas: 2156
+Estimated gas optimized: 2139
+
+Estimated initial size in bytes: 25
+Estimated size optimized in bytes: 37
+
+Initial number of instructions: 19
+Final number of instructions: 13
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_425;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;425;2;False;True;True;JUMPDEST PUSH0 SLOAD PUSH1 0x40 MLOAD PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB SWAP1 SWAP2 AND DUP2 MSTORE PUSH1 0x20 ADD PUSH2 0x00fe JUMP;JUMPDEST PUSH1 0x20 PUSH1 0x40 MLOAD PUSH20 0xffffffffffffffffffffffffffffffffffffffff PUSH1 0x0 SLOAD AND DUP2 MSTORE ADD PUSH1 0xfe JUMP;2156;25;19;2139;37;13;17;-12;6;True;False;False;False;0.1229438770096749;2;0;2100;2100
+
+Block: 912
+912Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD']>> 
+912-Stack size: 2 
+912-Equals Mem:<< []>> 
+912-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+912-Equals Sto:<< []>> 
+912-NonEquals Sto: << []>> 
+912-Useless: []
+912-Constancy: []
+912-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,13>, <1,17>, <1,22>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,13>, <1,17>, <1,22>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(2)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(5)', '32', 'mstore'), 2), (('s(7)', '32', 'mstore'), 2), (('s(9)', '35943731656364841964516503116990081338611484598491072354577564874054038349170', 'mstore'), 2)]
+Memory dep: [(3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2)]
+Memory dep simplified: [(3, 4), (2, 3), (1, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(2)', '+'), 2), (('s(2)', '4', '+'), 2), (('s(2)', '36', '+'), 2), (('s(2)', '68', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(2)', '+'), 2), (('s(2)', '4', '+'), 2), (('s(2)', '36', '+'), 2), (('s(2)', '68', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD DUP2 SWAP1 MSTORE PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572 PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD
+
+Optimized sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH1 0x64 PUSH32 0x8c379a000000000000000000000000000000000000000000000000000000000 DUP3 MSTORE PUSH1 0x20 DUP3 PUSH1 0x4 ADD MSTORE PUSH1 0x20 DUP3 PUSH1 0x24 ADD MSTORE PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572 DUP3 PUSH1 0x44 ADD MSTORE ADD
+
+Optimized code stored in /tmp/0x00/MemeKaisen_912_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_912_statistics.csv
+
+Estimated initial gas: 75
+Estimated gas optimized: 66
+
+Estimated initial size in bytes: 67
+Estimated size optimized in bytes: 93
+
+Initial number of instructions: 25
+Final number of instructions: 22
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_912;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;912;2;True;True;False;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD DUP2 SWAP1 MSTORE PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572 PUSH1 0x44 DUP3 ADD MSTORE PUSH1 0x64 ADD;PUSH1 0x40 MLOAD PUSH1 0x64 PUSH32 0x8c379a000000000000000000000000000000000000000000000000000000000 DUP3 MSTORE PUSH1 0x20 DUP3 PUSH1 0x4 ADD MSTORE PUSH1 0x20 DUP3 PUSH1 0x24 ADD MSTORE PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572 DUP3 PUSH1 0x44 ADD MSTORE ADD;75;67;25;66;93;22;9;-26;3;True;False;False;False;2.1494349819840863;1;3;0;0
+
+Block: 389
+389Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+389-Stack size: 3 
+389-Equals Mem:<< []>> 
+389-NonEquals Mem: << [<10,13>]>> 
+389-Equals Sto:<< []>> 
+389-NonEquals Sto: << []>> 
+389-Useless: []
+389-Constancy: []
+389-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<9,12>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<9,12>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{16: ((('s(2)', 'sload0'), 1), 1)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(2)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(4)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+(('s(2)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(2)', 'sload0'), 1), (('1461501637330902918203684832716283019655932542975', 's(1)', 'and'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{16: ((('s(2)', 'sload0'), 1), 1)}
+(('s(2)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(2)', 'sload0'), 1), (('1461501637330902918203684832716283019655932542975', 's(1)', 'and'), 2)]
+BLOCK 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_389 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 841
+841Instr:<<['JUMPDEST', 'CALLER', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP8', 'AND', 'DUP5', 'MSTORE', 'SWAP1', 'SWAP2', 'MSTORE', 'DUP2', 'KECCAK256', 'SLOAD', 'SWAP1', 'SWAP2', 'PUSH2 0x02d8', 'SWAP2', 'DUP6', 'SWAP1', 'PUSH2 0x033a', 'SWAP1', 'DUP7', 'PUSH2 0x0890', 'JUMP']>> 
+841-Stack size: 4 
+841-Equals Mem:<< [<5,23>, <10,26>]>> 
+841-NonEquals Mem: << [<5,10>, <5,26>, <10,23>, <23,26>]>> 
+841-Equals Sto:<< []>> 
+841-NonEquals Sto: << []>> 
+841-Useless: []
+841-Constancy: []
+841-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [<4,22>, <9,25>], 'memory_deps_noneqs': [<4,9>, <4,25>, <9,22>, <22,25>]}
+{'memory_deps_eqs': [<4,22>, <9,25>], 'memory_deps_noneqs': [<4,9>, <4,25>, <9,22>, <22,25>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{28: ((('s(10)', 'sload0'), 1), 2)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('0', '64', 'keccak2561'), 2), (('s(10)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+[OPT]: Removed mstore mstore with KECCAK
+[OPT]: Removed mstore mstore with KECCAK
+Memory order: [(('0', 's(12)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+(('s(17)', 'sload0'), 1)
+sload0
+[(('s(17)', 'sload0'), 1), (('caller', 'caller'), 0), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{28: ((('s(10)', 'sload0'), 1), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2561'), 2), (('s(10)', 'sload0'), 1), (('caller', 'caller'), 0), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST CALLER PUSH0 DUP2 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP8 AND DUP5 MSTORE SWAP1 SWAP2 MSTORE DUP2 KECCAK256 SLOAD SWAP1 SWAP2 PUSH2 0x02d8 SWAP2 DUP6 SWAP1 PUSH2 0x033a SWAP1 DUP7 PUSH2 0x0890 JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST CALLER PUSH0 DUP2 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP8 AND DUP5 MSTORE SWAP1 SWAP2 MSTORE DUP2 KECCAK256 SLOAD SWAP1 SWAP2 PUSH2 0x02d8 SWAP2 DUP6 SWAP1 PUSH2 0x033a SWAP1 DUP7 PUSH2 0x0890 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_841_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_841_statistics.csv
+
+Estimated initial gas: 2275
+Estimated gas optimized: 2275
+
+Estimated initial size in bytes: 53
+Estimated size optimized in bytes: 53
+
+Initial number of instructions: 41
+Final number of instructions: 41
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_841;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;841;2;True;False;False;JUMPDEST CALLER PUSH0 DUP2 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP8 AND DUP5 MSTORE SWAP1 SWAP2 MSTORE DUP2 KECCAK256 SLOAD SWAP1 SWAP2 PUSH2 0x02d8 SWAP2 DUP6 SWAP1 PUSH2 0x033a SWAP1 DUP7 PUSH2 0x0890 JUMP;JUMPDEST CALLER PUSH0 DUP2 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP8 AND DUP5 MSTORE SWAP1 SWAP2 MSTORE DUP2 KECCAK256 SLOAD SWAP1 SWAP2 PUSH2 0x02d8 SWAP2 DUP6 SWAP1 PUSH2 0x033a SWAP1 DUP7 PUSH2 0x0890 JUMP;2275;53;41;2275;53;41;0;0;0;True;False;False;False;2.171719142002985;4;2;2100;2100
+
+Block: 1481
+1481Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a20617070726f76652066726f6d20746865207a65726f206164', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x6472657373', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1481-Stack size: 9 
+1481-Equals Mem:<< []>> 
+1481-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1481-Equals Sto:<< []>> 
+1481-NonEquals Sto: << []>> 
+1481-Useless: []
+1481-Constancy: [(4, 0)]
+1481-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('216', '431415980915', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '37', 'mstore'), 2), (('s(10)', '33141318148850472439096086094949558249112328244380961553562127528609785602404', 'mstore'), 2), (('s(12)', '45433405612597180762055095701412804886438245671210399661410036396145969725440', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x25 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a20617070726f76652066726f6d20746865207a65726f206164 PUSH1 0x44 DUP3 ADD MSTORE PUSH5 0x6472657373 PUSH1 0xd8 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x25 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a20617070726f76652066726f6d20746865207a65726f206164 PUSH1 0x44 DUP3 ADD MSTORE PUSH5 0x6472657373 PUSH1 0xd8 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_1481_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_1481_statistics.csv
+
+Estimated initial gas: 104
+Estimated gas optimized: 104
+
+Estimated initial size in bytes: 85
+Estimated size optimized in bytes: 85
+
+Initial number of instructions: 33
+Final number of instructions: 33
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1481;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;1481;2;True;False;False;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x25 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a20617070726f76652066726f6d20746865207a65726f206164 PUSH1 0x44 DUP3 ADD MSTORE PUSH5 0x6472657373 PUSH1 0xd8 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x25 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a20617070726f76652066726f6d20746865207a65726f206164 PUSH1 0x44 DUP3 ADD MSTORE PUSH5 0x6472657373 PUSH1 0xd8 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;104;85;33;104;85;33;0;0;0;True;False;False;False;2.1192396450205706;2;4;0;0
+
+Block: 1581
+1581Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x23', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a20617070726f766520746f20746865207a65726f2061646472', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH3 0x657373', 'PUSH1 0xe8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1581-Stack size: 9 
+1581-Equals Mem:<< []>> 
+1581-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1581-Equals Sto:<< []>> 
+1581-NonEquals Sto: << []>> 
+1581-Useless: []
+1581-Constancy: [(4, 0)]
+1581-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('232', '6648691', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '35', 'mstore'), 2), (('s(10)', '33141318148850472439096086094949558249130920257697877667619589324562189542514', 'mstore'), 2), (('s(12)', '45887578820189300338443374388718498632482616163288499555830078344056365121536', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x23 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a20617070726f766520746f20746865207a65726f2061646472 PUSH1 0x44 DUP3 ADD MSTORE PUSH3 0x657373 PUSH1 0xe8 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x23 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a20617070726f766520746f20746865207a65726f2061646472 PUSH1 0x44 DUP3 ADD MSTORE PUSH3 0x657373 PUSH1 0xe8 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_1581_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_1581_statistics.csv
+
+Estimated initial gas: 104
+Estimated gas optimized: 104
+
+Estimated initial size in bytes: 83
+Estimated size optimized in bytes: 83
+
+Initial number of instructions: 33
+Final number of instructions: 33
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1581;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;1581;2;True;False;False;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x23 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a20617070726f766520746f20746865207a65726f2061646472 PUSH1 0x44 DUP3 ADD MSTORE PUSH3 0x657373 PUSH1 0xe8 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x23 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a20617070726f766520746f20746865207a65726f2061646472 PUSH1 0x44 DUP3 ADD MSTORE PUSH3 0x657373 PUSH1 0xe8 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;104;83;33;104;83;33;0;0;0;True;False;False;False;2.1198629200225696;2;4;0;0
+
+Block: 1664
+1664Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'DUP2', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP5', 'DUP8', 'AND', 'DUP1', 'DUP5', 'MSTORE', 'SWAP5', 'DUP3', 'MSTORE', 'SWAP2', 'DUP3', 'SWAP1', 'KECCAK256', 'DUP6', 'SWAP1', 'SSTORE', 'SWAP1', 'MLOAD', 'DUP5', 'DUP2', 'MSTORE', 'PUSH32 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925', 'SWAP2', 'ADD']>> 
+1664-Stack size: 9 
+1664-Equals Mem:<< [<12,27>, <17,30>]>> 
+1664-NonEquals Mem: << [<27,39>, <30,39>, <27,42>, <30,42>, <34,39>, <12,30>, <17,27>, <42,34>, <42,39>, <12,39>, <12,42>, <17,39>, <27,30>, <17,42>, <21,39>, <12,17>, <42,21>]>> 
+1664-Equals Sto:<< []>> 
+1664-NonEquals Sto: << []>> 
+1664-Useless: []
+1664-Constancy: [(4, 0)]
+1664-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [<11,26>, <16,29>], 'memory_deps_noneqs': [<26,38>, <29,38>, <26,41>, <29,41>, <33,38>, <11,29>, <16,26>, <33,41>, <38,41>, <11,38>, <11,41>, <16,38>, <26,29>, <16,41>, <20,38>, <11,16>, <20,41>]}
+{'memory_deps_eqs': [<11,26>, <16,29>], 'memory_deps_noneqs': [<26,38>, <29,38>, <26,41>, <29,41>, <33,38>, <11,29>, <16,26>, <33,41>, <38,41>, <11,38>, <11,41>, <16,38>, <26,29>, <16,41>, <20,38>, <11,16>, <20,41>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{36: ((('s(22)', 's(2)', 'sstore'), 2), 2)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('0', '64', 'keccak2561'), 2), (('s(22)', 's(2)', 'sstore'), 2)]
+Storage dep: []
+Storage dep simplified: []
+[OPT]: Removed mstore mstore with KECCAK
+[OPT]: Removed mstore mstore with KECCAK
+Memory order: [(('0', 's(9)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2), (('64', 'mload0'), 1), (('s(8)', 's(2)', 'mstore'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(8)', '+'), 2), (('1461501637330902918203684832716283019655932542975', 's(0)', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{36: ((('s(22)', 's(2)', 'sstore'), 2), 2)}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(8)', '+'), 2), (('1461501637330902918203684832716283019655932542975', 's(0)', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('0', '64', 'keccak2561'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP4 DUP2 AND PUSH0 DUP2 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 SWAP5 DUP8 AND DUP1 DUP5 MSTORE SWAP5 DUP3 MSTORE SWAP2 DUP3 SWAP1 KECCAK256 DUP6 SWAP1 SSTORE SWAP1 MLOAD DUP5 DUP2 MSTORE PUSH32 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925 SWAP2 ADD
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP4 DUP2 AND PUSH0 DUP2 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 SWAP5 DUP8 AND DUP1 DUP5 MSTORE SWAP5 DUP3 MSTORE SWAP2 DUP3 SWAP1 KECCAK256 DUP6 SWAP1 SSTORE SWAP1 MLOAD DUP5 DUP2 MSTORE PUSH32 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925 SWAP2 ADD
+
+Optimized code stored in /tmp/0x00/MemeKaisen_1664_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_1664_statistics.csv
+
+Estimated initial gas: 5186
+Estimated gas optimized: 5186
+
+Estimated initial size in bytes: 84
+Estimated size optimized in bytes: 84
+
+Initial number of instructions: 46
+Final number of instructions: 46
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1664;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;1664;2;True;False;False;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP4 DUP2 AND PUSH0 DUP2 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 SWAP5 DUP8 AND DUP1 DUP5 MSTORE SWAP5 DUP3 MSTORE SWAP2 DUP3 SWAP1 KECCAK256 DUP6 SWAP1 SSTORE SWAP1 MLOAD DUP5 DUP2 MSTORE PUSH32 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925 SWAP2 ADD;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP4 DUP2 AND PUSH0 DUP2 DUP2 MSTORE PUSH1 0x02 PUSH1 0x20 SWAP1 DUP2 MSTORE PUSH1 0x40 DUP1 DUP4 KECCAK256 SWAP5 DUP8 AND DUP1 DUP5 MSTORE SWAP5 DUP3 MSTORE SWAP2 DUP3 SWAP1 KECCAK256 DUP6 SWAP1 SSTORE SWAP1 MLOAD DUP5 DUP2 MSTORE PUSH32 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925 SWAP2 ADD;5186;84;46;5186;84;46;0;0;0;True;False;False;False;2.2664379280176945;4;2;5000;5000
+
+Block: 335
+335Instr:<<['JUMPDEST', 'PUSH1 0x06', 'SLOAD', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0xff', 'SWAP1', 'SWAP2', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x00fe', 'JUMP']>> 
+335-Stack size: 1 
+335-Equals Mem:<< []>> 
+335-NonEquals Mem: << [<10,4>]>> 
+335-Equals Sto:<< []>> 
+335-NonEquals Sto: << []>> 
+335-Useless: []
+335-Constancy: []
+335-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<3,9>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<3,9>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+{1: ((('6', 'sload0'), 1), 0)}
+Storage order: [(('6', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', 's(5)', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+(('6', 'sload0'), 1)
+sload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('6', 'sload0'), 1), (('s(6)', '255', 'and'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('6', 'sload0'), 1), (('s(6)', '255', 'and'), 2)]
+{1: ((('6', 'sload0'), 1), 0)}
+(('6', 'sload0'), 1)
+sload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('6', 'sload0'), 1), (('s(6)', '255', 'and'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(3)', '+'), 2), (('6', 'sload0'), 1), (('s(6)', '255', 'and'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x06 SLOAD PUSH1 0x40 MLOAD PUSH1 0xff SWAP1 SWAP2 AND DUP2 MSTORE PUSH1 0x20 ADD PUSH1 0x00fe JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x20 PUSH1 0x40 MLOAD PUSH1 0xff PUSH1 0x6 SLOAD AND DUP2 MSTORE ADD PUSH1 0xfe JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_335_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_335_statistics.csv
+
+Estimated initial gas: 2145
+Estimated gas optimized: 2139
+
+Estimated initial size in bytes: 20
+Estimated size optimized in bytes: 18
+
+Initial number of instructions: 15
+Final number of instructions: 13
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_335;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;335;2;False;True;True;JUMPDEST PUSH1 0x06 SLOAD PUSH1 0x40 MLOAD PUSH1 0xff SWAP1 SWAP2 AND DUP2 MSTORE PUSH1 0x20 ADD PUSH2 0x00fe JUMP;JUMPDEST PUSH1 0x20 PUSH1 0x40 MLOAD PUSH1 0xff PUSH1 0x6 SLOAD AND DUP2 MSTORE ADD PUSH1 0xfe JUMP;2145;20;15;2139;18;13;6;2;2;True;False;False;False;0.08432968700071797;0;0;2100;2100
+
+Block: 1776
+1776Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a207472616e736665722066726f6d20746865207a65726f2061', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x646472657373', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1776-Stack size: 9 
+1776-Equals Mem:<< []>> 
+1776-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1776-Equals Sto:<< []>> 
+1776-NonEquals Sto: << []>> 
+1776-Useless: []
+1776-Constancy: [(4, 0)]
+1776-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('208', '110382578758515', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '38', 'mstore'), 2), (('s(10)', '33141318148850472439562150683325581977139907708454341840318608083768149221473', 'mstore'), 2), (('s(12)', '45408759099000846574684193736602357774271237157169010951590501707763511459840', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a207472616e736665722066726f6d20746865207a65726f2061 PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x646472657373 PUSH1 0xd0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a207472616e736665722066726f6d20746865207a65726f2061 PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x646472657373 PUSH1 0xd0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_1776_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_1776_statistics.csv
+
+Estimated initial gas: 104
+Estimated gas optimized: 104
+
+Estimated initial size in bytes: 86
+Estimated size optimized in bytes: 86
+
+Initial number of instructions: 33
+Final number of instructions: 33
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1776;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;1776;2;True;False;False;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a207472616e736665722066726f6d20746865207a65726f2061 PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x646472657373 PUSH1 0xd0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x26 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x4945524332303a207472616e736665722066726f6d20746865207a65726f2061 PUSH1 0x44 DUP3 ADD MSTORE PUSH6 0x646472657373 PUSH1 0xd0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;104;86;33;104;86;33;0;0;0;True;False;False;False;2.1209828160353936;2;4;0;0
+
+Block: 1877
+1877Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4945524332303a207472616e7366657220746f20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x03d3', 'JUMP']>> 
+1877-Stack size: 9 
+1877-Equals Mem:<< []>> 
+1877-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1877-Equals Sto:<< []>> 
+1877-NonEquals Sto: << []>> 
+1877-Useless: []
+1877-Constancy: [(4, 0)]
+1877-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>, <1,11>, <1,16>, <1,21>, <1,28>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('224', '1919251315', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '36', 'mstore'), 2), (('s(10)', '33141318148850472439562150683325581977139980333506361043889145043908588299364', 'mstore'), 2), (('s(12)', '51742913093258732729005998692887265601192425265805909375210916622055285719040', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x24 DUP1 DUP3 ADD MSTORE PUSH32 0x4945524332303a207472616e7366657220746f20746865207a65726f20616464 PUSH1 0x44 DUP3 ADD MSTORE PUSH4 0x72657373 PUSH1 0xe0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x24 DUP1 DUP3 ADD MSTORE PUSH32 0x4945524332303a207472616e7366657220746f20746865207a65726f20616464 PUSH1 0x44 DUP3 ADD MSTORE PUSH4 0x72657373 PUSH1 0xe0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_1877_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_1877_statistics.csv
+
+Estimated initial gas: 104
+Estimated gas optimized: 104
+
+Estimated initial size in bytes: 83
+Estimated size optimized in bytes: 83
+
+Initial number of instructions: 33
+Final number of instructions: 33
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_1877;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;1877;2;True;False;False;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x24 DUP1 DUP3 ADD MSTORE PUSH32 0x4945524332303a207472616e7366657220746f20746865207a65726f20616464 PUSH1 0x44 DUP3 ADD MSTORE PUSH4 0x72657373 PUSH1 0xe0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x20 PUSH1 0x04 DUP3 ADD MSTORE PUSH1 0x24 DUP1 DUP3 ADD MSTORE PUSH32 0x4945524332303a207472616e7366657220746f20746865207a65726f20616464 PUSH1 0x44 DUP3 ADD MSTORE PUSH4 0x72657373 PUSH1 0xe0 SHL PUSH1 0x64 DUP3 ADD MSTORE PUSH1 0x84 ADD PUSH2 0x03d3 JUMP;104;83;33;104;83;33;0;0;0;True;False;False;False;2.125834772014059;2;4;0;0
+
+Block: 2020
+2020Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP6', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP3', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP4', 'SSTORE', 'SWAP1', 'DUP5', 'AND', 'DUP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'PUSH2 0x0812', 'SWAP1', 'DUP3', 'PUSH2 0x0890', 'JUMP']>> 
+2020-Stack size: 10 
+2020-Equals Mem:<< [<12,28>]>> 
+2020-NonEquals Mem: << [<12,15>, <15,28>]>> 
+2020-Equals Sto:<< [<23,30>]>> 
+2020-NonEquals Sto: << []>> 
+2020-Useless: []
+2020-Constancy: [(5, 0)]
+2020-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [<11,27>], 'memory_deps_noneqs': [<11,14>, <14,27>]}
+{'memory_deps_eqs': [<11,27>], 'memory_deps_noneqs': [<11,14>, <14,27>], 'storage_deps_eqs': [<22,29>], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{22: ((('s(12)', 's(3)', 'sstore'), 2), 1), 29: ((('s(7)', 'sload0'), 1), 3)}
+[OPT]: Replaced sload by its value
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(12)', 's(3)', 'sstore'), 2), (('0', '64', 'keccak2561'), 2)]
+Storage dep: []
+Storage dep simplified: []
+[OPT]: Removed mstore mstore with KECCAK
+Memory order: [(('0', 's(9)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+SFS with rule: isolated_block_0_0_input.json
+{22: ((('s(12)', 's(3)', 'sstore'), 2), 1), 29: ((('s(7)', 'sload0'), 1), 3)}
+(('s(7)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2561'), 2), (('s(7)', 'sload0'), 1), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP1 DUP6 AND PUSH0 SWAP1 DUP2 MSTORE PUSH1 0x01 PUSH1 0x20 MSTORE PUSH1 0x40 DUP1 DUP3 KECCAK256 SWAP4 SWAP1 SWAP4 SSTORE SWAP1 DUP5 AND DUP2 MSTORE KECCAK256 SLOAD PUSH2 0x0812 SWAP1 DUP3 PUSH2 0x0890 JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST DUP1 DUP5 PUSH20 0xffffffffffffffffffffffffffffffffffffffff AND PUSH1 0x0 PUSH1 0x1 PUSH1 0x20 MSTORE MSTORE DUP2 PUSH1 0x40 PUSH2 0x812 DUP5 SWAP6 SWAP6 POP SWAP4 SWAP2 POP PUSH1 0x0 SWAP3 DUP6 SWAP3 SWAP2 SWAP1 SWAP4 KECCAK256 SSTORE PUSH2 0x890 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_2020_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_2020_statistics.csv
+
+Estimated initial gas: 5258
+Estimated gas optimized: 5118
+
+Estimated initial size in bytes: 46
+Estimated size optimized in bytes: 60
+
+Initial number of instructions: 36
+Final number of instructions: 31
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_2020;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;2020;2;True;True;False;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP1 DUP6 AND PUSH0 SWAP1 DUP2 MSTORE PUSH1 0x01 PUSH1 0x20 MSTORE PUSH1 0x40 DUP1 DUP3 KECCAK256 SWAP4 SWAP1 SWAP4 SSTORE SWAP1 DUP5 AND DUP2 MSTORE KECCAK256 SLOAD PUSH2 0x0812 SWAP1 DUP3 PUSH2 0x0890 JUMP;JUMPDEST DUP1 DUP5 PUSH20 0xffffffffffffffffffffffffffffffffffffffff AND PUSH1 0x0 PUSH1 0x1 PUSH1 0x20 MSTORE MSTORE DUP2 PUSH1 0x40 PUSH2 0x812 DUP5 SWAP6 SWAP6 POP SWAP4 SWAP2 POP PUSH1 0x0 SWAP3 DUP6 SWAP3 SWAP2 SWAP1 SWAP4 KECCAK256 SSTORE PUSH2 0x890 JUMP;5258;46;36;5118;60;31;140;-14;5;True;True;False;False;2.1499941669753753;4;2;5100;5000
+
+Block: 2695
+2695Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+2695-Stack size: 10 
+2695-Equals Mem:<< []>> 
+2695-NonEquals Mem: << [<4,7>]>> 
+2695-Equals Sto:<< []>> 
+2695-NonEquals Sto: << []>> 
+2695-Useless: []
+2695-Constancy: [(4, 0)]
+2695-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<4,7>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<4,7>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('224', '1313373041', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', '35408467139433450592217433187231851964531694900788300625387963629091585785856', 'mstore'), 2), (('4', '17', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+SFS with rule: isolated_block_0_0_input.json
+{}
+BLOCK 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_2695 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2066
+2066Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP5', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'DUP2', 'SWAP1', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP4', 'SSTORE', 'SWAP2', 'MLOAD', 'SWAP1', 'DUP6', 'AND', 'SWAP1', 'PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef', 'SWAP1', 'PUSH2 0x06d4', 'SWAP1', 'DUP6', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'SWAP1', 'JUMP']>> 
+2066-Stack size: 10 
+2066-Equals Mem:<< []>> 
+2066-NonEquals Mem: << [<12,26>, <15,26>, <20,26>, <12,37>, <15,37>, <37,20>, <12,15>, <37,26>]>> 
+2066-Equals Sto:<< []>> 
+2066-NonEquals Sto: << []>> 
+2066-Useless: []
+2066-Constancy: [(5, 0)]
+2066-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<11,25>, <14,25>, <19,25>, <11,36>, <14,36>, <19,36>, <11,14>, <25,36>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<11,25>, <14,25>, <19,25>, <11,36>, <14,36>, <19,36>, <11,14>, <25,36>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{23: ((('s(19)', 's(3)', 'sstore'), 2), 1)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(19)', 's(3)', 'sstore'), 2)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(13)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2), (('64', 'mload0'), 1), (('s(9)', 's(2)', 'mstore'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(9)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{23: ((('s(19)', 's(3)', 'sstore'), 2), 1)}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(9)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP1 DUP5 AND PUSH0 DUP2 DUP2 MSTORE PUSH1 0x01 PUSH1 0x20 MSTORE PUSH1 0x40 SWAP1 DUP2 SWAP1 KECCAK256 SWAP4 SWAP1 SWAP4 SSTORE SWAP2 MLOAD SWAP1 DUP6 AND SWAP1 PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef SWAP1 PUSH2 0x06d4 SWAP1 DUP6 DUP2 MSTORE PUSH1 0x20 ADD SWAP1 JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP1 DUP5 AND PUSH0 DUP2 DUP2 MSTORE PUSH1 0x01 PUSH1 0x20 MSTORE PUSH1 0x40 SWAP1 DUP2 SWAP1 KECCAK256 SWAP4 SWAP1 SWAP4 SSTORE SWAP2 MLOAD SWAP1 DUP6 AND SWAP1 PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef SWAP1 PUSH2 0x06d4 SWAP1 DUP6 DUP2 MSTORE PUSH1 0x20 ADD SWAP1 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_2066_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_2066_statistics.csv
+
+Estimated initial gas: 5152
+Estimated gas optimized: 5152
+
+Estimated initial size in bytes: 83
+Estimated size optimized in bytes: 83
+
+Initial number of instructions: 42
+Final number of instructions: 42
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_2066;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;2066;2;True;False;False;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP1 DUP5 AND PUSH0 DUP2 DUP2 MSTORE PUSH1 0x01 PUSH1 0x20 MSTORE PUSH1 0x40 SWAP1 DUP2 SWAP1 KECCAK256 SWAP4 SWAP1 SWAP4 SSTORE SWAP2 MLOAD SWAP1 DUP6 AND SWAP1 PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef SWAP1 PUSH2 0x06d4 SWAP1 DUP6 DUP2 MSTORE PUSH1 0x20 ADD SWAP1 JUMP;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB DUP1 DUP5 AND PUSH0 DUP2 DUP2 MSTORE PUSH1 0x01 PUSH1 0x20 MSTORE PUSH1 0x40 SWAP1 DUP2 SWAP1 KECCAK256 SWAP4 SWAP1 SWAP4 SSTORE SWAP2 MLOAD SWAP1 DUP6 AND SWAP1 PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef SWAP1 PUSH2 0x06d4 SWAP1 DUP6 DUP2 MSTORE PUSH1 0x20 ADD SWAP1 JUMP;5152;83;42;5152;83;42;0;0;0;True;False;False;False;2.2295050969696604;2;2;5000;5000
+
+Block: 2160
+2160Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x04', 'ADD', 'PUSH2 0x03d3', 'SWAP2', 'SWAP1', 'PUSH2 0x08f1', 'JUMP']>> 
+2160-Stack size: 15 
+2160-Equals Mem:<< []>> 
+2160-NonEquals Mem: << [<6,1>]>> 
+2160-Equals Sto:<< []>> 
+2160-NonEquals Sto: << []>> 
+2160-Useless: []
+2160-Constancy: [(1, 0)]
+2160-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH ALIASING
+
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>]}
+{'memory_deps_eqs': [], 'memory_deps_noneqs': [<1,6>], 'storage_deps_eqs': [], 'storage_deps_noneqs': []}
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(5)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('4', 's(5)', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('4', 's(5)', '+'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+
+Initial sequence (basic block per line):
+PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x04 ADD PUSH2 0x03d3 SWAP2 SWAP1 PUSH2 0x08f1 JUMP
+
+Optimized sequence (basic block per line):
+PUSH2 0x3d3 SWAP1 PUSH32 0x8c379a000000000000000000000000000000000000000000000000000000000 PUSH1 0x40 MLOAD MSTORE PUSH1 0x40 MLOAD PUSH1 0x4 ADD PUSH2 0x8f1 JUMP
+
+Optimized code stored in /tmp/0x00/MemeKaisen_2160_optimized.txt
+Optimality results stored in /tmp/0x00/MemeKaisen_2160_statistics.csv
+
+Estimated initial gas: 47
+Estimated gas optimized: 41
+
+Estimated initial size in bytes: 24
+Estimated size optimized in bytes: 51
+
+Initial number of instructions: 14
+Final number of instructions: 12
+
+GREENRES: 0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol_MemeKaisen_2160;0x00969E0454313FaD64D01867c81CA71EFe058FF1.sol;MemeKaisen;2160;2;False;True;True;PUSH1 0x40 MLOAD PUSH3 0x461bcd PUSH1 0xe5 SHL DUP2 MSTORE PUSH1 0x04 ADD PUSH2 0x03d3 SWAP2 SWAP1 PUSH2 0x08f1 JUMP;PUSH2 0x3d3 SWAP1 PUSH32 0x8c379a000000000000000000000000000000000000000000000000000000000 PUSH1 0x40 MLOAD MSTORE PUSH1 0x40 MLOAD PUSH1 0x4 ADD PUSH2 0x8f1 JUMP;47;24;14;41;51;12;6;-27;2;True;False;False;False;0.07498010294511914;1;0;0;0
+
+Block: 254
+254Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'RETURN']>> 
+254-Stack size: 2 
+254-Equals Mem:<< []>> 
+254-NonEquals Mem: << []>> 
+254-Equals Sto:<< []>> 
+254-NonEquals Sto: << []>> 
+254-Useless: []
+254-Constancy: []
+254-ContextAliasing: []
+
+Block: 979
+979Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+979-Stack size: 3 
+979-Equals Mem:<< []>> 
+979-NonEquals Mem: << []>> 
+979-Equals Sto:<< []>> 
+979-NonEquals Sto: << []>> 
+979-Useless: []
+979-Constancy: []
+979-ContextAliasing: []
+

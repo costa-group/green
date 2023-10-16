@@ -1,0 +1,3475 @@
+incomplete push instruction at 3162
+Green Main
+*************************************************************
+Compilation time: 0.34768100298242643s
+*************************************************************
+File: ERC20
+Build CFG: 0.08216642803745344s
+Slots analysis started!
+Slots analysis finished!
+Constants analysis finished!
+Starting offset memory analysis ERC20
+Memory accesess analysis finished!
+
+
+GASOL: Useless accesses found: {}
+Free memory analyss finished
+
+
+SLOTS Contract ERC20: 34
+Memory read accesses ContractERC20: 107
+Memory write accesses ContractERC20: 183
+********************************** INIT
+COMPACT CLONES: True
+CONTRACT: ERC20
+-----
+Block: 2324_2
+2324_2Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324_2-Stack size: 4 
+2324_2-Equals Mem:<< []>> 
+2324_2-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+2324_2-Equals Sto:<< []>> 
+2324_2-NonEquals Sto: << []>> 
+2324_2-Useless: []
+2324_2-Constancy: []
+2324_2-ContextAliasing: []
+
+.....
+-----
+Block: 1361
+1361Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x646472657373', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1361-Stack size: 3 
+1361-Equals Mem:<< []>> 
+1361-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1361-Equals Sto:<< []>> 
+1361-NonEquals Sto: << []>> 
+1361-Useless: []
+1361-Constancy: []
+1361-ContextAliasing: []
+
+.....
+-----
+Block: 1296_2
+1296_2Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296_2-Stack size: 4 
+1296_2-Equals Mem:<< [<12,27>, <17,31>]>> 
+1296_2-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+1296_2-Equals Sto:<< []>> 
+1296_2-NonEquals Sto: << []>> 
+1296_2-Useless: []
+1296_2-Constancy: []
+1296_2-ContextAliasing: []
+
+.....
+-----
+Block: 335
+335Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+335-Stack size: 2 
+335-Equals Mem:<< []>> 
+335-NonEquals Mem: << [<5,2>]>> 
+335-Equals Sto:<< []>> 
+335-NonEquals Sto: << []>> 
+335-Useless: []
+335-Constancy: []
+335-ContextAliasing: []
+
+.....
+-----
+Block: 2324_1
+2324_1Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324_1-Stack size: 5 
+2324_1-Equals Mem:<< []>> 
+2324_1-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+2324_1-Equals Sto:<< []>> 
+2324_1-NonEquals Sto: << []>> 
+2324_1-Useless: []
+2324_1-Constancy: []
+2324_1-ContextAliasing: []
+
+.....
+-----
+Block: 3074_0
+3074_0Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x32', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3074_0-Stack size: 12 
+3074_0-Equals Mem:<< []>> 
+3074_0-NonEquals Mem: << [<5,8>]>> 
+3074_0-Equals Sto:<< []>> 
+3074_0-NonEquals Sto: << []>> 
+3074_0-Useless: []
+3074_0-Constancy: [(4, 0)]
+3074_0-ContextAliasing: []
+
+.....
+-----
+Block: 1239
+1239Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'DUP2', 'ADD', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'PUSH1 0x40', 'ADD', 'PUSH0', 'KECCAK256', 'DUP1', 'SLOAD', 'PUSH1 0xff', 'NOT', 'AND', 'SWAP2', 'ISZERO', 'ISZERO', 'SWAP2', 'SWAP1', 'SWAP2', 'OR', 'SWAP1', 'SSTORE', 'DUP1', 'PUSH2 0x0508', 'DUP2', 'PUSH2 0x0c16', 'JUMP']>> 
+1239-Stack size: 9 
+1239-Equals Mem:<< []>> 
+1239-NonEquals Mem: << [<8,15>]>> 
+1239-Equals Sto:<< [<21,33>]>> 
+1239-NonEquals Sto: << []>> 
+1239-Useless: []
+1239-Constancy: [(1, 0)]
+1239-ContextAliasing: []
+
+.....
+-----
+Block: 3035_1
+3035_1Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3035_1-Stack size: 10 
+3035_1-Equals Mem:<< []>> 
+3035_1-NonEquals Mem: << [<5,8>]>> 
+3035_1-Equals Sto:<< []>> 
+3035_1-NonEquals Sto: << []>> 
+3035_1-Useless: []
+3035_1-Constancy: [(1, 0)]
+3035_1-ContextAliasing: []
+
+.....
+-----
+Block: 557
+557Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'SWAP1', 'JUMP']>> 
+557-Stack size: 3 
+557-Equals Mem:<< []>> 
+557-NonEquals Mem: << [<10,13>]>> 
+557-Equals Sto:<< []>> 
+557-NonEquals Sto: << []>> 
+557-Useless: []
+557-Constancy: []
+557-ContextAliasing: []
+
+.....
+-----
+Block: 315
+315Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'ISZERO', 'ISZERO', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+315-Stack size: 2 
+315-Equals Mem:<< []>> 
+315-NonEquals Mem: << [<7,2>]>> 
+315-Equals Sto:<< []>> 
+315-NonEquals Sto: << []>> 
+315-Useless: []
+315-Constancy: []
+315-ContextAliasing: []
+
+.....
+-----
+Block: 1885_0
+1885_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e736665722066726f6d20746865207a65726f206164', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x6472657373', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1885_0-Stack size: 10 
+1885_0-Equals Mem:<< []>> 
+1885_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1885_0-Equals Sto:<< []>> 
+1885_0-NonEquals Sto: << []>> 
+1885_0-Useless: []
+1885_0-Constancy: [(5, 0)]
+1885_0-ContextAliasing: []
+
+.....
+-----
+Block: 1985_0
+1985_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x23', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220746f20746865207a65726f2061646472', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH3 0x657373', 'PUSH1 0xe8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1985_0-Stack size: 10 
+1985_0-Equals Mem:<< []>> 
+1985_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1985_0-Equals Sto:<< []>> 
+1985_0-NonEquals Sto: << []>> 
+1985_0-Useless: []
+1985_0-Constancy: [(5, 0)]
+1985_0-ContextAliasing: []
+
+.....
+-----
+Block: 2474_0
+2474_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'DUP1', 'PUSH2 0x09e7', 'JUMPI']>> 
+2474_0-Stack size: 14 
+2474_0-Equals Mem:<< []>> 
+2474_0-NonEquals Mem: << [<11,14>]>> 
+2474_0-Equals Sto:<< []>> 
+2474_0-NonEquals Sto: << []>> 
+2474_0-Useless: []
+2474_0-Constancy: [(9, 0)]
+2474_0-ContextAliasing: []
+
+.....
+-----
+Block: 2507_0
+2507_0Instr:<<['POP', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND']>> 
+2507_0-Stack size: 15 
+2507_0-Equals Mem:<< []>> 
+2507_0-NonEquals Mem: << [<11,14>]>> 
+2507_0-Equals Sto:<< []>> 
+2507_0-NonEquals Sto: << []>> 
+2507_0-Useless: []
+2507_0-Constancy: [(10, 0)]
+2507_0-ContextAliasing: []
+
+.....
+-----
+Block: 2556_0
+2556_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH0', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x44', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2556_0-Stack size: 14 
+2556_0-Equals Mem:<< []>> 
+2556_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>]>> 
+2556_0-Equals Sto:<< []>> 
+2556_0-NonEquals Sto: << []>> 
+2556_0-Useless: []
+2556_0-Constancy: [(9, 0)]
+2556_0-ContextAliasing: []
+
+.....
+-----
+Block: 2079_0
+2079_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'DUP2', 'DUP2', 'LT', 'ISZERO', 'PUSH2 0x0896', 'JUMPI']>> 
+2079_0-Stack size: 10 
+2079_0-Equals Mem:<< []>> 
+2079_0-NonEquals Mem: << [<11,14>]>> 
+2079_0-Equals Sto:<< []>> 
+2079_0-NonEquals Sto: << []>> 
+2079_0-Useless: []
+2079_0-Constancy: [(5, 0)]
+2079_0-ContextAliasing: []
+
+.....
+-----
+Block: 2112_0
+2112_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220616d6f756e7420657863656564732062', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x616c616e6365', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2112_0-Stack size: 11 
+2112_0-Equals Mem:<< []>> 
+2112_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+2112_0-Equals Sto:<< []>> 
+2112_0-NonEquals Sto: << []>> 
+2112_0-Useless: []
+2112_0-Constancy: [(6, 0)]
+2112_0-ContextAliasing: []
+
+.....
+-----
+Block: 2198_0
+2198_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP6', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP3', 'KECCAK256', 'DUP7', 'DUP7', 'SUB', 'SWAP1', 'SSTORE', 'SWAP3', 'DUP7', 'AND', 'DUP1', 'DUP3', 'MSTORE', 'SWAP1', 'DUP4', 'SWAP1', 'KECCAK256', 'DUP1', 'SLOAD', 'DUP7', 'ADD', 'SWAP1', 'SSTORE', 'SWAP2', 'MLOAD', 'PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef', 'SWAP1', 'PUSH2 0x08f5', 'SWAP1', 'DUP7', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'SWAP1', 'JUMP']>> 
+2198_0-Stack size: 11 
+2198_0-Equals Mem:<< [<12,30>]>> 
+2198_0-NonEquals Mem: << [<12,42>, <12,15>, <12,49>, <15,42>, <15,30>, <15,49>, <30,42>, <30,49>, <49,19>, <49,34>, <49,42>, <19,42>, <34,42>]>> 
+2198_0-Equals Sto:<< [<24,36>, <24,40>, <36,40>]>> 
+2198_0-NonEquals Sto: << []>> 
+2198_0-Useless: []
+2198_0-Constancy: [(6, 0)]
+2198_0-ContextAliasing: []
+
+.....
+-----
+Block: 1296_1
+1296_1Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296_1-Stack size: 10 
+1296_1-Equals Mem:<< [<12,27>, <17,31>]>> 
+1296_1-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+1296_1-Equals Sto:<< []>> 
+1296_1-NonEquals Sto: << []>> 
+1296_1-Useless: []
+1296_1-Constancy: [(5, 0), (3, 0)]
+1296_1-ContextAliasing: []
+
+.....
+-----
+Block: 1061
+1061Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a2064656372656173656420616c6c6f77616e63652062656c6f77', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x207a65726f', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD']>> 
+1061-Stack size: 7 
+1061-Equals Mem:<< []>> 
+1061-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1061-Equals Sto:<< []>> 
+1061-NonEquals Sto: << []>> 
+1061-Useless: []
+1061-Constancy: [(2, 0)]
+1061-ContextAliasing: []
+
+.....
+-----
+Block: 1474_1
+1474_1Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f76652066726f6d20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1474_1-Stack size: 11 
+1474_1-Equals Mem:<< []>> 
+1474_1-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1474_1-Equals Sto:<< []>> 
+1474_1-NonEquals Sto: << []>> 
+1474_1-Useless: []
+1474_1-Constancy: [(6, 0)]
+1474_1-ContextAliasing: []
+
+.....
+-----
+Block: 1572_1
+1572_1Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f766520746f20746865207a65726f206164647265', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH2 0x7373', 'PUSH1 0xf0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1572_1-Stack size: 11 
+1572_1-Equals Mem:<< []>> 
+1572_1-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1572_1-Equals Sto:<< []>> 
+1572_1-NonEquals Sto: << []>> 
+1572_1-Useless: []
+1572_1-Constancy: [(6, 0)]
+1572_1-ContextAliasing: []
+
+.....
+-----
+Block: 2324_0
+2324_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324_0-Stack size: 5 
+2324_0-Equals Mem:<< []>> 
+2324_0-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+2324_0-Equals Sto:<< []>> 
+2324_0-NonEquals Sto: << []>> 
+2324_0-Useless: []
+2324_0-Constancy: []
+2324_0-ContextAliasing: []
+
+.....
+-----
+Block: 3074
+3074Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x32', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3074-Stack size: 12 
+3074-Equals Mem:<< []>> 
+3074-NonEquals Mem: << [<5,8>]>> 
+3074-Equals Sto:<< []>> 
+3074-NonEquals Sto: << []>> 
+3074-Useless: []
+3074-Constancy: [(6, 0), (4, 0)]
+3074-ContextAliasing: []
+
+.....
+-----
+Block: 975
+975Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'DUP2', 'ADD', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'PUSH1 0x40', 'ADD', 'PUSH0', 'KECCAK256', 'DUP1', 'SLOAD', 'PUSH1 0xff', 'NOT', 'AND', 'SWAP2', 'ISZERO', 'ISZERO', 'SWAP2', 'SWAP1', 'SWAP2', 'OR', 'SWAP1', 'SSTORE', 'DUP1', 'PUSH2 0x0400', 'DUP2', 'PUSH2 0x0c16', 'JUMP']>> 
+975-Stack size: 9 
+975-Equals Mem:<< []>> 
+975-NonEquals Mem: << [<8,15>]>> 
+975-Equals Sto:<< [<21,33>]>> 
+975-NonEquals Sto: << []>> 
+975-Useless: []
+975-Constancy: [(3, 0), (1, 0)]
+975-ContextAliasing: []
+
+.....
+-----
+Block: 3035_0
+3035_0Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3035_0-Stack size: 10 
+3035_0-Equals Mem:<< []>> 
+3035_0-NonEquals Mem: << [<5,8>]>> 
+3035_0-Equals Sto:<< []>> 
+3035_0-NonEquals Sto: << []>> 
+3035_0-Useless: []
+3035_0-Constancy: [(1, 0)]
+3035_0-ContextAliasing: []
+
+.....
+-----
+Block: 3010_0
+3010_0Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3010_0-Stack size: 8 
+3010_0-Equals Mem:<< []>> 
+3010_0-NonEquals Mem: << [<4,7>]>> 
+3010_0-Equals Sto:<< []>> 
+3010_0-NonEquals Sto: << []>> 
+3010_0-Useless: []
+3010_0-Constancy: [(5, 96)]
+3010_0-ContextAliasing: []
+
+.....
+-----
+Block: 658
+658Instr:<<['JUMPDEST', 'DUP1', 'PUSH1 0x1f', 'ADD', 'PUSH1 0x20', 'DUP1', 'SWAP2', 'DIV', 'MUL', 'PUSH1 0x20', 'ADD', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'ADD', 'PUSH1 0x40', 'MSTORE', 'DUP1', 'SWAP3', 'SWAP2', 'SWAP1', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'DUP3', 'DUP1', 'SLOAD', 'PUSH2 0x02be', 'SWAP1', 'PUSH2 0x0ba3', 'JUMP']>> 
+658-Stack size: 5 
+658-Equals Mem:<< [<17,12>]>> 
+658-NonEquals Mem: << [<17,24>, <24,12>]>> 
+658-Equals Sto:<< []>> 
+658-NonEquals Sto: << []>> 
+658-Useless: []
+658-Constancy: [(2, 96)]
+658-ContextAliasing: []
+
+.....
+-----
+Block: 3010
+3010Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3010-Stack size: 12 
+3010-Equals Mem:<< []>> 
+3010-NonEquals Mem: << [<4,7>]>> 
+3010-Equals Sto:<< []>> 
+3010-NonEquals Sto: << []>> 
+3010-Useless: []
+3010-Constancy: [(9, 96)]
+3010-ContextAliasing: []
+
+.....
+-----
+Block: 2588
+2588Instr:<<['JUMPDEST', 'PUSH0', 'PUSH1 0x20', 'DUP1', 'DUP4', 'MSTORE', 'DUP4', 'MLOAD', 'DUP1', 'DUP3', 'DUP6', 'ADD', 'MSTORE', 'PUSH0']>> 
+2588-Stack size: 4 
+2588-Equals Mem:<< []>> 
+2588-NonEquals Mem: << [<5,7>, <5,12>, <12,7>]>> 
+2588-Equals Sto:<< []>> 
+2588-NonEquals Sto: << []>> 
+2588-Useless: []
+2588-Constancy: []
+2588-ContextAliasing: []
+
+.....
+-----
+Block: 2612
+2612Instr:<<['DUP6', 'DUP2', 'ADD', 'DUP4', 'ADD', 'MLOAD', 'DUP6', 'DUP3', 'ADD', 'PUSH1 0x40', 'ADD', 'MSTORE', 'DUP3', 'ADD', 'PUSH2 0x0a2b', 'JUMP']>> 
+2612-Stack size: 8 
+2612-Equals Mem:<< []>> 
+2612-NonEquals Mem: << [<11,5>]>> 
+2612-Equals Sto:<< []>> 
+2612-NonEquals Sto: << []>> 
+2612-Useless: []
+2612-Constancy: [(3, 0), (2, 32)]
+2612-ContextAliasing: []
+
+.....
+-----
+Block: 452
+452Instr:<<['JUMPDEST', 'PUSH0', 'SLOAD', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP1', 'SWAP2', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+452-Stack size: 1 
+452-Equals Mem:<< []>> 
+452-NonEquals Mem: << [<14,4>]>> 
+452-Equals Sto:<< []>> 
+452-NonEquals Sto: << []>> 
+452-Useless: []
+452-Constancy: []
+452-ContextAliasing: []
+
+.....
+-----
+Block: 2324
+2324Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324-Stack size: 3 
+2324-Equals Mem:<< []>> 
+2324-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+2324-Equals Sto:<< []>> 
+2324-NonEquals Sto: << []>> 
+2324-Useless: []
+2324-Constancy: []
+2324-ContextAliasing: []
+
+.....
+-----
+Block: 416
+416Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+416-Stack size: 3 
+416-Equals Mem:<< []>> 
+416-NonEquals Mem: << [<10,13>]>> 
+416-Equals Sto:<< []>> 
+416-NonEquals Sto: << []>> 
+416-Useless: []
+416-Constancy: []
+416-ContextAliasing: []
+
+.....
+-----
+Block: 1296_0
+1296_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296_0-Stack size: 13 
+1296_0-Equals Mem:<< [<12,27>, <17,31>]>> 
+1296_0-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+1296_0-Equals Sto:<< []>> 
+1296_0-NonEquals Sto: << []>> 
+1296_0-Useless: []
+1296_0-Constancy: [(8, 0)]
+1296_0-ContextAliasing: []
+
+.....
+-----
+Block: 3035
+3035Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3035-Stack size: 14 
+3035-Equals Mem:<< []>> 
+3035-NonEquals Mem: << [<5,8>]>> 
+3035-Equals Sto:<< []>> 
+3035-NonEquals Sto: << []>> 
+3035-Useless: []
+3035-Constancy: [(9, 0)]
+3035-ContextAliasing: []
+
+.....
+-----
+Block: 1474
+1474Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f76652066726f6d20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1474-Stack size: 10 
+1474-Equals Mem:<< []>> 
+1474-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1474-Equals Sto:<< []>> 
+1474-NonEquals Sto: << []>> 
+1474-Useless: []
+1474-Constancy: [(5, 0)]
+1474-ContextAliasing: []
+
+.....
+-----
+Block: 1572
+1572Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f766520746f20746865207a65726f206164647265', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH2 0x7373', 'PUSH1 0xf0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1572-Stack size: 10 
+1572-Equals Mem:<< []>> 
+1572-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1572-Equals Sto:<< []>> 
+1572-NonEquals Sto: << []>> 
+1572-Useless: []
+1572-Constancy: [(5, 0)]
+1572-ContextAliasing: []
+
+.....
+-----
+Block: 368
+368Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x12', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+368-Stack size: 1 
+368-Equals Mem:<< []>> 
+368-NonEquals Mem: << [<5,2>]>> 
+368-Equals Sto:<< []>> 
+368-NonEquals Sto: << []>> 
+368-Useless: []
+368-Constancy: []
+368-ContextAliasing: []
+
+.....
+-----
+Block: 1296
+1296Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296-Stack size: 15 
+1296-Equals Mem:<< [<12,27>, <17,31>]>> 
+1296-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+1296-Equals Sto:<< []>> 
+1296-NonEquals Sto: << []>> 
+1296-Useless: []
+1296-Constancy: [(9, 0), (3, 0)]
+1296-ContextAliasing: []
+
+.....
+-----
+Block: 1780
+1780Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x1d', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20696e73756666696369656e7420616c6c6f77616e6365000000', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1780-Stack size: 12 
+1780-Equals Mem:<< []>> 
+1780-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>]>> 
+1780-Equals Sto:<< []>> 
+1780-NonEquals Sto: << []>> 
+1780-Useless: []
+1780-Constancy: [(6, 0)]
+1780-ContextAliasing: []
+
+.....
+-----
+Block: 1474_0
+1474_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f76652066726f6d20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1474_0-Stack size: 16 
+1474_0-Equals Mem:<< []>> 
+1474_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1474_0-Equals Sto:<< []>> 
+1474_0-NonEquals Sto: << []>> 
+1474_0-Useless: []
+1474_0-Constancy: [(10, 0)]
+1474_0-ContextAliasing: []
+
+.....
+-----
+Block: 1572_0
+1572_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f766520746f20746865207a65726f206164647265', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH2 0x7373', 'PUSH1 0xf0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1572_0-Stack size: 16 
+1572_0-Equals Mem:<< []>> 
+1572_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1572_0-Equals Sto:<< []>> 
+1572_0-NonEquals Sto: << []>> 
+1572_0-Useless: []
+1572_0-Constancy: [(10, 0)]
+1572_0-ContextAliasing: []
+
+.....
+-----
+Block: 1885
+1885Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e736665722066726f6d20746865207a65726f206164', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x6472657373', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1885-Stack size: 11 
+1885-Equals Mem:<< []>> 
+1885-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1885-Equals Sto:<< []>> 
+1885-NonEquals Sto: << []>> 
+1885-Useless: []
+1885-Constancy: [(5, 0)]
+1885-ContextAliasing: []
+
+.....
+-----
+Block: 1985
+1985Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x23', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220746f20746865207a65726f2061646472', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH3 0x657373', 'PUSH1 0xe8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1985-Stack size: 11 
+1985-Equals Mem:<< []>> 
+1985-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1985-Equals Sto:<< []>> 
+1985-NonEquals Sto: << []>> 
+1985-Useless: []
+1985-Constancy: [(5, 0)]
+1985-ContextAliasing: []
+
+.....
+-----
+Block: 2474
+2474Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'DUP1', 'PUSH2 0x09e7', 'JUMPI']>> 
+2474-Stack size: 15 
+2474-Equals Mem:<< []>> 
+2474-NonEquals Mem: << [<11,14>]>> 
+2474-Equals Sto:<< []>> 
+2474-NonEquals Sto: << []>> 
+2474-Useless: []
+2474-Constancy: [(9, 0)]
+2474-ContextAliasing: []
+
+.....
+-----
+Block: 2507
+2507Instr:<<['POP', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND']>> 
+2507-Stack size: 16 
+2507-Equals Mem:<< []>> 
+2507-NonEquals Mem: << [<11,14>]>> 
+2507-Equals Sto:<< []>> 
+2507-NonEquals Sto: << []>> 
+2507-Useless: []
+2507-Constancy: [(10, 0)]
+2507-ContextAliasing: []
+
+.....
+-----
+Block: 2556
+2556Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH0', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x44', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2556-Stack size: 15 
+2556-Equals Mem:<< []>> 
+2556-NonEquals Mem: << [<6,1>, <11,1>, <16,1>]>> 
+2556-Equals Sto:<< []>> 
+2556-NonEquals Sto: << []>> 
+2556-Useless: []
+2556-Constancy: [(9, 0)]
+2556-ContextAliasing: []
+
+.....
+-----
+Block: 2079
+2079Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'DUP2', 'DUP2', 'LT', 'ISZERO', 'PUSH2 0x0896', 'JUMPI']>> 
+2079-Stack size: 11 
+2079-Equals Mem:<< []>> 
+2079-NonEquals Mem: << [<11,14>]>> 
+2079-Equals Sto:<< []>> 
+2079-NonEquals Sto: << []>> 
+2079-Useless: []
+2079-Constancy: [(5, 0)]
+2079-ContextAliasing: []
+
+.....
+-----
+Block: 2112
+2112Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220616d6f756e7420657863656564732062', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x616c616e6365', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2112-Stack size: 12 
+2112-Equals Mem:<< []>> 
+2112-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+2112-Equals Sto:<< []>> 
+2112-NonEquals Sto: << []>> 
+2112-Useless: []
+2112-Constancy: [(6, 0)]
+2112-ContextAliasing: []
+
+.....
+-----
+Block: 2198
+2198Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP6', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP3', 'KECCAK256', 'DUP7', 'DUP7', 'SUB', 'SWAP1', 'SSTORE', 'SWAP3', 'DUP7', 'AND', 'DUP1', 'DUP3', 'MSTORE', 'SWAP1', 'DUP4', 'SWAP1', 'KECCAK256', 'DUP1', 'SLOAD', 'DUP7', 'ADD', 'SWAP1', 'SSTORE', 'SWAP2', 'MLOAD', 'PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef', 'SWAP1', 'PUSH2 0x08f5', 'SWAP1', 'DUP7', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'SWAP1', 'JUMP']>> 
+2198-Stack size: 12 
+2198-Equals Mem:<< [<12,30>]>> 
+2198-NonEquals Mem: << [<12,42>, <12,15>, <12,49>, <15,42>, <15,30>, <15,49>, <30,42>, <30,49>, <49,19>, <49,34>, <49,42>, <19,42>, <34,42>]>> 
+2198-Equals Sto:<< [<24,36>, <24,40>, <36,40>]>> 
+2198-NonEquals Sto: << []>> 
+2198-Useless: []
+2198-Constancy: [(6, 0)]
+2198-ContextAliasing: []
+
+.....
+-----
+Block: 1142_12
+1142_12Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_12-Stack size: 5 
+1142_12-Equals Mem:<< []>> 
+1142_12-NonEquals Mem: << []>> 
+1142_12-Equals Sto:<< []>> 
+1142_12-NonEquals Sto: << []>> 
+1142_12-Useless: []
+1142_12-Constancy: []
+1142_12-ContextAliasing: []
+
+.....
+-----
+Block: 1142_11
+1142_11Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_11-Stack size: 4 
+1142_11-Equals Mem:<< []>> 
+1142_11-NonEquals Mem: << []>> 
+1142_11-Equals Sto:<< []>> 
+1142_11-NonEquals Sto: << []>> 
+1142_11-Useless: []
+1142_11-Constancy: []
+1142_11-ContextAliasing: []
+
+.....
+-----
+Block: 287
+287Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'RETURN']>> 
+287-Stack size: 2 
+287-Equals Mem:<< []>> 
+287-NonEquals Mem: << []>> 
+287-Equals Sto:<< []>> 
+287-NonEquals Sto: << []>> 
+287-Useless: []
+287-Constancy: []
+287-ContextAliasing: []
+
+.....
+-----
+Block: 1142_10
+1142_10Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_10-Stack size: 6 
+1142_10-Equals Mem:<< []>> 
+1142_10-NonEquals Mem: << []>> 
+1142_10-Equals Sto:<< []>> 
+1142_10-NonEquals Sto: << []>> 
+1142_10-Useless: []
+1142_10-Constancy: []
+1142_10-ContextAliasing: []
+
+.....
+-----
+Block: 1142
+1142Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142-Stack size: 11 
+1142-Equals Mem:<< []>> 
+1142-NonEquals Mem: << []>> 
+1142-Equals Sto:<< []>> 
+1142-NonEquals Sto: << []>> 
+1142-Useless: []
+1142-Constancy: [(6, 0)]
+1142-ContextAliasing: []
+
+.....
+-----
+Block: 1142_9
+1142_9Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_9-Stack size: 15 
+1142_9-Equals Mem:<< []>> 
+1142_9-NonEquals Mem: << []>> 
+1142_9-Equals Sto:<< []>> 
+1142_9-NonEquals Sto: << []>> 
+1142_9-Useless: []
+1142_9-Constancy: [(10, 0)]
+1142_9-ContextAliasing: []
+
+.....
+-----
+Block: 1142_8
+1142_8Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_8-Stack size: 12 
+1142_8-Equals Mem:<< []>> 
+1142_8-NonEquals Mem: << []>> 
+1142_8-Equals Sto:<< []>> 
+1142_8-NonEquals Sto: << []>> 
+1142_8-Useless: []
+1142_8-Constancy: [(7, 0)]
+1142_8-ContextAliasing: []
+
+.....
+-----
+Block: 1142_7
+1142_7Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_7-Stack size: 8 
+1142_7-Equals Mem:<< []>> 
+1142_7-NonEquals Mem: << []>> 
+1142_7-Equals Sto:<< []>> 
+1142_7-NonEquals Sto: << []>> 
+1142_7-Useless: []
+1142_7-Constancy: [(3, 0)]
+1142_7-ContextAliasing: []
+
+.....
+-----
+Block: 1142_2
+1142_2Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_2-Stack size: 12 
+1142_2-Equals Mem:<< []>> 
+1142_2-NonEquals Mem: << []>> 
+1142_2-Equals Sto:<< []>> 
+1142_2-NonEquals Sto: << []>> 
+1142_2-Useless: []
+1142_2-Constancy: []
+1142_2-ContextAliasing: []
+
+.....
+-----
+Block: 1142_6
+1142_6Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_6-Stack size: 6 
+1142_6-Equals Mem:<< []>> 
+1142_6-NonEquals Mem: << []>> 
+1142_6-Equals Sto:<< []>> 
+1142_6-NonEquals Sto: << []>> 
+1142_6-Useless: []
+1142_6-Constancy: []
+1142_6-ContextAliasing: []
+
+.....
+-----
+Block: 1142_5
+1142_5Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_5-Stack size: 4 
+1142_5-Equals Mem:<< []>> 
+1142_5-NonEquals Mem: << []>> 
+1142_5-Equals Sto:<< []>> 
+1142_5-NonEquals Sto: << []>> 
+1142_5-Useless: []
+1142_5-Constancy: []
+1142_5-ContextAliasing: []
+
+.....
+-----
+Block: 1142_4
+1142_4Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_4-Stack size: 13 
+1142_4-Equals Mem:<< []>> 
+1142_4-NonEquals Mem: << []>> 
+1142_4-Equals Sto:<< []>> 
+1142_4-NonEquals Sto: << []>> 
+1142_4-Useless: []
+1142_4-Constancy: [(7, 0)]
+1142_4-ContextAliasing: []
+
+.....
+-----
+Block: 1142_3
+1142_3Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_3-Stack size: 17 
+1142_3-Equals Mem:<< []>> 
+1142_3-NonEquals Mem: << []>> 
+1142_3-Equals Sto:<< []>> 
+1142_3-NonEquals Sto: << []>> 
+1142_3-Useless: []
+1142_3-Constancy: [(11, 0)]
+1142_3-ContextAliasing: []
+
+.....
+-----
+Block: 1142_1
+1142_1Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_1-Stack size: 16 
+1142_1-Equals Mem:<< []>> 
+1142_1-NonEquals Mem: << []>> 
+1142_1-Equals Sto:<< []>> 
+1142_1-NonEquals Sto: << []>> 
+1142_1-Useless: []
+1142_1-Constancy: [(10, 0)]
+1142_1-ContextAliasing: []
+
+.....
+-----
+Block: 1142_0
+1142_0Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_0-Stack size: 13 
+1142_0-Equals Mem:<< []>> 
+1142_0-NonEquals Mem: << []>> 
+1142_0-Equals Sto:<< []>> 
+1142_0-NonEquals Sto: << []>> 
+1142_0-Useless: []
+1142_0-Constancy: [(7, 0)]
+1142_0-ContextAliasing: []
+
+.....
+********************************** END
+Memory Analysis: 0.06314934097463265s
+
+*************************************************************
+File: PSY
+Build CFG: 0.08384852000745013s
+Slots analysis started!
+Slots analysis finished!
+Constants analysis finished!
+Starting offset memory analysis PSY
+Memory accesess analysis finished!
+
+
+GASOL: Useless accesses found: {}
+Free memory analyss finished
+
+
+SLOTS Contract PSY: 34
+Memory read accesses ContractPSY: 107
+Memory write accesses ContractPSY: 183
+********************************** INIT
+COMPACT CLONES: True
+CONTRACT: PSY
+-----
+Block: 2324_2
+2324_2Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324_2-Stack size: 4 
+2324_2-Equals Mem:<< []>> 
+2324_2-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+2324_2-Equals Sto:<< []>> 
+2324_2-NonEquals Sto: << []>> 
+2324_2-Useless: []
+2324_2-Constancy: []
+2324_2-ContextAliasing: []
+
+.....
+-----
+Block: 1361
+1361Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x646472657373', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1361-Stack size: 3 
+1361-Equals Mem:<< []>> 
+1361-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1361-Equals Sto:<< []>> 
+1361-NonEquals Sto: << []>> 
+1361-Useless: []
+1361-Constancy: []
+1361-ContextAliasing: []
+
+.....
+-----
+Block: 1296_2
+1296_2Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296_2-Stack size: 4 
+1296_2-Equals Mem:<< [<12,27>, <17,31>]>> 
+1296_2-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+1296_2-Equals Sto:<< []>> 
+1296_2-NonEquals Sto: << []>> 
+1296_2-Useless: []
+1296_2-Constancy: []
+1296_2-ContextAliasing: []
+
+.....
+-----
+Block: 335
+335Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+335-Stack size: 2 
+335-Equals Mem:<< []>> 
+335-NonEquals Mem: << [<5,2>]>> 
+335-Equals Sto:<< []>> 
+335-NonEquals Sto: << []>> 
+335-Useless: []
+335-Constancy: []
+335-ContextAliasing: []
+
+.....
+-----
+Block: 2324_1
+2324_1Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324_1-Stack size: 5 
+2324_1-Equals Mem:<< []>> 
+2324_1-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+2324_1-Equals Sto:<< []>> 
+2324_1-NonEquals Sto: << []>> 
+2324_1-Useless: []
+2324_1-Constancy: []
+2324_1-ContextAliasing: []
+
+.....
+-----
+Block: 3074_0
+3074_0Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x32', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3074_0-Stack size: 12 
+3074_0-Equals Mem:<< []>> 
+3074_0-NonEquals Mem: << [<5,8>]>> 
+3074_0-Equals Sto:<< []>> 
+3074_0-NonEquals Sto: << []>> 
+3074_0-Useless: []
+3074_0-Constancy: [(4, 0)]
+3074_0-ContextAliasing: []
+
+.....
+-----
+Block: 1239
+1239Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'DUP2', 'ADD', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'PUSH1 0x40', 'ADD', 'PUSH0', 'KECCAK256', 'DUP1', 'SLOAD', 'PUSH1 0xff', 'NOT', 'AND', 'SWAP2', 'ISZERO', 'ISZERO', 'SWAP2', 'SWAP1', 'SWAP2', 'OR', 'SWAP1', 'SSTORE', 'DUP1', 'PUSH2 0x0508', 'DUP2', 'PUSH2 0x0c16', 'JUMP']>> 
+1239-Stack size: 9 
+1239-Equals Mem:<< []>> 
+1239-NonEquals Mem: << [<8,15>]>> 
+1239-Equals Sto:<< [<21,33>]>> 
+1239-NonEquals Sto: << []>> 
+1239-Useless: []
+1239-Constancy: [(1, 0)]
+1239-ContextAliasing: []
+
+.....
+-----
+Block: 3035_1
+3035_1Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3035_1-Stack size: 10 
+3035_1-Equals Mem:<< []>> 
+3035_1-NonEquals Mem: << [<5,8>]>> 
+3035_1-Equals Sto:<< []>> 
+3035_1-NonEquals Sto: << []>> 
+3035_1-Useless: []
+3035_1-Constancy: [(1, 0)]
+3035_1-ContextAliasing: []
+
+.....
+-----
+Block: 557
+557Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'SWAP1', 'JUMP']>> 
+557-Stack size: 3 
+557-Equals Mem:<< []>> 
+557-NonEquals Mem: << [<10,13>]>> 
+557-Equals Sto:<< []>> 
+557-NonEquals Sto: << []>> 
+557-Useless: []
+557-Constancy: []
+557-ContextAliasing: []
+
+.....
+-----
+Block: 315
+315Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'ISZERO', 'ISZERO', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+315-Stack size: 2 
+315-Equals Mem:<< []>> 
+315-NonEquals Mem: << [<7,2>]>> 
+315-Equals Sto:<< []>> 
+315-NonEquals Sto: << []>> 
+315-Useless: []
+315-Constancy: []
+315-ContextAliasing: []
+
+.....
+-----
+Block: 1885_0
+1885_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e736665722066726f6d20746865207a65726f206164', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x6472657373', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1885_0-Stack size: 10 
+1885_0-Equals Mem:<< []>> 
+1885_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1885_0-Equals Sto:<< []>> 
+1885_0-NonEquals Sto: << []>> 
+1885_0-Useless: []
+1885_0-Constancy: [(5, 0)]
+1885_0-ContextAliasing: []
+
+.....
+-----
+Block: 1985_0
+1985_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x23', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220746f20746865207a65726f2061646472', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH3 0x657373', 'PUSH1 0xe8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1985_0-Stack size: 10 
+1985_0-Equals Mem:<< []>> 
+1985_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1985_0-Equals Sto:<< []>> 
+1985_0-NonEquals Sto: << []>> 
+1985_0-Useless: []
+1985_0-Constancy: [(5, 0)]
+1985_0-ContextAliasing: []
+
+.....
+-----
+Block: 2474_0
+2474_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'DUP1', 'PUSH2 0x09e7', 'JUMPI']>> 
+2474_0-Stack size: 14 
+2474_0-Equals Mem:<< []>> 
+2474_0-NonEquals Mem: << [<11,14>]>> 
+2474_0-Equals Sto:<< []>> 
+2474_0-NonEquals Sto: << []>> 
+2474_0-Useless: []
+2474_0-Constancy: [(9, 0)]
+2474_0-ContextAliasing: []
+
+.....
+-----
+Block: 2507_0
+2507_0Instr:<<['POP', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND']>> 
+2507_0-Stack size: 15 
+2507_0-Equals Mem:<< []>> 
+2507_0-NonEquals Mem: << [<11,14>]>> 
+2507_0-Equals Sto:<< []>> 
+2507_0-NonEquals Sto: << []>> 
+2507_0-Useless: []
+2507_0-Constancy: [(10, 0)]
+2507_0-ContextAliasing: []
+
+.....
+-----
+Block: 2556_0
+2556_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH0', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x44', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2556_0-Stack size: 14 
+2556_0-Equals Mem:<< []>> 
+2556_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>]>> 
+2556_0-Equals Sto:<< []>> 
+2556_0-NonEquals Sto: << []>> 
+2556_0-Useless: []
+2556_0-Constancy: [(9, 0)]
+2556_0-ContextAliasing: []
+
+.....
+-----
+Block: 2079_0
+2079_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'DUP2', 'DUP2', 'LT', 'ISZERO', 'PUSH2 0x0896', 'JUMPI']>> 
+2079_0-Stack size: 10 
+2079_0-Equals Mem:<< []>> 
+2079_0-NonEquals Mem: << [<11,14>]>> 
+2079_0-Equals Sto:<< []>> 
+2079_0-NonEquals Sto: << []>> 
+2079_0-Useless: []
+2079_0-Constancy: [(5, 0)]
+2079_0-ContextAliasing: []
+
+.....
+-----
+Block: 2112_0
+2112_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220616d6f756e7420657863656564732062', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x616c616e6365', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2112_0-Stack size: 11 
+2112_0-Equals Mem:<< []>> 
+2112_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+2112_0-Equals Sto:<< []>> 
+2112_0-NonEquals Sto: << []>> 
+2112_0-Useless: []
+2112_0-Constancy: [(6, 0)]
+2112_0-ContextAliasing: []
+
+.....
+-----
+Block: 2198_0
+2198_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP6', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP3', 'KECCAK256', 'DUP7', 'DUP7', 'SUB', 'SWAP1', 'SSTORE', 'SWAP3', 'DUP7', 'AND', 'DUP1', 'DUP3', 'MSTORE', 'SWAP1', 'DUP4', 'SWAP1', 'KECCAK256', 'DUP1', 'SLOAD', 'DUP7', 'ADD', 'SWAP1', 'SSTORE', 'SWAP2', 'MLOAD', 'PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef', 'SWAP1', 'PUSH2 0x08f5', 'SWAP1', 'DUP7', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'SWAP1', 'JUMP']>> 
+2198_0-Stack size: 11 
+2198_0-Equals Mem:<< [<12,30>]>> 
+2198_0-NonEquals Mem: << [<12,42>, <12,15>, <12,49>, <15,42>, <15,30>, <15,49>, <30,42>, <30,49>, <49,19>, <49,34>, <49,42>, <19,42>, <34,42>]>> 
+2198_0-Equals Sto:<< [<24,36>, <24,40>, <36,40>]>> 
+2198_0-NonEquals Sto: << []>> 
+2198_0-Useless: []
+2198_0-Constancy: [(6, 0)]
+2198_0-ContextAliasing: []
+
+.....
+-----
+Block: 1296_1
+1296_1Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296_1-Stack size: 10 
+1296_1-Equals Mem:<< [<12,27>, <17,31>]>> 
+1296_1-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+1296_1-Equals Sto:<< []>> 
+1296_1-NonEquals Sto: << []>> 
+1296_1-Useless: []
+1296_1-Constancy: [(5, 0), (3, 0)]
+1296_1-ContextAliasing: []
+
+.....
+-----
+Block: 1061
+1061Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a2064656372656173656420616c6c6f77616e63652062656c6f77', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x207a65726f', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD']>> 
+1061-Stack size: 7 
+1061-Equals Mem:<< []>> 
+1061-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1061-Equals Sto:<< []>> 
+1061-NonEquals Sto: << []>> 
+1061-Useless: []
+1061-Constancy: [(2, 0)]
+1061-ContextAliasing: []
+
+.....
+-----
+Block: 1474_1
+1474_1Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f76652066726f6d20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1474_1-Stack size: 11 
+1474_1-Equals Mem:<< []>> 
+1474_1-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1474_1-Equals Sto:<< []>> 
+1474_1-NonEquals Sto: << []>> 
+1474_1-Useless: []
+1474_1-Constancy: [(6, 0)]
+1474_1-ContextAliasing: []
+
+.....
+-----
+Block: 1572_1
+1572_1Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f766520746f20746865207a65726f206164647265', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH2 0x7373', 'PUSH1 0xf0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1572_1-Stack size: 11 
+1572_1-Equals Mem:<< []>> 
+1572_1-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1572_1-Equals Sto:<< []>> 
+1572_1-NonEquals Sto: << []>> 
+1572_1-Useless: []
+1572_1-Constancy: [(6, 0)]
+1572_1-ContextAliasing: []
+
+.....
+-----
+Block: 2324_0
+2324_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324_0-Stack size: 5 
+2324_0-Equals Mem:<< []>> 
+2324_0-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+2324_0-Equals Sto:<< []>> 
+2324_0-NonEquals Sto: << []>> 
+2324_0-Useless: []
+2324_0-Constancy: []
+2324_0-ContextAliasing: []
+
+.....
+-----
+Block: 3074
+3074Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x32', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3074-Stack size: 12 
+3074-Equals Mem:<< []>> 
+3074-NonEquals Mem: << [<5,8>]>> 
+3074-Equals Sto:<< []>> 
+3074-NonEquals Sto: << []>> 
+3074-Useless: []
+3074-Constancy: [(6, 0), (4, 0)]
+3074-ContextAliasing: []
+
+.....
+-----
+Block: 975
+975Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'DUP2', 'ADD', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'PUSH1 0x40', 'ADD', 'PUSH0', 'KECCAK256', 'DUP1', 'SLOAD', 'PUSH1 0xff', 'NOT', 'AND', 'SWAP2', 'ISZERO', 'ISZERO', 'SWAP2', 'SWAP1', 'SWAP2', 'OR', 'SWAP1', 'SSTORE', 'DUP1', 'PUSH2 0x0400', 'DUP2', 'PUSH2 0x0c16', 'JUMP']>> 
+975-Stack size: 9 
+975-Equals Mem:<< []>> 
+975-NonEquals Mem: << [<8,15>]>> 
+975-Equals Sto:<< [<21,33>]>> 
+975-NonEquals Sto: << []>> 
+975-Useless: []
+975-Constancy: [(3, 0), (1, 0)]
+975-ContextAliasing: []
+
+.....
+-----
+Block: 3035_0
+3035_0Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3035_0-Stack size: 10 
+3035_0-Equals Mem:<< []>> 
+3035_0-NonEquals Mem: << [<5,8>]>> 
+3035_0-Equals Sto:<< []>> 
+3035_0-NonEquals Sto: << []>> 
+3035_0-Useless: []
+3035_0-Constancy: [(1, 0)]
+3035_0-ContextAliasing: []
+
+.....
+-----
+Block: 3010_0
+3010_0Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3010_0-Stack size: 8 
+3010_0-Equals Mem:<< []>> 
+3010_0-NonEquals Mem: << [<4,7>]>> 
+3010_0-Equals Sto:<< []>> 
+3010_0-NonEquals Sto: << []>> 
+3010_0-Useless: []
+3010_0-Constancy: [(5, 96)]
+3010_0-ContextAliasing: []
+
+.....
+-----
+Block: 658
+658Instr:<<['JUMPDEST', 'DUP1', 'PUSH1 0x1f', 'ADD', 'PUSH1 0x20', 'DUP1', 'SWAP2', 'DIV', 'MUL', 'PUSH1 0x20', 'ADD', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'ADD', 'PUSH1 0x40', 'MSTORE', 'DUP1', 'SWAP3', 'SWAP2', 'SWAP1', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'DUP3', 'DUP1', 'SLOAD', 'PUSH2 0x02be', 'SWAP1', 'PUSH2 0x0ba3', 'JUMP']>> 
+658-Stack size: 5 
+658-Equals Mem:<< [<17,12>]>> 
+658-NonEquals Mem: << [<17,24>, <24,12>]>> 
+658-Equals Sto:<< []>> 
+658-NonEquals Sto: << []>> 
+658-Useless: []
+658-Constancy: [(2, 96)]
+658-ContextAliasing: []
+
+.....
+-----
+Block: 3010
+3010Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3010-Stack size: 12 
+3010-Equals Mem:<< []>> 
+3010-NonEquals Mem: << [<4,7>]>> 
+3010-Equals Sto:<< []>> 
+3010-NonEquals Sto: << []>> 
+3010-Useless: []
+3010-Constancy: [(9, 96)]
+3010-ContextAliasing: []
+
+.....
+-----
+Block: 2588
+2588Instr:<<['JUMPDEST', 'PUSH0', 'PUSH1 0x20', 'DUP1', 'DUP4', 'MSTORE', 'DUP4', 'MLOAD', 'DUP1', 'DUP3', 'DUP6', 'ADD', 'MSTORE', 'PUSH0']>> 
+2588-Stack size: 4 
+2588-Equals Mem:<< []>> 
+2588-NonEquals Mem: << [<5,7>, <5,12>, <12,7>]>> 
+2588-Equals Sto:<< []>> 
+2588-NonEquals Sto: << []>> 
+2588-Useless: []
+2588-Constancy: []
+2588-ContextAliasing: []
+
+.....
+-----
+Block: 2612
+2612Instr:<<['DUP6', 'DUP2', 'ADD', 'DUP4', 'ADD', 'MLOAD', 'DUP6', 'DUP3', 'ADD', 'PUSH1 0x40', 'ADD', 'MSTORE', 'DUP3', 'ADD', 'PUSH2 0x0a2b', 'JUMP']>> 
+2612-Stack size: 8 
+2612-Equals Mem:<< []>> 
+2612-NonEquals Mem: << [<11,5>]>> 
+2612-Equals Sto:<< []>> 
+2612-NonEquals Sto: << []>> 
+2612-Useless: []
+2612-Constancy: [(3, 0), (2, 32)]
+2612-ContextAliasing: []
+
+.....
+-----
+Block: 452
+452Instr:<<['JUMPDEST', 'PUSH0', 'SLOAD', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP1', 'SWAP2', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+452-Stack size: 1 
+452-Equals Mem:<< []>> 
+452-NonEquals Mem: << [<14,4>]>> 
+452-Equals Sto:<< []>> 
+452-NonEquals Sto: << []>> 
+452-Useless: []
+452-Constancy: []
+452-ContextAliasing: []
+
+.....
+-----
+Block: 2324
+2324Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324-Stack size: 3 
+2324-Equals Mem:<< []>> 
+2324-NonEquals Mem: << [<6,1>, <13,1>, <17,1>, <22,1>]>> 
+2324-Equals Sto:<< []>> 
+2324-NonEquals Sto: << []>> 
+2324-Useless: []
+2324-Constancy: []
+2324-ContextAliasing: []
+
+.....
+-----
+Block: 416
+416Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+416-Stack size: 3 
+416-Equals Mem:<< []>> 
+416-NonEquals Mem: << [<10,13>]>> 
+416-Equals Sto:<< []>> 
+416-NonEquals Sto: << []>> 
+416-Useless: []
+416-Constancy: []
+416-ContextAliasing: []
+
+.....
+-----
+Block: 1296_0
+1296_0Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296_0-Stack size: 13 
+1296_0-Equals Mem:<< [<12,27>, <17,31>]>> 
+1296_0-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+1296_0-Equals Sto:<< []>> 
+1296_0-NonEquals Sto: << []>> 
+1296_0-Useless: []
+1296_0-Constancy: [(8, 0)]
+1296_0-ContextAliasing: []
+
+.....
+-----
+Block: 3035
+3035Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3035-Stack size: 14 
+3035-Equals Mem:<< []>> 
+3035-NonEquals Mem: << [<5,8>]>> 
+3035-Equals Sto:<< []>> 
+3035-NonEquals Sto: << []>> 
+3035-Useless: []
+3035-Constancy: [(9, 0)]
+3035-ContextAliasing: []
+
+.....
+-----
+Block: 1474
+1474Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f76652066726f6d20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1474-Stack size: 10 
+1474-Equals Mem:<< []>> 
+1474-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1474-Equals Sto:<< []>> 
+1474-NonEquals Sto: << []>> 
+1474-Useless: []
+1474-Constancy: [(5, 0)]
+1474-ContextAliasing: []
+
+.....
+-----
+Block: 1572
+1572Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f766520746f20746865207a65726f206164647265', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH2 0x7373', 'PUSH1 0xf0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1572-Stack size: 10 
+1572-Equals Mem:<< []>> 
+1572-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1572-Equals Sto:<< []>> 
+1572-NonEquals Sto: << []>> 
+1572-Useless: []
+1572-Constancy: [(5, 0)]
+1572-ContextAliasing: []
+
+.....
+-----
+Block: 368
+368Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x12', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+368-Stack size: 1 
+368-Equals Mem:<< []>> 
+368-NonEquals Mem: << [<5,2>]>> 
+368-Equals Sto:<< []>> 
+368-NonEquals Sto: << []>> 
+368-Useless: []
+368-Constancy: []
+368-ContextAliasing: []
+
+.....
+-----
+Block: 1296
+1296Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296-Stack size: 15 
+1296-Equals Mem:<< [<12,27>, <17,31>]>> 
+1296-NonEquals Mem: << [<12,17>, <12,31>, <17,27>, <27,31>]>> 
+1296-Equals Sto:<< []>> 
+1296-NonEquals Sto: << []>> 
+1296-Useless: []
+1296-Constancy: [(9, 0), (3, 0)]
+1296-ContextAliasing: []
+
+.....
+-----
+Block: 1780
+1780Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x1d', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20696e73756666696369656e7420616c6c6f77616e6365000000', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1780-Stack size: 12 
+1780-Equals Mem:<< []>> 
+1780-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>]>> 
+1780-Equals Sto:<< []>> 
+1780-NonEquals Sto: << []>> 
+1780-Useless: []
+1780-Constancy: [(6, 0)]
+1780-ContextAliasing: []
+
+.....
+-----
+Block: 1474_0
+1474_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f76652066726f6d20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1474_0-Stack size: 16 
+1474_0-Equals Mem:<< []>> 
+1474_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1474_0-Equals Sto:<< []>> 
+1474_0-NonEquals Sto: << []>> 
+1474_0-Useless: []
+1474_0-Constancy: [(10, 0)]
+1474_0-ContextAliasing: []
+
+.....
+-----
+Block: 1572_0
+1572_0Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f766520746f20746865207a65726f206164647265', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH2 0x7373', 'PUSH1 0xf0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1572_0-Stack size: 16 
+1572_0-Equals Mem:<< []>> 
+1572_0-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1572_0-Equals Sto:<< []>> 
+1572_0-NonEquals Sto: << []>> 
+1572_0-Useless: []
+1572_0-Constancy: [(10, 0)]
+1572_0-ContextAliasing: []
+
+.....
+-----
+Block: 1885
+1885Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e736665722066726f6d20746865207a65726f206164', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x6472657373', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1885-Stack size: 11 
+1885-Equals Mem:<< []>> 
+1885-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1885-Equals Sto:<< []>> 
+1885-NonEquals Sto: << []>> 
+1885-Useless: []
+1885-Constancy: [(5, 0)]
+1885-ContextAliasing: []
+
+.....
+-----
+Block: 1985
+1985Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x23', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220746f20746865207a65726f2061646472', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH3 0x657373', 'PUSH1 0xe8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1985-Stack size: 11 
+1985-Equals Mem:<< []>> 
+1985-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1985-Equals Sto:<< []>> 
+1985-NonEquals Sto: << []>> 
+1985-Useless: []
+1985-Constancy: [(5, 0)]
+1985-ContextAliasing: []
+
+.....
+-----
+Block: 2474
+2474Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'DUP1', 'PUSH2 0x09e7', 'JUMPI']>> 
+2474-Stack size: 15 
+2474-Equals Mem:<< []>> 
+2474-NonEquals Mem: << [<11,14>]>> 
+2474-Equals Sto:<< []>> 
+2474-NonEquals Sto: << []>> 
+2474-Useless: []
+2474-Constancy: [(9, 0)]
+2474-ContextAliasing: []
+
+.....
+-----
+Block: 2507
+2507Instr:<<['POP', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND']>> 
+2507-Stack size: 16 
+2507-Equals Mem:<< []>> 
+2507-NonEquals Mem: << [<11,14>]>> 
+2507-Equals Sto:<< []>> 
+2507-NonEquals Sto: << []>> 
+2507-Useless: []
+2507-Constancy: [(10, 0)]
+2507-ContextAliasing: []
+
+.....
+-----
+Block: 2556
+2556Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH0', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x44', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2556-Stack size: 15 
+2556-Equals Mem:<< []>> 
+2556-NonEquals Mem: << [<6,1>, <11,1>, <16,1>]>> 
+2556-Equals Sto:<< []>> 
+2556-NonEquals Sto: << []>> 
+2556-Useless: []
+2556-Constancy: [(9, 0)]
+2556-ContextAliasing: []
+
+.....
+-----
+Block: 2079
+2079Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'DUP2', 'DUP2', 'LT', 'ISZERO', 'PUSH2 0x0896', 'JUMPI']>> 
+2079-Stack size: 11 
+2079-Equals Mem:<< []>> 
+2079-NonEquals Mem: << [<11,14>]>> 
+2079-Equals Sto:<< []>> 
+2079-NonEquals Sto: << []>> 
+2079-Useless: []
+2079-Constancy: [(5, 0)]
+2079-ContextAliasing: []
+
+.....
+-----
+Block: 2112
+2112Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220616d6f756e7420657863656564732062', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x616c616e6365', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2112-Stack size: 12 
+2112-Equals Mem:<< []>> 
+2112-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+2112-Equals Sto:<< []>> 
+2112-NonEquals Sto: << []>> 
+2112-Useless: []
+2112-Constancy: [(6, 0)]
+2112-ContextAliasing: []
+
+.....
+-----
+Block: 2198
+2198Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP6', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP3', 'KECCAK256', 'DUP7', 'DUP7', 'SUB', 'SWAP1', 'SSTORE', 'SWAP3', 'DUP7', 'AND', 'DUP1', 'DUP3', 'MSTORE', 'SWAP1', 'DUP4', 'SWAP1', 'KECCAK256', 'DUP1', 'SLOAD', 'DUP7', 'ADD', 'SWAP1', 'SSTORE', 'SWAP2', 'MLOAD', 'PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef', 'SWAP1', 'PUSH2 0x08f5', 'SWAP1', 'DUP7', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'SWAP1', 'JUMP']>> 
+2198-Stack size: 12 
+2198-Equals Mem:<< [<12,30>]>> 
+2198-NonEquals Mem: << [<12,42>, <12,15>, <12,49>, <15,42>, <15,30>, <15,49>, <30,42>, <30,49>, <49,19>, <49,34>, <49,42>, <19,42>, <34,42>]>> 
+2198-Equals Sto:<< [<24,36>, <24,40>, <36,40>]>> 
+2198-NonEquals Sto: << []>> 
+2198-Useless: []
+2198-Constancy: [(6, 0)]
+2198-ContextAliasing: []
+
+.....
+-----
+Block: 1142_12
+1142_12Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_12-Stack size: 5 
+1142_12-Equals Mem:<< []>> 
+1142_12-NonEquals Mem: << []>> 
+1142_12-Equals Sto:<< []>> 
+1142_12-NonEquals Sto: << []>> 
+1142_12-Useless: []
+1142_12-Constancy: []
+1142_12-ContextAliasing: []
+
+.....
+-----
+Block: 1142_11
+1142_11Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_11-Stack size: 4 
+1142_11-Equals Mem:<< []>> 
+1142_11-NonEquals Mem: << []>> 
+1142_11-Equals Sto:<< []>> 
+1142_11-NonEquals Sto: << []>> 
+1142_11-Useless: []
+1142_11-Constancy: []
+1142_11-ContextAliasing: []
+
+.....
+-----
+Block: 287
+287Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'RETURN']>> 
+287-Stack size: 2 
+287-Equals Mem:<< []>> 
+287-NonEquals Mem: << []>> 
+287-Equals Sto:<< []>> 
+287-NonEquals Sto: << []>> 
+287-Useless: []
+287-Constancy: []
+287-ContextAliasing: []
+
+.....
+-----
+Block: 1142_10
+1142_10Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_10-Stack size: 6 
+1142_10-Equals Mem:<< []>> 
+1142_10-NonEquals Mem: << []>> 
+1142_10-Equals Sto:<< []>> 
+1142_10-NonEquals Sto: << []>> 
+1142_10-Useless: []
+1142_10-Constancy: []
+1142_10-ContextAliasing: []
+
+.....
+-----
+Block: 1142
+1142Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142-Stack size: 11 
+1142-Equals Mem:<< []>> 
+1142-NonEquals Mem: << []>> 
+1142-Equals Sto:<< []>> 
+1142-NonEquals Sto: << []>> 
+1142-Useless: []
+1142-Constancy: [(6, 0)]
+1142-ContextAliasing: []
+
+.....
+-----
+Block: 1142_9
+1142_9Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_9-Stack size: 15 
+1142_9-Equals Mem:<< []>> 
+1142_9-NonEquals Mem: << []>> 
+1142_9-Equals Sto:<< []>> 
+1142_9-NonEquals Sto: << []>> 
+1142_9-Useless: []
+1142_9-Constancy: [(10, 0)]
+1142_9-ContextAliasing: []
+
+.....
+-----
+Block: 1142_8
+1142_8Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_8-Stack size: 12 
+1142_8-Equals Mem:<< []>> 
+1142_8-NonEquals Mem: << []>> 
+1142_8-Equals Sto:<< []>> 
+1142_8-NonEquals Sto: << []>> 
+1142_8-Useless: []
+1142_8-Constancy: [(7, 0)]
+1142_8-ContextAliasing: []
+
+.....
+-----
+Block: 1142_7
+1142_7Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_7-Stack size: 8 
+1142_7-Equals Mem:<< []>> 
+1142_7-NonEquals Mem: << []>> 
+1142_7-Equals Sto:<< []>> 
+1142_7-NonEquals Sto: << []>> 
+1142_7-Useless: []
+1142_7-Constancy: [(3, 0)]
+1142_7-ContextAliasing: []
+
+.....
+-----
+Block: 1142_2
+1142_2Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_2-Stack size: 12 
+1142_2-Equals Mem:<< []>> 
+1142_2-NonEquals Mem: << []>> 
+1142_2-Equals Sto:<< []>> 
+1142_2-NonEquals Sto: << []>> 
+1142_2-Useless: []
+1142_2-Constancy: []
+1142_2-ContextAliasing: []
+
+.....
+-----
+Block: 1142_6
+1142_6Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_6-Stack size: 6 
+1142_6-Equals Mem:<< []>> 
+1142_6-NonEquals Mem: << []>> 
+1142_6-Equals Sto:<< []>> 
+1142_6-NonEquals Sto: << []>> 
+1142_6-Useless: []
+1142_6-Constancy: []
+1142_6-ContextAliasing: []
+
+.....
+-----
+Block: 1142_5
+1142_5Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_5-Stack size: 4 
+1142_5-Equals Mem:<< []>> 
+1142_5-NonEquals Mem: << []>> 
+1142_5-Equals Sto:<< []>> 
+1142_5-NonEquals Sto: << []>> 
+1142_5-Useless: []
+1142_5-Constancy: []
+1142_5-ContextAliasing: []
+
+.....
+-----
+Block: 1142_4
+1142_4Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_4-Stack size: 13 
+1142_4-Equals Mem:<< []>> 
+1142_4-NonEquals Mem: << []>> 
+1142_4-Equals Sto:<< []>> 
+1142_4-NonEquals Sto: << []>> 
+1142_4-Useless: []
+1142_4-Constancy: [(7, 0)]
+1142_4-ContextAliasing: []
+
+.....
+-----
+Block: 1142_3
+1142_3Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_3-Stack size: 17 
+1142_3-Equals Mem:<< []>> 
+1142_3-NonEquals Mem: << []>> 
+1142_3-Equals Sto:<< []>> 
+1142_3-NonEquals Sto: << []>> 
+1142_3-Useless: []
+1142_3-Constancy: [(11, 0)]
+1142_3-ContextAliasing: []
+
+.....
+-----
+Block: 1142_1
+1142_1Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_1-Stack size: 16 
+1142_1-Equals Mem:<< []>> 
+1142_1-NonEquals Mem: << []>> 
+1142_1-Equals Sto:<< []>> 
+1142_1-NonEquals Sto: << []>> 
+1142_1-Useless: []
+1142_1-Constancy: [(10, 0)]
+1142_1-ContextAliasing: []
+
+.....
+-----
+Block: 1142_0
+1142_0Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142_0-Stack size: 13 
+1142_0-Equals Mem:<< []>> 
+1142_0-NonEquals Mem: << []>> 
+1142_0-Equals Sto:<< []>> 
+1142_0-NonEquals Sto: << []>> 
+1142_0-Useless: []
+1142_0-Constancy: [(7, 0)]
+1142_0-ContextAliasing: []
+
+.....
+********************************** END
+Memory Analysis: 0.07135543302865699s
+
+*************************************************************
+FILERES: 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20;187;330;31;79;54;6;0.1475553199998103
+FILERES: 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY;187;330;31;79;54;6;0.15756861900445074
+
+
+Aux path: /tmp/0x00//ethir_f2f4ae572916423db9d9cc7552154eea
+The files generated by EthIR are stored in the following directory: /tmp/0x00/costabs/
+Block: 1361
+1361Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x646472657373', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1361-Stack size: 3 
+1361-Equals Mem:<< []>> 
+1361-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1361-Equals Sto:<< []>> 
+1361-NonEquals Sto: << []>> 
+1361-Useless: []
+1361-Constancy: []
+1361-ContextAliasing: []
+
+Block: 335
+335Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+335-Stack size: 2 
+335-Equals Mem:<< []>> 
+335-NonEquals Mem: << [<5,2>]>> 
+335-Equals Sto:<< []>> 
+335-NonEquals Sto: << []>> 
+335-Useless: []
+335-Constancy: []
+335-ContextAliasing: []
+
+Block: 1239
+1239Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'DUP2', 'ADD', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'PUSH1 0x40', 'ADD', 'PUSH0', 'KECCAK256', 'DUP1', 'SLOAD', 'PUSH1 0xff', 'NOT', 'AND', 'SWAP2', 'ISZERO', 'ISZERO', 'SWAP2', 'SWAP1', 'SWAP2', 'OR', 'SWAP1', 'SSTORE', 'DUP1', 'PUSH2 0x0508', 'DUP2', 'PUSH2 0x0c16', 'JUMP']>> 
+1239-Stack size: 9 
+1239-Equals Mem:<< []>> 
+1239-NonEquals Mem: << [<8,15>]>> 
+1239-Equals Sto:<< [<21,33>]>> 
+1239-NonEquals Sto: << []>> 
+1239-Useless: []
+1239-Constancy: [(1, 0)]
+1239-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+[RULE]: Evaluate expression ('s(3)', '32', '+')
+[RULE]: Evaluate expression ('64', 's(3)', '+')
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), (('s(10)', 's(12)', 'sstore'), 2)]
+Storage dep: [(1, 2)]
+Storage dep simplified: [(1, 2)]
+Memory order: [(('s(3)', 's(5)', 'mstore'), 2), (('32', 's(2)', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2), (0, 1)]
+Memory dep simplified: [(1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), (('s(10)', 's(12)', 'sstore'), 2)]
+Storage dep: [(1, 2)]
+Storage dep simplified: [(1, 2)]
+Memory order: [(('0', 's(5)', 'mstore'), 2), (('32', 's(2)', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+********************IT*********************
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('s(3)', '32', '+'), 2), (('64', 's(3)', '+'), 2), (('0', 's(9)', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0508 DUP2 PUSH2 0x0c16 JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0508 DUP2 PUSH2 0x0c16 JUMP
+
+Optimized code stored in /tmp/0x00/ERC20_1239_optimized.txt
+Optimality results stored in /tmp/0x00/ERC20_1239_statistics.csv
+
+Estimated initial gas: 5140
+Estimated gas optimized: 5140
+
+Estimated initial size in bytes: 49
+Estimated size optimized in bytes: 49
+
+Initial number of instructions: 39
+Final number of instructions: 39
+
+GREENRES: 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_1239;0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol;ERC20;1239;2;True;False;False;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0508 DUP2 PUSH2 0x0c16 JUMP;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0508 DUP2 PUSH2 0x0c16 JUMP;5140;49;39;5140;49;39;0;0;0;True;True;False;True;2.208939849981107;5;2;5000;5000
+
+Block: 557
+557Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'SWAP1', 'JUMP']>> 
+557-Stack size: 3 
+557-Equals Mem:<< []>> 
+557-NonEquals Mem: << [<10,13>]>> 
+557-Equals Sto:<< []>> 
+557-NonEquals Sto: << []>> 
+557-Useless: []
+557-Constancy: []
+557-ContextAliasing: []
+
+Block: 315
+315Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'ISZERO', 'ISZERO', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+315-Stack size: 2 
+315-Equals Mem:<< []>> 
+315-NonEquals Mem: << [<7,2>]>> 
+315-Equals Sto:<< []>> 
+315-NonEquals Sto: << []>> 
+315-Useless: []
+315-Constancy: []
+315-ContextAliasing: []
+
+Block: 1061
+1061Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a2064656372656173656420616c6c6f77616e63652062656c6f77', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x207a65726f', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD']>> 
+1061-Stack size: 7 
+1061-Equals Mem:<< []>> 
+1061-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1061-Equals Sto:<< []>> 
+1061-NonEquals Sto: << []>> 
+1061-Useless: []
+1061-Constancy: [(2, 0)]
+1061-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('216', '139492422255', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(2)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(5)', '32', 'mstore'), 2), (('s(7)', '37', 'mstore'), 2), (('s(9)', '31354931781638678506476475496475743842680577777870365728514456330491174612855', 'mstore'), 2), (('s(11)', '14690266658072097593480850647027335513285713462661904985951319567533531463680', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(2)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(5)', '32', 'mstore'), 2), (('s(7)', '37', 'mstore'), 2), (('s(9)', '31354931781638678506476475496475743842680577777870365728514456330491174612855', 'mstore'), 2), (('s(11)', '14690266658072097593480850647027335513285713462661904985951319567533531463680', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(2)', '+'), 2), (('s(2)', '4', '+'), 2), (('s(2)', '36', '+'), 2), (('s(2)', '68', '+'), 2), (('s(2)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(2)', '+'), 2), (('s(2)', '4', '+'), 2), (('s(2)', '36', '+'), 2), (('s(2)', '68', '+'), 2), (('s(2)', '100', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_1061 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 3074
+3074Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x32', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3074-Stack size: 12 
+3074-Equals Mem:<< []>> 
+3074-NonEquals Mem: << [<5,8>]>> 
+3074-Equals Sto:<< []>> 
+3074-NonEquals Sto: << []>> 
+3074-Useless: []
+3074-Constancy: [(4, 0)]
+3074-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('224', '1313373041', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', '35408467139433450592217433187231851964531694900788300625387963629091585785856', 'mstore'), 2), (('4', '50', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', '35408467139433450592217433187231851964531694900788300625387963629091585785856', 'mstore'), 2), (('4', '50', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+********************IT*********************
+SFS with rule: isolated_block_0_0_input.json
+{}
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_3074 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 975
+975Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'DUP2', 'ADD', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'PUSH1 0x40', 'ADD', 'PUSH0', 'KECCAK256', 'DUP1', 'SLOAD', 'PUSH1 0xff', 'NOT', 'AND', 'SWAP2', 'ISZERO', 'ISZERO', 'SWAP2', 'SWAP1', 'SWAP2', 'OR', 'SWAP1', 'SSTORE', 'DUP1', 'PUSH2 0x0400', 'DUP2', 'PUSH2 0x0c16', 'JUMP']>> 
+975-Stack size: 9 
+975-Equals Mem:<< []>> 
+975-NonEquals Mem: << [<8,15>]>> 
+975-Equals Sto:<< [<21,33>]>> 
+975-NonEquals Sto: << []>> 
+975-Useless: []
+975-Constancy: [(3, 0), (1, 0)]
+975-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+[RULE]: Evaluate expression ('s(3)', '32', '+')
+[RULE]: Evaluate expression ('64', 's(3)', '+')
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), (('s(10)', 's(12)', 'sstore'), 2)]
+Storage dep: [(1, 2)]
+Storage dep simplified: [(1, 2)]
+Memory order: [(('s(3)', 's(5)', 'mstore'), 2), (('32', 's(2)', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2), (0, 1)]
+Memory dep simplified: [(1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), (('s(10)', 's(12)', 'sstore'), 2)]
+Storage dep: [(1, 2)]
+Storage dep simplified: [(1, 2)]
+Memory order: [(('0', 's(5)', 'mstore'), 2), (('32', 's(2)', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+[RULE]: Simplification rule type 1: {'id': 'OR_0', 'opcode': '17', 'disasm': 'OR', 'inpt_sk': [0, 's(13)'], 'outpt_sk': ['s(12)'], 'push': False, 'gas': 3, 'commutative': True, 'storage': False, 'size': 1}
+********************IT*********************
+********************IT*********************
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(16)', 'and'), 2), ((0, 's(13)', 'or'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('s(3)', '32', '+'), 2), (('64', 's(3)', '+'), 2), (('0', 's(9)', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(16)', 'and'), 2), ((0, 's(13)', 'or'), 2)]
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(16)', 'and'), 2), ((0, 's(13)', 'or'), 2)]
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0400 DUP2 PUSH2 0x0c16 JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0400 DUP2 PUSH2 0x0c16 JUMP
+
+Optimized code stored in /tmp/0x00/ERC20_975_optimized.txt
+Optimality results stored in /tmp/0x00/ERC20_975_statistics.csv
+
+Estimated initial gas: 5140
+Estimated gas optimized: 5140
+
+Estimated initial size in bytes: 49
+Estimated size optimized in bytes: 49
+
+Initial number of instructions: 39
+Final number of instructions: 39
+
+GREENRES: 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_975;0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol;ERC20;975;2;True;False;False;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0400 DUP2 PUSH2 0x0c16 JUMP;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0400 DUP2 PUSH2 0x0c16 JUMP;5140;49;39;5140;49;39;0;0;0;True;True;False;True;2.1390649240347557;8;2;5000;5000
+
+Block: 658
+658Instr:<<['JUMPDEST', 'DUP1', 'PUSH1 0x1f', 'ADD', 'PUSH1 0x20', 'DUP1', 'SWAP2', 'DIV', 'MUL', 'PUSH1 0x20', 'ADD', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'ADD', 'PUSH1 0x40', 'MSTORE', 'DUP1', 'SWAP3', 'SWAP2', 'SWAP1', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'DUP3', 'DUP1', 'SLOAD', 'PUSH2 0x02be', 'SWAP1', 'PUSH2 0x0ba3', 'JUMP']>> 
+658-Stack size: 5 
+658-Equals Mem:<< [<17,12>]>> 
+658-NonEquals Mem: << [<17,24>, <24,12>]>> 
+658-Equals Sto:<< []>> 
+658-NonEquals Sto: << []>> 
+658-Useless: []
+658-Constancy: [(2, 96)]
+658-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+{28: ((('s(0)', 'sload0'), 1), 0)}
+Storage order: [(('s(0)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('64', 's(12)', 'mstore'), 2), (('s(10)', 's(1)', 'mstore'), 2)]
+Memory dep: [(1, 2), (0, 1), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: [(('s(0)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('64', 's(12)', 'mstore'), 2), (('s(10)', 's(1)', 'mstore'), 2)]
+Memory dep: [(1, 2), (0, 1), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('s(0)', 'sload0'), 1)
+sload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+{28: ((('s(0)', 'sload0'), 1), 0)}
+(('s(0)', 'sload0'), 1)
+sload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_658 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 3010
+3010Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3010-Stack size: 8 
+3010-Equals Mem:<< []>> 
+3010-NonEquals Mem: << [<4,7>]>> 
+3010-Equals Sto:<< []>> 
+3010-NonEquals Sto: << []>> 
+3010-Useless: []
+3010-Constancy: []
+3010-ContextAliasing: []
+
+Block: 2588
+2588Instr:<<['JUMPDEST', 'PUSH0', 'PUSH1 0x20', 'DUP1', 'DUP4', 'MSTORE', 'DUP4', 'MLOAD', 'DUP1', 'DUP3', 'DUP6', 'ADD', 'MSTORE', 'PUSH0']>> 
+2588-Stack size: 4 
+2588-Equals Mem:<< []>> 
+2588-NonEquals Mem: << [<5,7>, <5,12>, <12,7>]>> 
+2588-Equals Sto:<< []>> 
+2588-NonEquals Sto: << []>> 
+2588-Useless: []
+2588-Constancy: []
+2588-ContextAliasing: []
+
+Block: 2612
+2612Instr:<<['DUP6', 'DUP2', 'ADD', 'DUP4', 'ADD', 'MLOAD', 'DUP6', 'DUP3', 'ADD', 'PUSH1 0x40', 'ADD', 'MSTORE', 'DUP3', 'ADD', 'PUSH2 0x0a2b', 'JUMP']>> 
+2612-Stack size: 8 
+2612-Equals Mem:<< []>> 
+2612-NonEquals Mem: << [<11,5>]>> 
+2612-Equals Sto:<< []>> 
+2612-NonEquals Sto: << []>> 
+2612-Useless: []
+2612-Constancy: [(3, 0), (2, 32)]
+2612-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('s(10)', 'mload0'), 1), (('s(8)', 's(12)', 'mstore'), 2)]
+Memory dep: [(0, 1)]
+Memory dep simplified: [(0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('s(10)', 'mload0'), 1), (('s(8)', 's(12)', 'mstore'), 2)]
+Memory dep: [(0, 1)]
+Memory dep simplified: [(0, 1)]
+********************IT*********************
+********************IT*********************
+(('s(10)', 'mload0'), 1)
+mload0
+[(('32', 's(5)', '+'), 2), (('s(5)', 's(1)', '+'), 2), (('64', 's(9)', '+'), 2), (('s(5)', 's(0)', '+'), 2), (('32', 's(11)', '+'), 2), (('s(10)', 'mload0'), 1)]
+{}
+(('s(10)', 'mload0'), 1)
+mload0
+[(('s(3)', 's(5)', '+'), 2), (('s(5)', 's(1)', '+'), 2), (('64', 's(9)', '+'), 2), (('s(5)', 's(0)', '+'), 2), (('s(3)', 's(11)', '+'), 2), (('s(10)', 'mload0'), 1)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_2612 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 452
+452Instr:<<['JUMPDEST', 'PUSH0', 'SLOAD', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP1', 'SWAP2', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+452-Stack size: 1 
+452-Equals Mem:<< []>> 
+452-NonEquals Mem: << [<14,4>]>> 
+452-Equals Sto:<< []>> 
+452-NonEquals Sto: << []>> 
+452-Useless: []
+452-Constancy: []
+452-ContextAliasing: []
+
+Block: 2324
+2324Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324-Stack size: 3 
+2324-Equals Mem:<< []>> 
+2324-NonEquals Mem: << [<17,1>, <6,1>, <13,1>, <22,1>]>> 
+2324-Equals Sto:<< []>> 
+2324-NonEquals Sto: << []>> 
+2324-Useless: []
+2324-Constancy: []
+2324-ContextAliasing: []
+
+Block: 416
+416Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+416-Stack size: 3 
+416-Equals Mem:<< []>> 
+416-NonEquals Mem: << [<10,13>]>> 
+416-Equals Sto:<< []>> 
+416-NonEquals Sto: << []>> 
+416-Useless: []
+416-Constancy: []
+416-ContextAliasing: []
+
+Block: 3035
+3035Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3035-Stack size: 10 
+3035-Equals Mem:<< []>> 
+3035-NonEquals Mem: << [<5,8>]>> 
+3035-Equals Sto:<< []>> 
+3035-NonEquals Sto: << []>> 
+3035-Useless: []
+3035-Constancy: []
+3035-ContextAliasing: []
+
+Block: 1474
+1474Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f76652066726f6d20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1474-Stack size: 10 
+1474-Equals Mem:<< []>> 
+1474-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1474-Equals Sto:<< []>> 
+1474-NonEquals Sto: << []>> 
+1474-Useless: []
+1474-Constancy: []
+1474-ContextAliasing: []
+
+Block: 1572
+1572Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f766520746f20746865207a65726f206164647265', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH2 0x7373', 'PUSH1 0xf0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1572-Stack size: 10 
+1572-Equals Mem:<< []>> 
+1572-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1572-Equals Sto:<< []>> 
+1572-NonEquals Sto: << []>> 
+1572-Useless: []
+1572-Constancy: []
+1572-ContextAliasing: []
+
+Block: 368
+368Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x12', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+368-Stack size: 1 
+368-Equals Mem:<< []>> 
+368-NonEquals Mem: << [<5,2>]>> 
+368-Equals Sto:<< []>> 
+368-NonEquals Sto: << []>> 
+368-Useless: []
+368-Constancy: []
+368-ContextAliasing: []
+
+Block: 1296
+1296Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296-Stack size: 4 
+1296-Equals Mem:<< [<17,31>, <12,27>]>> 
+1296-NonEquals Mem: << [<27,31>, <12,31>, <17,27>, <12,17>]>> 
+1296-Equals Sto:<< []>> 
+1296-NonEquals Sto: << []>> 
+1296-Useless: []
+1296-Constancy: []
+1296-ContextAliasing: []
+
+Block: 1780
+1780Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x1d', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20696e73756666696369656e7420616c6c6f77616e6365000000', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1780-Stack size: 12 
+1780-Equals Mem:<< []>> 
+1780-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>]>> 
+1780-Equals Sto:<< []>> 
+1780-NonEquals Sto: << []>> 
+1780-Useless: []
+1780-Constancy: [(6, 0)]
+1780-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '29', 'mstore'), 2), (('s(10)', '31354931781638678538084197150757782427756587561754988975511141185730285404160', 'mstore'), 2)]
+Memory dep: [(3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4)]
+Memory dep simplified: [(3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '29', 'mstore'), 2), (('s(10)', '31354931781638678538084197150757782427756587561754988975511141185730285404160', 'mstore'), 2)]
+Memory dep: [(3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4)]
+Memory dep simplified: [(3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_1780 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 1885
+1885Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e736665722066726f6d20746865207a65726f206164', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x6472657373', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1885-Stack size: 10 
+1885-Equals Mem:<< []>> 
+1885-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1885-Equals Sto:<< []>> 
+1885-NonEquals Sto: << []>> 
+1885-Useless: []
+1885-Constancy: [(5, 0)]
+1885-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('216', '431415980915', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '37', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859107492772550336241160036866987736981860', 'mstore'), 2), (('s(12)', '45433405612597180762055095701412804886438245671210399661410036396145969725440', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '37', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859107492772550336241160036866987736981860', 'mstore'), 2), (('s(12)', '45433405612597180762055095701412804886438245671210399661410036396145969725440', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_1885 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 1985
+1985Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x23', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220746f20746865207a65726f2061646472', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH3 0x657373', 'PUSH1 0xe8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1985-Stack size: 10 
+1985-Equals Mem:<< []>> 
+1985-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1985-Equals Sto:<< []>> 
+1985-NonEquals Sto: << []>> 
+1985-Useless: []
+1985-Constancy: [(5, 0)]
+1985-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('232', '6648691', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '35', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859126084785867252355217498662940140921970', 'mstore'), 2), (('s(12)', '45887578820189300338443374388718498632482616163288499555830078344056365121536', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '35', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859126084785867252355217498662940140921970', 'mstore'), 2), (('s(12)', '45887578820189300338443374388718498632482616163288499555830078344056365121536', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_1985 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2474
+2474Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'DUP1', 'PUSH2 0x09e7', 'JUMPI']>> 
+2474-Stack size: 14 
+2474-Equals Mem:<< []>> 
+2474-NonEquals Mem: << [<11,14>]>> 
+2474-Equals Sto:<< []>> 
+2474-NonEquals Sto: << []>> 
+2474-Useless: []
+2474-Constancy: [(9, 0)]
+2474-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{17: ((('s(6)', 'sload0'), 1), 1)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(6)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(11)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(6)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(11)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+********************IT*********************
+(('s(6)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(6)', 'sload0'), 1), (('255', 's(7)', 'and'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{17: ((('s(6)', 'sload0'), 1), 1)}
+(('s(6)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(6)', 'sload0'), 1), (('255', 's(7)', 'and'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_2474 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2507
+2507Instr:<<['POP', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND']>> 
+2507-Stack size: 15 
+2507-Equals Mem:<< []>> 
+2507-NonEquals Mem: << [<11,14>]>> 
+2507-Equals Sto:<< []>> 
+2507-NonEquals Sto: << []>> 
+2507-Useless: []
+2507-Constancy: [(10, 0)]
+2507-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{17: ((('s(5)', 'sload0'), 1), 1)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(5)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(7)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(5)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(7)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+********************IT*********************
+(('s(5)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(5)', 'sload0'), 1), (('255', 's(6)', 'and'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{17: ((('s(5)', 'sload0'), 1), 1)}
+(('s(5)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(5)', 'sload0'), 1), (('255', 's(6)', 'and'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_2507 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2556
+2556Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH0', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x44', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2556-Stack size: 14 
+2556-Equals Mem:<< []>> 
+2556-NonEquals Mem: << [<16,1>, <11,1>, <6,1>]>> 
+2556-Equals Sto:<< []>> 
+2556-NonEquals Sto: << []>> 
+2556-Useless: []
+2556-Constancy: [(9, 0)]
+2556-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '0', 'mstore'), 2)]
+Memory dep: [(2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3)]
+Memory dep simplified: [(2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '0', 'mstore'), 2)]
+Memory dep: [(2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3)]
+Memory dep simplified: [(2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('68', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('68', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_2556 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2079
+2079Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'DUP2', 'DUP2', 'LT', 'ISZERO', 'PUSH2 0x0896', 'JUMPI']>> 
+2079-Stack size: 10 
+2079-Equals Mem:<< []>> 
+2079-NonEquals Mem: << [<11,14>]>> 
+2079-Equals Sto:<< []>> 
+2079-NonEquals Sto: << []>> 
+2079-Useless: []
+2079-Constancy: [(5, 0)]
+2079-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{17: ((('s(7)', 'sload0'), 1), 1)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(7)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(12)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(7)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(12)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+********************IT*********************
+(('s(7)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(7)', 'sload0'), 1), (('s(8)', 's(2)', 'lt'), 2), (('s(6)', 'iszero'), 1), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{17: ((('s(7)', 'sload0'), 1), 1)}
+(('s(7)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(7)', 'sload0'), 1), (('s(8)', 's(2)', 'lt'), 2), (('s(6)', 'iszero'), 1), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_2079 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2112
+2112Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220616d6f756e7420657863656564732062', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x616c616e6365', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2112-Stack size: 11 
+2112-Equals Mem:<< []>> 
+2112-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+2112-Equals Sto:<< []>> 
+2112-NonEquals Sto: << []>> 
+2112-Useless: []
+2112-Constancy: [(6, 0)]
+2112-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('208', '107118118986597', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '38', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859100820671745083778533502622993977909346', 'mstore'), 2), (('s(12)', '44065838241030143116324720188876985940908656145555552347773292252211112312832', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '38', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859100820671745083778533502622993977909346', 'mstore'), 2), (('s(12)', '44065838241030143116324720188876985940908656145555552347773292252211112312832', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_2112 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2198
+2198Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP6', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP3', 'KECCAK256', 'DUP7', 'DUP7', 'SUB', 'SWAP1', 'SSTORE', 'SWAP3', 'DUP7', 'AND', 'DUP1', 'DUP3', 'MSTORE', 'SWAP1', 'DUP4', 'SWAP1', 'KECCAK256', 'DUP1', 'SLOAD', 'DUP7', 'ADD', 'SWAP1', 'SSTORE', 'SWAP2', 'MLOAD', 'PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef', 'SWAP1', 'PUSH2 0x08f5', 'SWAP1', 'DUP7', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'SWAP1', 'JUMP']>> 
+2198-Stack size: 11 
+2198-Equals Mem:<< [<12,30>]>> 
+2198-NonEquals Mem: << [<15,49>, <49,19>, <30,42>, <12,15>, <34,42>, <15,30>, <30,49>, <49,34>, <12,49>, <12,42>, <15,42>, <49,42>, <19,42>]>> 
+2198-Equals Sto:<< [<24,40>, <24,36>, <36,40>]>> 
+2198-NonEquals Sto: << []>> 
+2198-Useless: []
+2198-Constancy: [(6, 0)]
+2198-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{23: ((('s(20)', 's(21)', 'sstore'), 2), 1), 35: ((('s(25)', 'sload0'), 1), 3), 39: ((('s(25)', 's(26)', 'sstore'), 2), 4)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(20)', 's(21)', 'sstore'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(25)', 's(26)', 'sstore'), 2)]
+Storage dep: [(1, 4), (1, 3), (3, 4)]
+Storage dep simplified: [(1, 3), (3, 4)]
+Memory order: [(('0', 's(11)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2), (('0', 's(14)', 'mstore'), 2), (('0', '64', 'keccak2561'), 2), (('64', 'mload0'), 1), (('s(10)', 's(2)', 'mstore'), 2)]
+Memory dep: [(3, 6), (1, 6), (0, 6), (5, 6), (3, 4), (1, 4), (0, 4), (4, 6), (0, 3), (1, 2), (0, 2), (2, 3), (2, 6)]
+Memory dep simplified: [(3, 4), (1, 2), (0, 2), (5, 6), (4, 6), (2, 3)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(20)', 's(21)', 'sstore'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(25)', 's(26)', 'sstore'), 2)]
+Storage dep: [(1, 4), (1, 3), (3, 4)]
+Storage dep simplified: [(1, 3), (3, 4)]
+Memory order: [(('0', 's(11)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2), (('0', 's(14)', 'mstore'), 2), (('0', '64', 'keccak2561'), 2), (('64', 'mload0'), 1), (('s(10)', 's(2)', 'mstore'), 2)]
+Memory dep: [(3, 6), (1, 6), (0, 6), (5, 6), (3, 4), (1, 4), (0, 4), (4, 6), (0, 3), (1, 2), (0, 2), (2, 3), (2, 6)]
+Memory dep simplified: [(3, 4), (1, 2), (0, 2), (5, 6), (4, 6), (2, 3)]
+********************IT*********************
+********************IT*********************
+(('s(25)', 'sload0'), 1)
+sload0
+[(('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(3)', 's(2)', '-'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(2)', 's(28)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(3)', 's(2)', '-'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(2)', 's(28)', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{23: ((('s(20)', 's(21)', 'sstore'), 2), 1), 35: ((('s(25)', 'sload0'), 1), 3), 39: ((('s(25)', 's(26)', 'sstore'), 2), 4)}
+(('s(25)', 'sload0'), 1)
+sload0
+[(('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(3)', 's(2)', '-'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(2)', 's(28)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(3)', 's(2)', '-'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(2)', 's(28)', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_ERC20_2198 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 287
+287Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'RETURN']>> 
+287-Stack size: 2 
+287-Equals Mem:<< []>> 
+287-NonEquals Mem: << []>> 
+287-Equals Sto:<< []>> 
+287-NonEquals Sto: << []>> 
+287-Useless: []
+287-Constancy: []
+287-ContextAliasing: []
+
+Block: 1142
+1142Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142-Stack size: 4 
+1142-Equals Mem:<< []>> 
+1142-NonEquals Mem: << []>> 
+1142-Equals Sto:<< []>> 
+1142-NonEquals Sto: << []>> 
+1142-Useless: []
+1142-Constancy: []
+1142-ContextAliasing: []
+
+Block: 1361
+1361Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x646472657373', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1361-Stack size: 3 
+1361-Equals Mem:<< []>> 
+1361-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1361-Equals Sto:<< []>> 
+1361-NonEquals Sto: << []>> 
+1361-Useless: []
+1361-Constancy: []
+1361-ContextAliasing: []
+
+Block: 335
+335Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+335-Stack size: 2 
+335-Equals Mem:<< []>> 
+335-NonEquals Mem: << [<5,2>]>> 
+335-Equals Sto:<< []>> 
+335-NonEquals Sto: << []>> 
+335-Useless: []
+335-Constancy: []
+335-ContextAliasing: []
+
+Block: 1239
+1239Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'DUP2', 'ADD', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'PUSH1 0x40', 'ADD', 'PUSH0', 'KECCAK256', 'DUP1', 'SLOAD', 'PUSH1 0xff', 'NOT', 'AND', 'SWAP2', 'ISZERO', 'ISZERO', 'SWAP2', 'SWAP1', 'SWAP2', 'OR', 'SWAP1', 'SSTORE', 'DUP1', 'PUSH2 0x0508', 'DUP2', 'PUSH2 0x0c16', 'JUMP']>> 
+1239-Stack size: 9 
+1239-Equals Mem:<< []>> 
+1239-NonEquals Mem: << [<8,15>]>> 
+1239-Equals Sto:<< [<21,33>]>> 
+1239-NonEquals Sto: << []>> 
+1239-Useless: []
+1239-Constancy: [(1, 0)]
+1239-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+[RULE]: Evaluate expression ('s(3)', '32', '+')
+[RULE]: Evaluate expression ('64', 's(3)', '+')
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), (('s(10)', 's(12)', 'sstore'), 2)]
+Storage dep: [(1, 2)]
+Storage dep simplified: [(1, 2)]
+Memory order: [(('s(3)', 's(5)', 'mstore'), 2), (('32', 's(2)', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2), (0, 1)]
+Memory dep simplified: [(1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), (('s(10)', 's(12)', 'sstore'), 2)]
+Storage dep: [(1, 2)]
+Storage dep simplified: [(1, 2)]
+Memory order: [(('0', 's(5)', 'mstore'), 2), (('32', 's(2)', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+********************IT*********************
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('s(3)', '32', '+'), 2), (('64', 's(3)', '+'), 2), (('0', 's(9)', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0508 DUP2 PUSH2 0x0c16 JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0508 DUP2 PUSH2 0x0c16 JUMP
+
+Optimized code stored in /tmp/0x00/PSY_1239_optimized.txt
+Optimality results stored in /tmp/0x00/PSY_1239_statistics.csv
+
+Estimated initial gas: 5140
+Estimated gas optimized: 5140
+
+Estimated initial size in bytes: 49
+Estimated size optimized in bytes: 49
+
+Initial number of instructions: 39
+Final number of instructions: 39
+
+GREENRES: 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_1239;0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol;PSY;1239;2;True;False;False;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0508 DUP2 PUSH2 0x0c16 JUMP;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0508 DUP2 PUSH2 0x0c16 JUMP;5140;49;39;5140;49;39;0;0;0;True;True;False;True;2.210627497988753;5;2;5000;5000
+
+Block: 557
+557Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'SWAP1', 'JUMP']>> 
+557-Stack size: 3 
+557-Equals Mem:<< []>> 
+557-NonEquals Mem: << [<10,13>]>> 
+557-Equals Sto:<< []>> 
+557-NonEquals Sto: << []>> 
+557-Useless: []
+557-Constancy: []
+557-ContextAliasing: []
+
+Block: 315
+315Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'ISZERO', 'ISZERO', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+315-Stack size: 2 
+315-Equals Mem:<< []>> 
+315-NonEquals Mem: << [<7,2>]>> 
+315-Equals Sto:<< []>> 
+315-NonEquals Sto: << []>> 
+315-Useless: []
+315-Constancy: []
+315-ContextAliasing: []
+
+Block: 1061
+1061Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a2064656372656173656420616c6c6f77616e63652062656c6f77', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x207a65726f', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD']>> 
+1061-Stack size: 7 
+1061-Equals Mem:<< []>> 
+1061-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1061-Equals Sto:<< []>> 
+1061-NonEquals Sto: << []>> 
+1061-Useless: []
+1061-Constancy: [(2, 0)]
+1061-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('216', '139492422255', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(2)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(5)', '32', 'mstore'), 2), (('s(7)', '37', 'mstore'), 2), (('s(9)', '31354931781638678506476475496475743842680577777870365728514456330491174612855', 'mstore'), 2), (('s(11)', '14690266658072097593480850647027335513285713462661904985951319567533531463680', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(2)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(5)', '32', 'mstore'), 2), (('s(7)', '37', 'mstore'), 2), (('s(9)', '31354931781638678506476475496475743842680577777870365728514456330491174612855', 'mstore'), 2), (('s(11)', '14690266658072097593480850647027335513285713462661904985951319567533531463680', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(2)', '+'), 2), (('s(2)', '4', '+'), 2), (('s(2)', '36', '+'), 2), (('s(2)', '68', '+'), 2), (('s(2)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(2)', '+'), 2), (('s(2)', '4', '+'), 2), (('s(2)', '36', '+'), 2), (('s(2)', '68', '+'), 2), (('s(2)', '100', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_1061 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 3074
+3074Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x32', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3074-Stack size: 12 
+3074-Equals Mem:<< []>> 
+3074-NonEquals Mem: << [<5,8>]>> 
+3074-Equals Sto:<< []>> 
+3074-NonEquals Sto: << []>> 
+3074-Useless: []
+3074-Constancy: [(4, 0)]
+3074-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('224', '1313373041', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', '35408467139433450592217433187231851964531694900788300625387963629091585785856', 'mstore'), 2), (('4', '50', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', '35408467139433450592217433187231851964531694900788300625387963629091585785856', 'mstore'), 2), (('4', '50', 'mstore'), 2)]
+Memory dep: []
+Memory dep simplified: []
+********************IT*********************
+********************IT*********************
+SFS with rule: isolated_block_0_0_input.json
+{}
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_3074 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 975
+975Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'DUP2', 'ADD', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'PUSH1 0x40', 'ADD', 'PUSH0', 'KECCAK256', 'DUP1', 'SLOAD', 'PUSH1 0xff', 'NOT', 'AND', 'SWAP2', 'ISZERO', 'ISZERO', 'SWAP2', 'SWAP1', 'SWAP2', 'OR', 'SWAP1', 'SSTORE', 'DUP1', 'PUSH2 0x0400', 'DUP2', 'PUSH2 0x0c16', 'JUMP']>> 
+975-Stack size: 9 
+975-Equals Mem:<< []>> 
+975-NonEquals Mem: << [<8,15>]>> 
+975-Equals Sto:<< [<21,33>]>> 
+975-NonEquals Sto: << []>> 
+975-Useless: []
+975-Constancy: [(3, 0), (1, 0)]
+975-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+[RULE]: Evaluate expression ('s(3)', '32', '+')
+[RULE]: Evaluate expression ('64', 's(3)', '+')
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), (('s(10)', 's(12)', 'sstore'), 2)]
+Storage dep: [(1, 2)]
+Storage dep simplified: [(1, 2)]
+Memory order: [(('s(3)', 's(5)', 'mstore'), 2), (('32', 's(2)', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2), (0, 1)]
+Memory dep simplified: [(1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), (('s(10)', 's(12)', 'sstore'), 2)]
+Storage dep: [(1, 2)]
+Storage dep simplified: [(1, 2)]
+Memory order: [(('0', 's(5)', 'mstore'), 2), (('32', 's(2)', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+[RULE]: Simplification rule type 1: {'id': 'OR_0', 'opcode': '17', 'disasm': 'OR', 'inpt_sk': [0, 's(13)'], 'outpt_sk': ['s(12)'], 'push': False, 'gas': 3, 'commutative': True, 'storage': False, 'size': 1}
+********************IT*********************
+********************IT*********************
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(16)', 'and'), 2), ((0, 's(13)', 'or'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('s(3)', '32', '+'), 2), (('64', 's(3)', '+'), 2), (('0', 's(9)', 'keccak2560'), 2), (('s(1)', 'iszero'), 1), (('s(13)', 'iszero'), 1), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(18)', 'and'), 2), (('s(14)', 's(15)', 'or'), 2)]
+Optimizing isolated_block_0_0... Timeout:2
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(16)', 'and'), 2), ((0, 's(13)', 'or'), 2)]
+{20: ((('s(10)', 'sload0'), 1), 1), 32: ((('s(10)', 's(12)', 'sstore'), 2), 2)}
+(('s(10)', 'sload0'), 1)
+sload0
+[(('1461501637330902918203684832716283019655932542975', 's(4)', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(10)', 'sload0'), 1), ((115792089237316195423570985008687907853269984665640564039457584007913129639680, 's(16)', 'and'), 2), ((0, 's(13)', 'or'), 2)]
+
+Initial sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0400 DUP2 PUSH2 0x0c16 JUMP
+
+Optimized sequence (basic block per line):
+JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0400 DUP2 PUSH2 0x0c16 JUMP
+
+Optimized code stored in /tmp/0x00/PSY_975_optimized.txt
+Optimality results stored in /tmp/0x00/PSY_975_statistics.csv
+
+Estimated initial gas: 5140
+Estimated gas optimized: 5140
+
+Estimated initial size in bytes: 49
+Estimated size optimized in bytes: 49
+
+Initial number of instructions: 39
+Final number of instructions: 39
+
+GREENRES: 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_975;0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol;PSY;975;2;True;False;False;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0400 DUP2 PUSH2 0x0c16 JUMP;JUMPDEST PUSH1 0x01 PUSH1 0x01 PUSH1 0xa0 SHL SUB AND DUP2 MSTORE PUSH1 0x20 DUP2 ADD SWAP2 SWAP1 SWAP2 MSTORE PUSH1 0x40 ADD PUSH0 KECCAK256 DUP1 SLOAD PUSH1 0xff NOT AND SWAP2 ISZERO ISZERO SWAP2 SWAP1 SWAP2 OR SWAP1 SSTORE DUP1 PUSH2 0x0400 DUP2 PUSH2 0x0c16 JUMP;5140;49;39;5140;49;39;0;0;0;True;True;False;True;2.1373447160003707;8;2;5000;5000
+
+Block: 658
+658Instr:<<['JUMPDEST', 'DUP1', 'PUSH1 0x1f', 'ADD', 'PUSH1 0x20', 'DUP1', 'SWAP2', 'DIV', 'MUL', 'PUSH1 0x20', 'ADD', 'PUSH1 0x40', 'MLOAD', 'SWAP1', 'DUP2', 'ADD', 'PUSH1 0x40', 'MSTORE', 'DUP1', 'SWAP3', 'SWAP2', 'SWAP1', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'DUP3', 'DUP1', 'SLOAD', 'PUSH2 0x02be', 'SWAP1', 'PUSH2 0x0ba3', 'JUMP']>> 
+658-Stack size: 5 
+658-Equals Mem:<< [<17,12>]>> 
+658-NonEquals Mem: << [<17,24>, <24,12>]>> 
+658-Equals Sto:<< []>> 
+658-NonEquals Sto: << []>> 
+658-Useless: []
+658-Constancy: [(2, 96)]
+658-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+{28: ((('s(0)', 'sload0'), 1), 0)}
+Storage order: [(('s(0)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('64', 's(12)', 'mstore'), 2), (('s(10)', 's(1)', 'mstore'), 2)]
+Memory dep: [(1, 2), (0, 1), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: [(('s(0)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('64', 's(12)', 'mstore'), 2), (('s(10)', 's(1)', 'mstore'), 2)]
+Memory dep: [(1, 2), (0, 1), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('s(0)', 'sload0'), 1)
+sload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+{28: ((('s(0)', 'sload0'), 1), 0)}
+(('s(0)', 'sload0'), 1)
+sload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('s(0)', 'sload0'), 1), (('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('31', 's(1)', '+'), 2), (('s(17)', '32', '/'), 2), (('s(16)', '32', '*'), 2), (('32', 's(15)', '+'), 2), (('s(10)', 's(14)', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_658 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 3010
+3010Instr:<<['PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3010-Stack size: 8 
+3010-Equals Mem:<< []>> 
+3010-NonEquals Mem: << [<4,7>]>> 
+3010-Equals Sto:<< []>> 
+3010-NonEquals Sto: << []>> 
+3010-Useless: []
+3010-Constancy: []
+3010-ContextAliasing: []
+
+Block: 2588
+2588Instr:<<['JUMPDEST', 'PUSH0', 'PUSH1 0x20', 'DUP1', 'DUP4', 'MSTORE', 'DUP4', 'MLOAD', 'DUP1', 'DUP3', 'DUP6', 'ADD', 'MSTORE', 'PUSH0']>> 
+2588-Stack size: 4 
+2588-Equals Mem:<< []>> 
+2588-NonEquals Mem: << [<5,7>, <5,12>, <12,7>]>> 
+2588-Equals Sto:<< []>> 
+2588-NonEquals Sto: << []>> 
+2588-Useless: []
+2588-Constancy: []
+2588-ContextAliasing: []
+
+Block: 2612
+2612Instr:<<['DUP6', 'DUP2', 'ADD', 'DUP4', 'ADD', 'MLOAD', 'DUP6', 'DUP3', 'ADD', 'PUSH1 0x40', 'ADD', 'MSTORE', 'DUP3', 'ADD', 'PUSH2 0x0a2b', 'JUMP']>> 
+2612-Stack size: 8 
+2612-Equals Mem:<< []>> 
+2612-NonEquals Mem: << [<11,5>]>> 
+2612-Equals Sto:<< []>> 
+2612-NonEquals Sto: << []>> 
+2612-Useless: []
+2612-Constancy: [(3, 0), (2, 32)]
+2612-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('s(10)', 'mload0'), 1), (('s(8)', 's(12)', 'mstore'), 2)]
+Memory dep: [(0, 1)]
+Memory dep simplified: [(0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('s(10)', 'mload0'), 1), (('s(8)', 's(12)', 'mstore'), 2)]
+Memory dep: [(0, 1)]
+Memory dep simplified: [(0, 1)]
+********************IT*********************
+********************IT*********************
+(('s(10)', 'mload0'), 1)
+mload0
+[(('32', 's(5)', '+'), 2), (('s(5)', 's(1)', '+'), 2), (('64', 's(9)', '+'), 2), (('s(5)', 's(0)', '+'), 2), (('32', 's(11)', '+'), 2), (('s(10)', 'mload0'), 1)]
+{}
+(('s(10)', 'mload0'), 1)
+mload0
+[(('s(3)', 's(5)', '+'), 2), (('s(5)', 's(1)', '+'), 2), (('64', 's(9)', '+'), 2), (('s(5)', 's(0)', '+'), 2), (('s(3)', 's(11)', '+'), 2), (('s(10)', 'mload0'), 1)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_2612 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 452
+452Instr:<<['JUMPDEST', 'PUSH0', 'SLOAD', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP1', 'SWAP2', 'AND', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+452-Stack size: 1 
+452-Equals Mem:<< []>> 
+452-NonEquals Mem: << [<14,4>]>> 
+452-Equals Sto:<< []>> 
+452-NonEquals Sto: << []>> 
+452-Useless: []
+452-Constancy: []
+452-ContextAliasing: []
+
+Block: 2324
+2324Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'DUP2', 'SWAP1', 'MSTORE', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2324-Stack size: 3 
+2324-Equals Mem:<< []>> 
+2324-NonEquals Mem: << [<17,1>, <6,1>, <13,1>, <22,1>]>> 
+2324-Equals Sto:<< []>> 
+2324-NonEquals Sto: << []>> 
+2324-Useless: []
+2324-Constancy: []
+2324-ContextAliasing: []
+
+Block: 416
+416Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+416-Stack size: 3 
+416-Equals Mem:<< []>> 
+416-NonEquals Mem: << [<10,13>]>> 
+416-Equals Sto:<< []>> 
+416-NonEquals Sto: << []>> 
+416-Useless: []
+416-Constancy: []
+416-ContextAliasing: []
+
+Block: 3035
+3035Instr:<<['JUMPDEST', 'PUSH4 0x4e487b71', 'PUSH1 0xe0', 'SHL', 'PUSH0', 'MSTORE', 'PUSH1 0x11', 'PUSH1 0x04', 'MSTORE', 'PUSH1 0x24', 'PUSH0', 'REVERT']>> 
+3035-Stack size: 10 
+3035-Equals Mem:<< []>> 
+3035-NonEquals Mem: << [<5,8>]>> 
+3035-Equals Sto:<< []>> 
+3035-NonEquals Sto: << []>> 
+3035-Useless: []
+3035-Constancy: []
+3035-ContextAliasing: []
+
+Block: 1474
+1474Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x24', 'DUP1', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f76652066726f6d20746865207a65726f20616464', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH4 0x72657373', 'PUSH1 0xe0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1474-Stack size: 10 
+1474-Equals Mem:<< []>> 
+1474-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1474-Equals Sto:<< []>> 
+1474-NonEquals Sto: << []>> 
+1474-Useless: []
+1474-Constancy: []
+1474-ContextAliasing: []
+
+Block: 1572
+1572Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x22', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20617070726f766520746f20746865207a65726f206164647265', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH2 0x7373', 'PUSH1 0xf0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1572-Stack size: 10 
+1572-Equals Mem:<< []>> 
+1572-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1572-Equals Sto:<< []>> 
+1572-NonEquals Sto: << []>> 
+1572-Useless: []
+1572-Constancy: []
+1572-ContextAliasing: []
+
+Block: 368
+368Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'PUSH1 0x12', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'PUSH2 0x011f', 'JUMP']>> 
+368-Stack size: 1 
+368-Equals Mem:<< []>> 
+368-NonEquals Mem: << [<5,2>]>> 
+368-Equals Sto:<< []>> 
+368-NonEquals Sto: << []>> 
+368-Useless: []
+368-Constancy: []
+368-ContextAliasing: []
+
+Block: 1296
+1296Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'SWAP2', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x03', 'PUSH1 0x20', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP4', 'KECCAK256', 'SWAP4', 'SWAP1', 'SWAP5', 'AND', 'DUP3', 'MSTORE', 'SWAP2', 'SWAP1', 'SWAP2', 'MSTORE', 'KECCAK256', 'SLOAD', 'SWAP1', 'JUMP']>> 
+1296-Stack size: 4 
+1296-Equals Mem:<< [<17,31>, <12,27>]>> 
+1296-NonEquals Mem: << [<27,31>, <12,31>, <17,27>, <12,17>]>> 
+1296-Equals Sto:<< []>> 
+1296-NonEquals Sto: << []>> 
+1296-Useless: []
+1296-Constancy: []
+1296-ContextAliasing: []
+
+Block: 1780
+1780Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x1d', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a20696e73756666696369656e7420616c6c6f77616e6365000000', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x64', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1780-Stack size: 12 
+1780-Equals Mem:<< []>> 
+1780-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>]>> 
+1780-Equals Sto:<< []>> 
+1780-NonEquals Sto: << []>> 
+1780-Useless: []
+1780-Constancy: [(6, 0)]
+1780-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '29', 'mstore'), 2), (('s(10)', '31354931781638678538084197150757782427756587561754988975511141185730285404160', 'mstore'), 2)]
+Memory dep: [(3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4)]
+Memory dep simplified: [(3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '29', 'mstore'), 2), (('s(10)', '31354931781638678538084197150757782427756587561754988975511141185730285404160', 'mstore'), 2)]
+Memory dep: [(3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4)]
+Memory dep simplified: [(3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('100', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_1780 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 1885
+1885Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x25', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e736665722066726f6d20746865207a65726f206164', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH5 0x6472657373', 'PUSH1 0xd8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1885-Stack size: 10 
+1885-Equals Mem:<< []>> 
+1885-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1885-Equals Sto:<< []>> 
+1885-NonEquals Sto: << []>> 
+1885-Useless: []
+1885-Constancy: [(5, 0)]
+1885-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('216', '431415980915', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '37', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859107492772550336241160036866987736981860', 'mstore'), 2), (('s(12)', '45433405612597180762055095701412804886438245671210399661410036396145969725440', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '37', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859107492772550336241160036866987736981860', 'mstore'), 2), (('s(12)', '45433405612597180762055095701412804886438245671210399661410036396145969725440', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_1885 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 1985
+1985Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x23', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220746f20746865207a65726f2061646472', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH3 0x657373', 'PUSH1 0xe8', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+1985-Stack size: 10 
+1985-Equals Mem:<< []>> 
+1985-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+1985-Equals Sto:<< []>> 
+1985-NonEquals Sto: << []>> 
+1985-Useless: []
+1985-Constancy: [(5, 0)]
+1985-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('232', '6648691', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '35', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859126084785867252355217498662940140921970', 'mstore'), 2), (('s(12)', '45887578820189300338443374388718498632482616163288499555830078344056365121536', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '35', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859126084785867252355217498662940140921970', 'mstore'), 2), (('s(12)', '45887578820189300338443374388718498632482616163288499555830078344056365121536', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_1985 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2474
+2474Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP3', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND', 'DUP1', 'PUSH2 0x09e7', 'JUMPI']>> 
+2474-Stack size: 14 
+2474-Equals Mem:<< []>> 
+2474-NonEquals Mem: << [<11,14>]>> 
+2474-Equals Sto:<< []>> 
+2474-NonEquals Sto: << []>> 
+2474-Useless: []
+2474-Constancy: [(9, 0)]
+2474-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{17: ((('s(6)', 'sload0'), 1), 1)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(6)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(11)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(6)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(11)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+********************IT*********************
+(('s(6)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(6)', 'sload0'), 1), (('255', 's(7)', 'and'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{17: ((('s(6)', 'sload0'), 1), 1)}
+(('s(6)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(6)', 'sload0'), 1), (('255', 's(7)', 'and'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_2474 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2507
+2507Instr:<<['POP', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x02', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'PUSH1 0xff', 'AND']>> 
+2507-Stack size: 15 
+2507-Equals Mem:<< []>> 
+2507-NonEquals Mem: << [<11,14>]>> 
+2507-Equals Sto:<< []>> 
+2507-NonEquals Sto: << []>> 
+2507-Useless: []
+2507-Constancy: [(10, 0)]
+2507-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{17: ((('s(5)', 'sload0'), 1), 1)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(5)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(7)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(5)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(7)', 'mstore'), 2), (('32', '2', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+********************IT*********************
+(('s(5)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(5)', 'sload0'), 1), (('255', 's(6)', 'and'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{17: ((('s(5)', 'sload0'), 1), 1)}
+(('s(5)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(5)', 'sload0'), 1), (('255', 's(6)', 'and'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_2507 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2556
+2556Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH0', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x44', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2556-Stack size: 14 
+2556-Equals Mem:<< []>> 
+2556-NonEquals Mem: << [<16,1>, <11,1>, <6,1>]>> 
+2556-Equals Sto:<< []>> 
+2556-NonEquals Sto: << []>> 
+2556-Useless: []
+2556-Constancy: [(9, 0)]
+2556-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '0', 'mstore'), 2)]
+Memory dep: [(2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3)]
+Memory dep simplified: [(2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '0', 'mstore'), 2)]
+Memory dep: [(2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3)]
+Memory dep simplified: [(2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('68', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('68', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_2556 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2079
+2079Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP4', 'AND', 'PUSH0', 'SWAP1', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'SWAP1', 'KECCAK256', 'SLOAD', 'DUP2', 'DUP2', 'LT', 'ISZERO', 'PUSH2 0x0896', 'JUMPI']>> 
+2079-Stack size: 10 
+2079-Equals Mem:<< []>> 
+2079-NonEquals Mem: << [<11,14>]>> 
+2079-Equals Sto:<< []>> 
+2079-NonEquals Sto: << []>> 
+2079-Useless: []
+2079-Constancy: [(5, 0)]
+2079-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{17: ((('s(7)', 'sload0'), 1), 1)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(7)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(12)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(7)', 'sload0'), 1)]
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('0', 's(12)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2)]
+Memory dep: [(1, 2), (0, 2)]
+Memory dep simplified: [(1, 2), (0, 2)]
+********************IT*********************
+********************IT*********************
+(('s(7)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(7)', 'sload0'), 1), (('s(8)', 's(2)', 'lt'), 2), (('s(6)', 'iszero'), 1), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{17: ((('s(7)', 'sload0'), 1), 1)}
+(('s(7)', 'sload0'), 1)
+sload0
+[(('0', '64', 'keccak2560'), 2), (('s(7)', 'sload0'), 1), (('s(8)', 's(2)', 'lt'), 2), (('s(6)', 'iszero'), 1), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_2079 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2112
+2112Instr:<<['PUSH1 0x40', 'MLOAD', 'PUSH3 0x461bcd', 'PUSH1 0xe5', 'SHL', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'PUSH1 0x04', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x26', 'PUSH1 0x24', 'DUP3', 'ADD', 'MSTORE', 'PUSH32 0x45524332303a207472616e7366657220616d6f756e7420657863656564732062', 'PUSH1 0x44', 'DUP3', 'ADD', 'MSTORE', 'PUSH6 0x616c616e6365', 'PUSH1 0xd0', 'SHL', 'PUSH1 0x64', 'DUP3', 'ADD', 'MSTORE', 'PUSH1 0x84', 'ADD', 'PUSH2 0x0476', 'JUMP']>> 
+2112-Stack size: 11 
+2112-Equals Mem:<< []>> 
+2112-NonEquals Mem: << [<6,1>, <11,1>, <16,1>, <21,1>, <28,1>]>> 
+2112-Equals Sto:<< []>> 
+2112-NonEquals Sto: << []>> 
+2112-Useless: []
+2112-Constancy: [(6, 0)]
+2112-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('229', '4594637', 'shl')
+[RULE]: Evaluate expression ('208', '107118118986597', 'shl')
+{}
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '38', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859100820671745083778533502622993977909346', 'mstore'), 2), (('s(12)', '44065838241030143116324720188876985940908656145555552347773292252211112312832', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+Recomputing memory simplification with context info
+Storage order: []
+Storage dep: []
+Storage dep simplified: []
+Memory order: [(('64', 'mload0'), 1), (('s(3)', '3963877391197344453575983046348115674221700746820753546331534351508065746944', 'mstore'), 2), (('s(6)', '32', 'mstore'), 2), (('s(8)', '38', 'mstore'), 2), (('s(10)', '31354931781638678607228669297131712859100820671745083778533502622993977909346', 'mstore'), 2), (('s(12)', '44065838241030143116324720188876985940908656145555552347773292252211112312832', 'mstore'), 2)]
+Memory dep: [(4, 5), (3, 5), (2, 5), (1, 5), (3, 4), (2, 4), (1, 4), (2, 3), (1, 3), (1, 2), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5)]
+Memory dep simplified: [(4, 5), (3, 4), (2, 3), (1, 2), (0, 1)]
+********************IT*********************
+********************IT*********************
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{}
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('132', 's(3)', '+'), 2), (('s(3)', '4', '+'), 2), (('s(3)', '36', '+'), 2), (('s(3)', '68', '+'), 2), (('s(3)', '100', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_2112 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 2198
+2198Instr:<<['JUMPDEST', 'PUSH1 0x01', 'PUSH1 0x01', 'PUSH1 0xa0', 'SHL', 'SUB', 'DUP1', 'DUP6', 'AND', 'PUSH0', 'DUP2', 'DUP2', 'MSTORE', 'PUSH1 0x01', 'PUSH1 0x20', 'MSTORE', 'PUSH1 0x40', 'DUP1', 'DUP3', 'KECCAK256', 'DUP7', 'DUP7', 'SUB', 'SWAP1', 'SSTORE', 'SWAP3', 'DUP7', 'AND', 'DUP1', 'DUP3', 'MSTORE', 'SWAP1', 'DUP4', 'SWAP1', 'KECCAK256', 'DUP1', 'SLOAD', 'DUP7', 'ADD', 'SWAP1', 'SSTORE', 'SWAP2', 'MLOAD', 'PUSH32 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef', 'SWAP1', 'PUSH2 0x08f5', 'SWAP1', 'DUP7', 'DUP2', 'MSTORE', 'PUSH1 0x20', 'ADD', 'SWAP1', 'JUMP']>> 
+2198-Stack size: 11 
+2198-Equals Mem:<< [<12,30>]>> 
+2198-NonEquals Mem: << [<15,49>, <49,19>, <30,42>, <12,15>, <34,42>, <15,30>, <30,49>, <49,34>, <12,49>, <12,42>, <15,42>, <49,42>, <19,42>]>> 
+2198-Equals Sto:<< [<24,40>, <24,36>, <36,40>]>> 
+2198-NonEquals Sto: << []>> 
+2198-Useless: []
+2198-Constancy: [(6, 0)]
+2198-ContextAliasing: []
+
+
+ADDITIONAL EXECUTION WITH CONTEXT
+
+[RULE]: Evaluate expression ('160', '1', 'shl')
+[RULE]: Evaluate expression ('1461501637330902918203684832716283019655932542976', '1', '-')
+{23: ((('s(20)', 's(21)', 'sstore'), 2), 1), 35: ((('s(25)', 'sload0'), 1), 3), 39: ((('s(25)', 's(26)', 'sstore'), 2), 4)}
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(20)', 's(21)', 'sstore'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(25)', 's(26)', 'sstore'), 2)]
+Storage dep: [(1, 4), (1, 3), (3, 4)]
+Storage dep simplified: [(1, 3), (3, 4)]
+Memory order: [(('0', 's(11)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2), (('0', 's(14)', 'mstore'), 2), (('0', '64', 'keccak2561'), 2), (('64', 'mload0'), 1), (('s(10)', 's(2)', 'mstore'), 2)]
+Memory dep: [(3, 6), (1, 6), (0, 6), (5, 6), (3, 4), (1, 4), (0, 4), (4, 6), (0, 3), (1, 2), (0, 2), (2, 3), (2, 6)]
+Memory dep simplified: [(3, 4), (1, 2), (0, 2), (5, 6), (4, 6), (2, 3)]
+Recomputing memory simplification with context info
+Storage order: [(('0', '64', 'keccak2560'), 2), (('s(20)', 's(21)', 'sstore'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(25)', 's(26)', 'sstore'), 2)]
+Storage dep: [(1, 4), (1, 3), (3, 4)]
+Storage dep simplified: [(1, 3), (3, 4)]
+Memory order: [(('0', 's(11)', 'mstore'), 2), (('32', '1', 'mstore'), 2), (('0', '64', 'keccak2560'), 2), (('0', 's(14)', 'mstore'), 2), (('0', '64', 'keccak2561'), 2), (('64', 'mload0'), 1), (('s(10)', 's(2)', 'mstore'), 2)]
+Memory dep: [(3, 6), (1, 6), (0, 6), (5, 6), (3, 4), (1, 4), (0, 4), (4, 6), (0, 3), (1, 2), (0, 2), (2, 3), (2, 6)]
+Memory dep simplified: [(3, 4), (1, 2), (0, 2), (5, 6), (4, 6), (2, 3)]
+********************IT*********************
+********************IT*********************
+(('s(25)', 'sload0'), 1)
+sload0
+[(('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(3)', 's(2)', '-'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(2)', 's(28)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(3)', 's(2)', '-'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(2)', 's(28)', '+'), 2)]
+SFS with rule: isolated_block_0_0_input.json
+{23: ((('s(20)', 's(21)', 'sstore'), 2), 1), 35: ((('s(25)', 'sload0'), 1), 3), 39: ((('s(25)', 's(26)', 'sstore'), 2), 4)}
+(('s(25)', 'sload0'), 1)
+sload0
+[(('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(3)', 's(2)', '-'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(2)', 's(28)', '+'), 2)]
+(('64', 'mload0'), 1)
+mload0
+[(('64', 'mload0'), 1), (('32', 's(10)', '+'), 2), (('s(0)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('s(1)', '1461501637330902918203684832716283019655932542975', 'and'), 2), (('0', '64', 'keccak2560'), 2), (('s(3)', 's(2)', '-'), 2), (('0', '64', 'keccak2561'), 2), (('s(25)', 'sload0'), 1), (('s(2)', 's(28)', '+'), 2)]
+BLOCK 0x00000da6b63985c5241a21b8ca55adf71b8439f9.sol_PSY_2198 FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION
+Block: 287
+287Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'RETURN']>> 
+287-Stack size: 2 
+287-Equals Mem:<< []>> 
+287-NonEquals Mem: << []>> 
+287-Equals Sto:<< []>> 
+287-NonEquals Sto: << []>> 
+287-Useless: []
+287-Constancy: []
+287-ContextAliasing: []
+
+Block: 1142
+1142Instr:<<['JUMPDEST', 'PUSH1 0x40', 'MLOAD', 'DUP1', 'SWAP2', 'SUB', 'SWAP1', 'REVERT']>> 
+1142-Stack size: 4 
+1142-Equals Mem:<< []>> 
+1142-NonEquals Mem: << []>> 
+1142-Equals Sto:<< []>> 
+1142-NonEquals Sto: << []>> 
+1142-Useless: []
+1142-Constancy: []
+1142-ContextAliasing: []
+
