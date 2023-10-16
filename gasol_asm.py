@@ -26,7 +26,7 @@ from solution_generation.optimize_from_sub_blocks import rebuild_optimized_asm_b
 from sfs_generator.asm_block import AsmBlock, AsmBytecode
 from smt_encoding.block_optimizer import BlockOptimizer, OptimizeOutcome
 from solution_generation.ids2asm import asm_from_ids
-from greedy.solution_from_greedy import greedy_to_gasol
+# from greedy.solution_from_greedy import greedy_to_gasol
 
 
 def init():
@@ -167,7 +167,8 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
 
         if parsed_args.greedy or parsed_args.backend:
             if parsed_args.greedy:
-                optimization_outcome, solver_time, optimized_ids = greedy_to_gasol(sfs_block)
+                # optimization_outcome, solver_time, optimized_ids = greedy_to_gasol(sfs_block)
+                pass
             else:
                 optimization_outcome, solver_time, optimized_ids = optimizer.optimize_block()
 
