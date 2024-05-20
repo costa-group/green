@@ -49,7 +49,7 @@ def parse_args():
     
     #Added by Pablo Gordillo
     parser.add_argument( "-d", "--debug",                   help="Display the status of the stack after each opcode", action = "store_true")
-    parser.add_argument( "-cfg", "--control-flow-graph",    help="Store the CFG", choices=["normal","memory"])
+    parser.add_argument( "-cfg", "--control-flow-graph",    help="Store the CFG", choices=["normal","memory","storage"])
     parser.add_argument("-optimize-run", "--optimize-run",             help="Enable optimization flag in solc compiler", action="store_true")
     parser.add_argument("-run", "--run",             help="Set for how many contract runs to optimize (200 by default if --optimize-run)", default=-1,action="store",type=int)
     parser.add_argument("-no-yul-opt", "--no-yul-opt",             help="Disable yul optimization in solc compiler (when possible)", action="store_true")
@@ -57,6 +57,7 @@ def parse_args():
     parser.add_argument( "-hashes", "--hashes",             help="Generate a file that contains the functions of the solidity file", action="store_true")
     parser.add_argument( "-out", "--out",             help="Generate a file that contains the functions of the solidity file", action="store", dest="path_out",type=str)
     parser.add_argument("-mem-analysis", "--mem-analysis",             help="Executes memory analysis. baseref runs the basic analysis where it only identifies the base refences. Offset runs baseref+offset option", choices = ["baseref","offset"])
+    parser.add_argument("-storage-analysis", "--storage-analysis",             help="Executes storage analysis", action="store_true")
     parser.add_argument("-aliasing-info", "--aliasing-info",             help="Executes optimization on blocks obtained by memory analysis.", action="store_true")
     parser.add_argument("-non-aliasing-disabled", "--non-aliasing-disabled",             help="It only uses the information of aliasing.", action="store_true")
     parser.add_argument("-useless-info", "--useless-info",             help="Uses useless info from memory analysis.", action="store_true")
