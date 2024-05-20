@@ -49,7 +49,7 @@ def parse_args():
     
     #Added by Pablo Gordillo
     parser.add_argument( "-d", "--debug",                   help="Display the status of the stack after each opcode", action = "store_true")
-    parser.add_argument( "-cfg", "--control-flow-graph",    help="Store the CFG", choices=["normal","memory","storage"])
+    parser.add_argument( "-cfg", "--control-flow-graph",    help="Store the CFG", choices=["normal","memory","storage","all"])
     parser.add_argument("-optimize-run", "--optimize-run",             help="Enable optimization flag in solc compiler", action="store_true")
     parser.add_argument("-run", "--run",             help="Set for how many contract runs to optimize (200 by default if --optimize-run)", default=-1,action="store",type=int)
     parser.add_argument("-no-yul-opt", "--no-yul-opt",             help="Disable yul optimization in solc compiler (when possible)", action="store_true")
@@ -347,7 +347,7 @@ def run_ethir():
     if not ethir_main.has_dependencies_installed():
         return
     
-    ethir_main.clean_dir()
+    # ethir_main.clean_dir()
 
     try:
         if "costabs" in os.listdir(global_params.tmp_path):
