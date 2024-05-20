@@ -13,7 +13,7 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/gasol_optimizer")
 import ethir_complete.ethir.oyente_ethir as ethir_main
 import ethir_complete.ethir.symExec as symExec
 from ethir_complete.ethir.input_helper import InputHelper
-from ethir_complete.ethir.memory_optimizer_connector import OptimizableBlockInfo
+from ethir_complete.ethir.memory.memory_optimizer_connector import OptimizableBlockInfo
 import ethir_complete.ethir.global_params_ethir as global_params
 import gasol_asm as gasol_main
 from timeit import default_timer as dtimer
@@ -235,6 +235,7 @@ def run_solidity_analysis(inputs,hashes):
                                               svc = {},
                                               opt_bytecode = (args.optimize_run or args.via_ir), 
                                               mem_analysis = args.mem_analysis,
+                                              storage_analysis = args.storage_analysis,
                                               compact_clones = args.compact_clones)
 
             if symExec.opt_blocks != None:
@@ -270,7 +271,8 @@ def run_solidity_analysis(inputs,hashes):
                                                   evm_version = True, 
                                                   svc = {}, 
                                                   opt_bytecode = (args.optimize_run or args.via_ir), 
-                                                  mem_analysis = args.mem_analysis, 
+                                                  mem_analysis = args.mem_analysis,
+                                                  storage_analysis = args.storage_analysis,
                                                   compact_clones = args.compact_clones)
                 if symExec.opt_blocks != None:
                     optimized_blocks[symExec.opt_blocks.get_contract_name()] = symExec.opt_blocks
