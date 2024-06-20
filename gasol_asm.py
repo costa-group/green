@@ -26,8 +26,8 @@ from solution_generation.optimize_from_sub_blocks import rebuild_optimized_asm_b
 from sfs_generator.asm_block import AsmBlock, AsmBytecode
 from smt_encoding.block_optimizer import BlockOptimizer, OptimizeOutcome
 from solution_generation.ids2asm import asm_from_ids
-# from greedy.solution_from_greedy import greedy_to_gasol
-
+from greedy.block_generation import greedy_from_json, greedy_standalone
+from global_params.options import OptimizationParams
 
 def init():
     global previous_gas
@@ -88,7 +88,7 @@ def create_ml_models(parsed_args: Namespace) -> None:
         parsed_args.optimized_predictor_model = None
 
 
-def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: Namespace, dep_mem_info: Dict = {}, opt_info: Dict = {}):
+def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: OptimizationParams, dep_mem_info: Dict = {}, opt_info: Dict = {}):
     stack_size = block.source_stack
     block_name = block.block_name
     block_id = block.block_id
@@ -108,13 +108,13 @@ def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: Name
 
     block_data = {"instructions": instructions_to_optimize, "input": stack_size}
 
-    fname = parsed_args.input_path.split("/")[-1].split(".")[0]
+    fname = parsed_args.input_file.split("/")[-1].split(".")[0]
     
     exit_code, subblocks_list = \
         ir_block.evm2rbr_compiler(file_name=fname, block=block_data, block_name=block_name, block_id=block_id,
-                                  simplification=not parsed_args.no_simp, storage=parsed_args.storage,
-                                  size=parsed_args.size, part=parsed_args.partition,
-                                  pop=not parsed_args.pop_basic, push=not parsed_args.push_basic, revert=revert_flag,
+                                  simplification=not parsed_args.no_simp, storage=parsed_args.split_storage,
+                                  size=parsed_args.criteria=="size", part=parsed_args.split_partition,
+                                  pop=parsed_args.pop_uninterpreted, push=not parsed_args.push_basic, revert=revert_flag,
                                   extra_dependences_info=dep_mem_info,extra_opt_info=opt_info,debug_info=parsed_args.debug_flag)
 
     sfs_dict = get_sfs_dict()
@@ -122,11 +122,106 @@ def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: Name
     return sfs_dict, subblocks_list
 
 
+def search_optimal(sfs_block: Dict, params: Namespace, tout: int,
+                   block_name: str) -> Tuple[OptimizeOutcome, float, List[str], Optional[List[str]]]:
+    """
+    Decides which superoptimization algorithm (or greedy standalone) is applied, using the bound by the greedy if
+    the corresponding option is enabled. Returns the optimization outcome, the time spent in the search, the ids
+    from the optimized sequence and from the greedy algorithm
+    """
+    # Must come before extended json with instr dep and bounds to apply the new ub to the bounds generation
+    if params.ub_greedy and not params.greedy:
+        try:
+            new_data, _, _, greedy_ids, error = greedy_from_json(sfs_block)
+            # Check there is no error in the generated solution (as to consider it for the greedy)
+            if error == 0:
+                # Only choose the greedy if the obtained ub is better
+                # For smt, we are only interested in improving the bound
+                if len(greedy_ids) < sfs_block['init_progr_len']:
+                    sfs_block['init_progr_len'] = len(greedy_ids)
+
+            else:
+                greedy_ids = None
+        except:
+            greedy_ids = None
+    else:
+        greedy_ids = None
+
+    # Greedy standalone configuration
+    if params.greedy:
+        optimization_outcome_str, solver_time, optimized_ids = greedy_standalone(sfs_block)
+        optimization_outcome = OptimizeOutcome.non_optimal if optimization_outcome_str == "non_optimal" else OptimizeOutcome.error
+
+    # Otherwise, SMT superoptimization
+    else:
+        optimizer = BlockOptimizer(block_name, sfs_block, params, tout)
+        optimization_outcome, solver_time, optimized_ids = optimizer.optimize_block()
+
+    return optimization_outcome, solver_time, optimized_ids, greedy_ids
+
+
+# Assume optimized criteria and optimized greedy have returned a valid model
+def compare_best_block(original_seq: List[AsmBytecode], optimized_superopt: List[AsmBytecode],
+                       optimized_greedy: List[AsmBytecode], criterion: str) -> Tuple[List[AsmBytecode], str]:
+    if criterion == 'size':
+        saved_optimized = sum([instr.bytes_required for instr in original_seq]) - sum([instr.bytes_required for instr in optimized_superopt])
+        saved_greedy = sum([instr.bytes_required for instr in original_seq]) - sum([instr.bytes_required for instr in optimized_greedy])
+
+    elif criterion == 'gas':
+        saved_optimized = sum([instr.gas_spent for instr in original_seq]) - sum([instr.gas_spent for instr in optimized_superopt])
+        saved_greedy = sum([instr.gas_spent for instr in original_seq]) - sum([instr.gas_spent for instr in optimized_greedy])
+
+    else:
+        saved_optimized = len(original_seq) - len(optimized_superopt)
+        saved_greedy = len(original_seq) - len(optimized_greedy)
+
+    if saved_optimized <= 0 and saved_greedy <= 0:
+        return optimized_superopt, 'both_worse_or_equal'
+    elif saved_optimized == saved_greedy:
+        return optimized_superopt, 'tie'
+    elif saved_optimized < saved_greedy:
+        return optimized_greedy, 'greedy'
+    else:
+        return optimized_superopt, 'superopt'
+
+
+def choose_best_solution(original_asm: List[AsmBytecode], optimized_asm: List[AsmBytecode],
+                         greedy_asm: Optional[List[AsmBytecode]], optimization_outcome: OptimizeOutcome,
+                         params: OptimizationParams):
+    chosen_solution_tag = None
+    if params.ub_greedy:
+        criterion = params.criteria
+
+        # Case: no solution found by the superoptimizer and the greedy has found a solution
+        if (optimization_outcome == OptimizeOutcome.no_model or optimization_outcome == OptimizeOutcome.unsat) \
+                and greedy_asm is not None:
+            optimized_asm, chosen_solution_tag = greedy_asm, 'greedy_no_model'
+
+        # Case: both the greedy and the superoptimizer has found no solution
+        elif optimization_outcome == OptimizeOutcome.no_model or optimization_outcome == OptimizeOutcome.unsat:
+            optimized_asm, chosen_solution_tag = [], 'both_worse_or_equal'
+
+        # Case: no solution found by the greedy algorithm but the superoptimizer has found a solution
+        elif greedy_asm is None:
+            optimized_asm, chosen_solution_tag = compare_best_block(original_asm, optimized_asm,
+                                                                    original_asm, criterion)
+
+        # Case: both the greedy and the superoptimizer have returned a sequence
+        else:
+            optimized_asm, chosen_solution_tag = compare_best_block(original_asm, optimized_asm,
+                                                                    greedy_asm, criterion)
+
+    # We just return the corresponding optimization assembly code and the tag indicating in which situation
+    # we have fallen into
+    return optimized_asm, chosen_solution_tag
+
+
+
 # Given the sequence of bytecodes, the initial stack size, the contract name and the
 # block id, returns the output given by the solver, the name given to that block and current gas associated
 # to that sequence.
-def optimize_block(sfs_dict, timeout, parsed_args: Namespace, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> List[Tuple[AsmBlock, OptimizeOutcome, float,
-List[AsmBytecode], int, int, List[str], List[str]]]:
+def optimize_block(sfs_dict, timeout, parsed_args: OptimizationParams, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> List[Tuple[AsmBlock, OptimizeOutcome, float,
+List[AsmBytecode], str, int, int, List[str], List[str]]]:
     block_solutions = []
     # SFS dict of syrup contract contains all sub-blocks derived from a block after splitting
     for block_name in sfs_dict:
@@ -150,7 +245,7 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
         # To match previous results, multiply timeout by number of storage instructions
         # TODO devise better heuristics to deal with timeouts
         if parsed_args.direct_timeout:
-            tout = parsed_args.tout
+            tout = parsed_args.timeout
         else:
             if opt_info.get("dependences",False) and not opt_info.get("non_aliasing_disabled",False):
                 taux = 2.5*(len(dep_mem_info.get_equal_pairs_memory())+len(dep_mem_info.get_nonequal_pairs_memory()))
@@ -160,22 +255,25 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
                 taux = len(dep_mem_info.get_useless_info())
             else:
                 taux = 0
-            tout = parsed_args.tout * (1 + len([True for instr in sfs_block['user_instrs'] if instr["storage"]])+taux)
+            tout = parsed_args.timeout * (1 + len([True for instr in sfs_block['user_instrs'] if instr["storage"]])+taux)
 
-        optimizer = BlockOptimizer(block_name, sfs_block, parsed_args, tout)
         print(f"Optimizing {block_name}... Timeout:{str(tout)}")
 
-        if parsed_args.greedy or parsed_args.backend:
-            if parsed_args.greedy:
-                # optimization_outcome, solver_time, optimized_ids = greedy_to_gasol(sfs_block)
-                pass
-            else:
-                optimization_outcome, solver_time, optimized_ids = optimizer.optimize_block()
+        # We have enabled the optimization process (otherwise, we just generate the intermediate SMT files)
+        if parsed_args.optimization_enabled:
+            optimization_outcome, solver_time, optimized_ids, greedy_ids = search_optimal(sfs_block, parsed_args, tout, block_name)
+            optimized_asm = asm_from_ids(sfs_block, optimized_ids) if optimized_ids is not None else []
+            greedy_asm = asm_from_ids(sfs_block, greedy_ids) if greedy_ids is not None else None
 
-            optimized_asm = asm_from_ids(sfs_block, optimized_ids)
+            # We only determine the best solution if we have enabled previously the greedy algorithm
+            if parsed_args.ub_greedy:
+                chosen_seq, chosen_tag = choose_best_solution(original_block.instructions, optimized_asm, greedy_asm, optimization_outcome, parsed_args)
+            else:
+                chosen_seq, chosen_tag = optimized_asm, "greedy_not_enabled"
             block_solutions.append((original_block, optimization_outcome, solver_time,
-                                    optimized_asm, tout, initial_solver_bound, sfs_block['rules'], optimized_ids))
+                                    chosen_seq, chosen_tag, tout, initial_solver_bound, sfs_block['rules'], optimized_ids))
         else:
+            optimizer = BlockOptimizer(block_name, sfs_block, parsed_args, tout)
             optimizer.generate_intermediate_files()
 
     return block_solutions
@@ -184,7 +282,7 @@ List[AsmBytecode], int, int, List[str], List[str]]]:
 # Given the log file loaded in json format, current block and the contract name, generates three dicts: one that
 # contains the sfs from each block, the second one contains the sequence of instructions and
 # the third one is a set that contains all block ids.
-def generate_sfs_dicts_from_log(block, json_log, parsed_args: Namespace):
+def generate_sfs_dicts_from_log(block, json_log, parsed_args: OptimizationParams):
     contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args)
     syrup_contracts = contracts_dict["syrup_contract"]
 
@@ -346,7 +444,7 @@ def optimize_isolated_asm_block(file_name, output_file, csv_file, parsed_args: N
         update_size_count(old_block, asm_block)
         asm_blocks.append(asm_block)
 
-    if parsed_args.backend:
+    if parsed_args.optimization_enabled:
         df = pd.DataFrame(statistics_rows)
         df.to_csv(csv_file)
         print("")
@@ -387,7 +485,7 @@ def update_length_count(old_block: AsmBlock, new_block: AsmBlock):
 
 
 def generate_statistics_info(original_block: AsmBlock, outcome: Optional[OptimizeOutcome], solver_time: float,
-                             optimized_block: AsmBlock, initial_bound: int, tout: int, rules: List[str]) -> Dict:
+                             optimized_block: AsmBlock, chosen_tag: Optional[str], initial_bound: int, tout: int, rules: List[str]) -> Dict:
     block_name = original_block.block_name
     original_instr = ' '.join(original_block.instructions_to_optimize_plain())
 
@@ -395,7 +493,7 @@ def generate_statistics_info(original_block: AsmBlock, outcome: Optional[Optimiz
                       "initial_n_instrs": initial_bound, 'initial_estimated_size': original_block.bytes_required,
                       'initial_estimated_gas': original_block.gas_spent, 'rules': ','.join(rules),
                       'initial_length': len(original_block.instructions_to_optimize_plain()),
-                      'saved_length': 0}
+                      'saved_length': 0, 'chosen_block_tag': chosen_tag}
 
     # The outcome of the solver is unsat
     if outcome == OptimizeOutcome.unsat:
@@ -446,18 +544,18 @@ def improves_criterion(saved_criterion: int, *saved_other):
 
 
 def block_has_been_optimized(original_block: AsmBlock, optimized_block: AsmBlock,
-                             size_criterion: bool, length_criterion: bool) -> bool:
+                             criteria: str) -> bool:
     saved_size = original_block.bytes_required - optimized_block.bytes_required
     saved_gas = original_block.gas_spent - optimized_block.gas_spent
     saved_length = original_block.length - optimized_block.length
 
-    return (size_criterion and improves_criterion(saved_size, saved_gas)) or \
-        (length_criterion and improves_criterion(saved_length, saved_gas, saved_size)) or \
-        (not size_criterion and not length_criterion and improves_criterion(saved_gas, saved_size))
+    return (criteria == "size" and improves_criterion(saved_size, saved_gas)) or \
+        (criteria == "length" and improves_criterion(saved_length, saved_gas, saved_size)) or \
+        (criteria == "gas" and improves_criterion(saved_gas, saved_size))
 
 
 # Given an asm_block and its contract name, returns the asm block after the optimization
-def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: Namespace, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> \
+def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: OptimizationParams, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> \
 Tuple[AsmBlock, Dict, List[Dict]]:
     global equal_aliasing
     global sfs_information
@@ -477,7 +575,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
     if instructions == []:
         return new_block, {}, []
 
-    if parsed_args.optimized_predictor_model is not None and parsed_args.backend:
+    if parsed_args.optimized_predictor_model is not None and parsed_args.optimization_enabled:
 
         stack_size = block.source_stack
 
@@ -524,7 +622,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
                 old_val = parsed_args.debug_flag
                 parsed_args.debug_flag = False
                 if parsed_args.debug_flag:
-                    print("COMPUTING SFS WIITHUT HEAP INFO")
+                    print("COMPUTING SFS WITHOUT HEAP INFO")
                 contracts_dict_init, sub_block_list_init = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,{})
                 parsed_args.debug_flag = old_val
                 sfs_dict_extra = contracts_dict_init["syrup_contract"]
@@ -533,6 +631,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
                     equal_aliasing = True
                     return new_block, {}, [] 
         except Exception as e:
+            print("EXCEPTION", e)
             failed_row = {'instructions': instructions, 'exception': str(e)}
             return new_block, {}, []
 
@@ -544,18 +643,19 @@ Tuple[AsmBlock, Dict, List[Dict]]:
             sfs_information[s]["rules"]= sfs_dict[s]["rules"]
             sfs_information[s]["deps"]= sfs_dict[s]["memory_dependences"]
             sfs_information[s]["discount_op"] = get_discount_op()
-            
-    if not parsed_args.backend:
+
+    print("SFS", sfs_dict)
+    if not parsed_args.optimization_enabled:
         optimize_block(sfs_dict, timeout, parsed_args,dep_mem_info, opt_info)
         return new_block, {}, []
 
-    for sub_block, optimization_outcome, solver_time, optimized_asm, tout, initial_solver_bound, rules, optimized_log_rep in optimize_block(
+    for sub_block, optimization_outcome, solver_time, optimized_asm, tag, tout, initial_solver_bound, rules, optimized_log_rep in optimize_block(
             sfs_dict, timeout, parsed_args,dep_mem_info, opt_info):
 
         optimal_block = AsmBlock('optimized', sub_block.block_id, sub_block.block_name, sub_block.is_init_block)
         optimal_block.instructions = optimized_asm
 
-        statistics_info = generate_statistics_info(sub_block, optimization_outcome, solver_time, optimal_block,
+        statistics_info = generate_statistics_info(sub_block, optimization_outcome, solver_time, optimal_block, tag,
                                                    initial_solver_bound, tout, rules)
 
         csv_statistics.append(statistics_info)
@@ -563,7 +663,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
         # Only check if the new block is considered if the solver has generated a new one
         if optimization_outcome == OptimizeOutcome.non_optimal or optimization_outcome == OptimizeOutcome.optimal:
             sub_block_name = sub_block.block_name
-            if block_has_been_optimized(sub_block, optimal_block, parsed_args.size, parsed_args.length):
+            if block_has_been_optimized(sub_block, optimal_block, parsed_args.criteria):
                 optimized_blocks[sub_block_name] = optimized_asm
                 log_dicts[sub_block_name] = optimized_log_rep
             else:
@@ -693,7 +793,7 @@ def optimize_asm_in_asm_format(file_name, output_file, csv_file, log_file, parse
         with open(log_file, "w") as log_f:
             json.dump(log_dicts, log_f)
 
-    if parsed_args.backend:
+    if parsed_args.optimization_enabled:
         with open(output_file, 'w') as f:
             f.write(json.dumps(new_asm.to_json()))
 
@@ -710,14 +810,14 @@ def optimize_from_sfs(json_file: str, output_file: str, csv_file: str, parsed_ar
     sfs_dict = {block_name: sfs_block}
 
     csv_statistics = []
-    for original_block, optimization_outcome, solver_time, optimized_asm, tout, initial_solver_bound, rules, optimized_log_rep \
+    for original_block, optimization_outcome, solver_time, optimized_asm, tag, tout, initial_solver_bound, rules, optimized_log_rep \
             in optimize_block(sfs_dict, parsed_args.tout, parsed_args):
 
         optimal_block = AsmBlock('optimized', original_block.block_id, original_block.block_name,
                                  original_block.is_init_block)
         optimal_block.instructions = optimized_asm
 
-        statistics_info = generate_statistics_info(original_block, optimization_outcome, solver_time, optimal_block,
+        statistics_info = generate_statistics_info(original_block, optimization_outcome, solver_time, optimal_block, tag,
                                                    initial_solver_bound, tout, rules)
 
         csv_statistics.append(statistics_info)
@@ -735,7 +835,7 @@ def optimize_from_sfs(json_file: str, output_file: str, csv_file: str, parsed_ar
             print("")
 
         elif (optimization_outcome == OptimizeOutcome.optimal or optimization_outcome == OptimizeOutcome.optimal) \
-                and block_has_been_optimized(original_block, optimal_block, parsed_args.size, parsed_args.length):
+                and block_has_been_optimized(original_block, optimal_block, parsed_args.criteria):
             final_block = deepcopy(original_block)
             final_block.instructions = optimized_asm
 
@@ -743,7 +843,7 @@ def optimize_from_sfs(json_file: str, output_file: str, csv_file: str, parsed_ar
         update_length_count(original_block, final_block)
         update_size_count(original_block, final_block)
 
-    if parsed_args.backend:
+    if parsed_args.optimization_enabled:
         df = pd.DataFrame(csv_statistics)
         df.to_csv(csv_file)
         print("")
@@ -840,6 +940,8 @@ def parse_encoding_args() -> Namespace:
                        help="Enables reasoning for optimizations with PUSH0 opcode.")
     basic.add_argument('-greedy', '--greedy', dest='greedy', help='Uses greedy directly to generate the results',
                        action='store_true')
+    basic.add_argument("-ub-greedy", "--ub-greedy", dest='ub_greedy',
+                       help='Disables greedy algorithm to predict the upper bound', action='store_false')
 
     blocks = ap.add_argument_group('Split block options', 'Options for deciding how to split blocks when optimizing')
 
@@ -956,13 +1058,13 @@ if __name__ == '__main__':
     print("")
     print("Total time: " + str(round(y - x, 2)) + " s")
 
-    if parsed_args.intermediate or not parsed_args.backend:
+    if parsed_args.intermediate or not parsed_args.optimization_enabled:
         print("")
         print("Intermediate files stored at " + paths.gasol_path)
     else:
         shutil.rmtree(paths.gasol_path, ignore_errors=True)
 
-    if parsed_args.backend:
+    if parsed_args.optimization_enabled:
         print("")
         print("Optimized code stored in " + output_file)
         print("Optimality results stored in " + csv_file)

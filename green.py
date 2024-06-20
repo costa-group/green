@@ -21,17 +21,11 @@ import traceback
 
 import gasol_optimizer.global_params.constants as constants
 import gasol_optimizer.global_params.paths as paths
-import gasol_optimizer.sfs_generator.ir_block as ir_block
-from gasol_optimizer.sfs_generator.gasol_optimization import get_sfs_dict
 from gasol_optimizer.sfs_generator.parser_asm import (parse_asm,
                                       generate_block_from_plain_instructions,
                                       parse_blocks_from_plain_instructions)
 from gasol_optimizer.sfs_generator.utils import process_blocks_split,get_gasol_path
-from gasol_optimizer.verification.sfs_verify import verify_block_from_list_of_sfs, are_equals
-from gasol_optimizer.solution_generation.optimize_from_sub_blocks import rebuild_optimized_asm_block
-from gasol_optimizer.sfs_generator.asm_block import AsmBlock, AsmBytecode
-from gasol_optimizer.smt_encoding.block_optimizer import BlockOptimizer, OptimizeOutcome
-from gasol_optimizer.solution_generation.ids2asm import asm_from_ids
+from global_params.options import OptimizationParams
 
 import pandas as pd
 
@@ -95,7 +89,8 @@ def parse_args():
     basic.add_argument("-push0", "--push0", dest='push0_enabled', action='store_true',
                        help="Enables reasoning for optimizations with PUSH0 opcode.")
     basic.add_argument('-greedy', '--greedy', dest='greedy', help='Uses greedy directly to generate the results', action='store_true')
-    
+    basic.add_argument("-ub-greedy", "--ub-greedy", dest='ub_greedy', help='Enables greedy algorithm to predict the upper bound', action='store_true')
+
     blocks = parser.add_argument_group('Split block options', 'Options for deciding how to split blocks when optimizing')
 
     blocks.add_argument("-storage", "--storage", help="Split using SSTORE, MSTORE and MSTORE8", action="store_true")
@@ -403,13 +398,14 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
     storage_gas = 0
     storage_gas_original = 0
     discount_op = 0
+    optimization_params = OptimizationParams()
+    optimization_params.parse_args(parsed_args)
 
-    
     for old_block in blocks:
 
         storage_gas_original+=old_block.gas_spent_by_storage()
         
-        asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, parsed_args, dep_information, opt_info)
+        asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, optimization_params, dep_information, opt_info)
 
         storage_gas += asm_block.gas_spent_by_storage()
         if gasol_main.equal_aliasing:
