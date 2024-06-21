@@ -443,7 +443,7 @@ def run_gasol(instr, contract_name, block_id, output_file, csv_file, dep_informa
         has_info = (opt_info["useless"] or opt_info["dependences"])
 
         if not has_info:
-            eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, parsed_args,dep_information, opt_info)
+            eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, optimization_params,dep_information, opt_info)
         
             if not eq:
                 print("Comparison failed, so initial block is kept")
