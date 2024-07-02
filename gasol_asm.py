@@ -643,8 +643,9 @@ Tuple[AsmBlock, Dict, List[Dict]]:
             sfs_information[s]["rules"]= sfs_dict[s]["rules"]
             sfs_information[s]["deps"]= sfs_dict[s]["memory_dependences"]
             sfs_information[s]["discount_op"] = get_discount_op()
-
-    print("SFS", sfs_dict)
+            sfs_information[s]["sfs"] = sfs_dict[s]
+            
+    #print("SFS", sfs_dict)
     if not parsed_args.optimization_enabled:
         optimize_block(sfs_dict, timeout, parsed_args,dep_mem_info, opt_info)
         return new_block, {}, []
