@@ -4,7 +4,7 @@ import importlib
 import logging
 import sys
 import os
-from typing import Dict, List
+from typing import Dict, List, Tuple
 import json
 import six
 import argparse
@@ -393,7 +393,8 @@ def run_gasol_from_instructions(instr, contract_name, block_id, output_file, csv
     run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file, dep_information, opt_info)
 
 
-def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file, dep_information=None, opt_info=None) -> List:
+def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file, dep_information=None, opt_info=None) -> \
+        Tuple[List, List]:
     if opt_info is None:
         opt_info = {}
 
@@ -424,7 +425,7 @@ def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file
         storage_gas += asm_block.gas_spent_by_storage()
         if gasol_main.equal_aliasing:
             print("BLOCK "+args.source+"_"+contract_name+"_"+str(block_id)+" FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION")
-            return [asm_block]
+            return [asm_block], []
         
         statistics_rows.extend(statistics_csv)
 
@@ -454,7 +455,7 @@ def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file
         has_info = (opt_info["useless"] or opt_info["dependences"])
 
         if not has_info:
-            eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, optimization_params,dep_information, opt_info)
+            eq, reason = gasol_main.compare_asm_block_asm_format(old_block, asm_block, optimization_params, dep_information, opt_info)
         
             if not eq:
                 print("Comparison failed, so initial block is kept")
@@ -549,7 +550,7 @@ def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file
         print("")
         print("Initial number of instructions: " + str(gasol_main.new_n_instrs))
 
-    return optimized_asm_blocks
+    return optimized_asm_blocks, statistics_rows
 
 # def run_gasol(opt_blocks = {}):
 #     pass
@@ -784,14 +785,11 @@ def optimize_optimizable_blocks(opt_blocks):
                         run_gasol_from_instructions(instructions_as_plain_text, c, b, output_file, csv_file, blocks[b], opt_dict)
 
 
-def compare_assingimmutable_words(concrete_words: List[str], abstract_words: List[str]):
-    return True
-
-
 def compare_instructions(concrete_words: List[str], abstract_words: List[str]):
-    # Special case: ASSIGNIMMUTABLE can be translated to multiple MSTORE operations
+    # Special case: ASSIGNIMMUTABLE can be translated to multiple MSTORE operations.
+    # Nevertheless, as it should appear in the initial code, this case should never be activated
     if "ASSIGNIMMUTABLE" in abstract_words:
-        return compare_assingimmutable_words(concrete_words, abstract_words)
+        raise NotImplementedError
 
     # Compare lengths of concrete and absract words
     if len(concrete_words) != len(abstract_words):
@@ -866,20 +864,22 @@ def optimize_all_blocks(opt_blocks, asm_inputs):
     Optimizes all the blocks from contracts stored in the asm inputs. Note that opt blocks only records the blocks
     for which some of the analysis have inferred some extra information
     """
-    contracts = dict()
+    contracts, csv_dict = dict(), dict()
     opt_dict = {"useless": args.useless_info, "dependences": args.aliasing_info, "context": args.context_info,
                 "non_aliasing_disabled": args.non_aliasing_disabled and args.aliasing_info}
 
     for c in opt_blocks:
+        csv_rows = []
         asm_contract = build_asm_contract(c, asm_inputs[c])
         new_contract = copy.deepcopy(asm_contract)
 
         initialize_args_for_gasol(c)
 
         # First we optimize the init code, as usual with no analysis applied
-        optimized_init_code = run_gasol_from_blocks(asm_contract.init_code, c, "initial", f"{c}_init_output.txt",
-                                                    f"{c}_init_stats.csv", {}, opt_dict)
+        optimized_init_code, init_csv = run_gasol_from_blocks(asm_contract.init_code, c, "initial", f"{c}_init_output.txt",
+                                                              f"{c}_init_stats.csv", {}, opt_dict)
         new_contract.init_code = optimized_init_code
+        csv_rows.extend(init_csv)
 
         optimizable_blocks = opt_blocks[c].get_optimizable_blocks()
         block_number2blocks = {block.block_number: block for block in optimizable_blocks.values()}
@@ -908,20 +908,21 @@ def optimize_all_blocks(opt_blocks, asm_inputs):
                     block_instructions = asm_block.instructions_words_abstract()
 
                     eq, reason = compare_instructions(optimizable_instructions, block_instructions)
+                    print("Comparing...")
+                    print(optimizable_instructions)
+                    print(block_instructions)
                     if not eq:
-                        print(reason)
-                        print(optimizable_instructions)
-                        print(block_instructions)
-                        exit(1)
+                        print("FAILS: [REASON]", reason)
 
-                run_code_blocks.extend(run_gasol_from_blocks([asm_block], c, block_id, output_file,
-                                                             csv_file, optimizable_block, opt_dict))
-
+                run_code, run_csv = run_gasol_from_blocks([asm_block], c, block_id, output_file, csv_file, optimizable_block, opt_dict)
+                run_code_blocks.extend(run_code)
+                csv_rows.extend(run_csv)
             new_contract.set_run_code(identifier, run_code_blocks)
 
         contracts[c] = new_contract
+        csv_dict[c] = csv_rows
 
-    return contracts
+    return contracts, csv_dict
 
 
 def store_asm_json_contracts(asm_json_dict: Dict):
@@ -931,13 +932,20 @@ def store_asm_json_contracts(asm_json_dict: Dict):
             json.dump(asm_contract.to_asm_json(), f, indent=4)
 
 
+def store_csv_dict(csv_dict: Dict):
+    for contract_name, csv_rows in csv_dict.items():
+        csv_name = contract_name + ".csv"
+        print("STORING...", csv_name)
+        pd.DataFrame(csv_rows).to_csv(csv_name)
+
+
 if __name__ == "__main__":
     global args
     
     print("Green Main")
     parse_args()
 
-    #For testing
+    # For testing
     # gasol_main.init()
     # run_gasol_test()
     # raise Exception
@@ -955,8 +963,9 @@ if __name__ == "__main__":
 
     # If we only consider blocks that can be further optimized, we just analyze directly the corresponding info
     if args.assembly_generation:
-        asm_json_dict = optimize_all_blocks(opt_blocks, asm_inputs)
+        asm_json_dict, csv_dict = optimize_all_blocks(opt_blocks, asm_inputs)
         store_asm_json_contracts(asm_json_dict)
+        store_csv_dict(csv_dict)
     # Otherwise, we consider the asm blocks
     else:
         optimize_optimizable_blocks(opt_blocks)
