@@ -9,6 +9,8 @@ import json
 import six
 import argparse
 import shutil
+import tempfile
+from pathlib import Path
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/ethir_complete/ethir")
 sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/gasol_optimizer")
@@ -868,6 +870,10 @@ def optimize_all_blocks(opt_blocks, asm_inputs):
     opt_dict = {"useless": args.useless_info, "dependences": args.aliasing_info, "context": args.context_info,
                 "non_aliasing_disabled": args.non_aliasing_disabled and args.aliasing_info}
 
+    # Named temporary files to avoid storing the information
+    output_file = tempfile.NamedTemporaryFile()
+    csv_file = tempfile.NamedTemporaryFile()
+
     for c in opt_blocks:
         csv_rows = []
         asm_contract = build_asm_contract(c, asm_inputs[c])
@@ -876,8 +882,8 @@ def optimize_all_blocks(opt_blocks, asm_inputs):
         initialize_args_for_gasol(c)
 
         # First we optimize the init code, as usual with no analysis applied
-        optimized_init_code, init_csv = run_gasol_from_blocks(asm_contract.init_code, c, "initial", f"{c}_init_output.txt",
-                                                              f"{c}_init_stats.csv", {}, opt_dict)
+        optimized_init_code, init_csv = run_gasol_from_blocks(asm_contract.init_code, c, "initial", output_file.name,
+                                                              csv_file.name, {}, opt_dict)
         new_contract.init_code = optimized_init_code
         csv_rows.extend(init_csv)
 
@@ -893,8 +899,6 @@ def optimize_all_blocks(opt_blocks, asm_inputs):
                 # if args.debug:
                 #     print(blocks[b].get_instructions())
                 block_id = asm_block.block_id
-
-                output_file, csv_file, log_file = final_file_names(args, c, block_id)
 
                 initialize_args_for_gasol(c)
                 # Retrieves the corresponding optimizable block if exists
@@ -914,7 +918,8 @@ def optimize_all_blocks(opt_blocks, asm_inputs):
                     if not eq:
                         print("FAILS: [REASON]", reason)
 
-                run_code, run_csv = run_gasol_from_blocks([asm_block], c, block_id, output_file, csv_file, optimizable_block, opt_dict)
+                run_code, run_csv = run_gasol_from_blocks([asm_block], c, block_id, output_file.name, csv_file.name,
+                                                          optimizable_block, opt_dict)
                 run_code_blocks.extend(run_code)
                 csv_rows.extend(run_csv)
             new_contract.set_run_code(identifier, run_code_blocks)
@@ -922,19 +927,23 @@ def optimize_all_blocks(opt_blocks, asm_inputs):
         contracts[c] = new_contract
         csv_dict[c] = csv_rows
 
+    output_file.close()
+    csv_file.close()
+
     return contracts, csv_dict
 
 
-def store_asm_json_contracts(asm_json_dict: Dict):
+def store_asm_json_contracts(asm_json_dict: Dict, final_dir: Path):
     for contract_name, asm_contract in asm_json_dict.items():
-        with open(contract_name + ".json_solc", 'w') as f:
-            print("STORING...", contract_name + ".json_solc")
+        json_solc = final_dir.joinpath(contract_name + ".json_solc")
+        with open(json_solc, 'w') as f:
+            print("STORING...", json_solc)
             json.dump(asm_contract.to_asm_json(), f, indent=4)
 
 
-def store_csv_dict(csv_dict: Dict):
+def store_csv_dict(csv_dict: Dict, final_dir: Path):
     for contract_name, csv_rows in csv_dict.items():
-        csv_name = contract_name + ".csv"
+        csv_name = final_dir.joinpath(contract_name + ".csv")
         print("STORING...", csv_name)
         pd.DataFrame(csv_rows).to_csv(csv_name)
 
@@ -949,6 +958,9 @@ if __name__ == "__main__":
     # gasol_main.init()
     # run_gasol_test()
     # raise Exception
+
+    if args.output_path is not None:
+        Path(args.output_path).mkdir(parents=True, exist_ok=True)
     
     opt_blocks, asm_inputs = run_ethir()
 
@@ -964,8 +976,8 @@ if __name__ == "__main__":
     # If we only consider blocks that can be further optimized, we just analyze directly the corresponding info
     if args.assembly_generation:
         asm_json_dict, csv_dict = optimize_all_blocks(opt_blocks, asm_inputs)
-        store_asm_json_contracts(asm_json_dict)
-        store_csv_dict(csv_dict)
+        store_asm_json_contracts(asm_json_dict, Path("." if args.output_path is None else args.output_path))
+        store_csv_dict(csv_dict, Path("." if args.output_path is None else args.output_path))
     # Otherwise, we consider the asm blocks
     else:
         optimize_optimizable_blocks(opt_blocks)
