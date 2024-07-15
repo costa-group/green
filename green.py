@@ -4,7 +4,7 @@ import importlib
 import logging
 import sys
 import os
-from typing import Dict
+from typing import Dict, List
 import json
 import six
 import argparse
@@ -393,11 +393,9 @@ def run_gasol_from_instructions(instr, contract_name, block_id, output_file, csv
     run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file, dep_information, opt_info)
 
 
-def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file, dep_information=None, opt_info=None):
+def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file, dep_information=None, opt_info=None) -> List:
     if opt_info is None:
         opt_info = {}
-    if dep_information is None:
-        dep_information = {}
 
     statistics_rows = []
     timeout = args.tout
@@ -426,7 +424,7 @@ def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file
         storage_gas += asm_block.gas_spent_by_storage()
         if gasol_main.equal_aliasing:
             print("BLOCK "+args.source+"_"+contract_name+"_"+str(block_id)+" FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION")
-            return 0
+            return [asm_block]
         
         statistics_rows.extend(statistics_csv)
 
@@ -520,8 +518,8 @@ def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file
         has_context = False
         
         has_info = (opt_info["useless"] or opt_info["dependences"] or opt_info["context"])
-        
-        if has_info:
+
+        if has_info and dep_information:
             has_memory = (dep_information.get_equal_pairs_memory()!= []) or (dep_information.get_nonequal_pairs_memory() != [])
             has_storage = (dep_information.get_equal_pairs_storage()!= []) or (dep_information.get_nonequal_pairs_storage() != [])
             has_useless = opt_info["useless"] and (dep_information.get_useless_info() != [])
@@ -786,6 +784,83 @@ def optimize_optimizable_blocks(opt_blocks):
                         run_gasol_from_instructions(instructions_as_plain_text, c, b, output_file, csv_file, blocks[b], opt_dict)
 
 
+def compare_assingimmutable_words(concrete_words: List[str], abstract_words: List[str]):
+    return True
+
+
+def compare_instructions(concrete_words: List[str], abstract_words: List[str]):
+    # Special case: ASSIGNIMMUTABLE can be translated to multiple MSTORE operations
+    if "ASSIGNIMMUTABLE" in abstract_words:
+        return compare_assingimmutable_words(concrete_words, abstract_words)
+
+    # Compare lengths of concrete and absract words
+    if len(concrete_words) != len(abstract_words):
+        return False, "Different length when comparing instructions"
+
+    # We must map the corresponding values of pseudo-push instructions to the concrete value in the list of
+    # concrete words
+    abstract_value2concrete = dict()
+    i = 0
+    while i < len(concrete_words):
+        concrete_word, abstract_word = concrete_words[i], abstract_words[i]
+        if abstract_word == "PUSH*":
+            if not concrete_word.startswith("PUSH"):
+                return False, f"Concrete word {concrete_word} in position {i} does not start with PUSH"
+            concrete_value = concrete_words[i + 1]
+            abstract_value = abstract_words[i + 1]
+
+            # We only compare the abstract values that are not generic (i.e. *)
+            if abstract_value != "*":
+                # Assign the abstract value in the dict if not present yet
+                if abstract_value not in abstract_value2concrete:
+                    abstract_value2concrete[abstract_value] = concrete_value
+
+                if concrete_value != abstract_value2concrete[abstract_value]:
+                    return False, f"Abstract value does not match the expected concrete value in position {i+1}"
+
+            i += 2
+
+        elif concrete_word.startswith("0x"):
+            if not abstract_word.startswith("0x"):
+                return False, f"Values in position {i} do not match: {concrete_word}!={abstract_word}"
+            if int(concrete_word, 16) != int(abstract_word, 16):
+                return False, f"Values in position {i} do not match: {concrete_word}!={abstract_word}"
+            i += 1
+        else:
+            if concrete_word != abstract_word:
+                return False, f"Instructions do not match in position {i}: {concrete_word}!={abstract_word} "
+
+            i += 1
+
+    return True, ""
+
+
+def print_blocks(opt_blocks, asm_inputs):
+    with open('inputs.json', 'w') as f:
+        json.dump(asm_inputs, f)
+    for c in opt_blocks:
+        asm_contract = build_asm_contract(c, asm_inputs[c])
+        new_contract = copy.deepcopy(asm_contract)
+
+        print("CONTRACT", c)
+        assert len(asm_contract.get_data_ids_with_code()) == 1
+        print("ASM")
+        block_optimizer = opt_blocks[c].vertices
+        for identifier in asm_contract.get_data_ids_with_code():
+            blocks = asm_contract.get_run_code(identifier)
+            for i, (asm_block, ethir_block) in enumerate(zip(blocks, block_optimizer)):
+                concrete_instructions = block_optimizer[ethir_block].get_instructions_gasol()
+                concrete_instructions = [word for instr in concrete_instructions
+                                         for word in instr.split(' ') if word != '']
+                abstract_instructions = asm_block.instructions_words_abstract()
+
+                print(i)
+                print(asm_block.to_json())
+                print(compare_instructions(concrete_instructions, abstract_instructions))
+                print(' '.join(concrete_instructions))
+                print(' '.join(abstract_instructions))
+
+
 def optimize_all_blocks(opt_blocks, asm_inputs):
     """
     Optimizes all the blocks from contracts stored in the asm inputs. Note that opt blocks only records the blocks
@@ -808,6 +883,7 @@ def optimize_all_blocks(opt_blocks, asm_inputs):
 
         optimizable_blocks = opt_blocks[c].get_optimizable_blocks()
         block_number2blocks = {block.block_number: block for block in optimizable_blocks.values()}
+        assert len(asm_contract.get_data_ids_with_code()) == 1
         for identifier in asm_contract.get_data_ids_with_code():
             blocks = asm_contract.get_run_code(identifier)
 
@@ -822,7 +898,21 @@ def optimize_all_blocks(opt_blocks, asm_inputs):
 
                 initialize_args_for_gasol(c)
                 # Retrieves the corresponding optimizable block if exists
-                optimizable_block = block_number2blocks.get(block_number, dict())
+                optimizable_block = block_number2blocks.get(block_number, None)
+
+                # Extra check: the instructions match
+                if optimizable_block:
+                    optimizable_instructions = [word for instr in optimizable_block.get_instructions()
+                                                for word in instr.split(' ') if word != '']
+
+                    block_instructions = asm_block.instructions_words_abstract()
+
+                    eq, reason = compare_instructions(optimizable_instructions, block_instructions)
+                    if not eq:
+                        print(reason)
+                        print(optimizable_instructions)
+                        print(block_instructions)
+                        exit(1)
 
                 run_code_blocks.extend(run_gasol_from_blocks([asm_block], c, block_id, output_file,
                                                              csv_file, optimizable_block, opt_dict))
@@ -860,6 +950,8 @@ if __name__ == "__main__":
     # Set push0 global variable to the corresponding flag
     constants._set_push0(args.push0_enabled)
     args.optimized_predictor_model = None
+
+    # print_blocks(opt_blocks, asm_inputs)
 
     # If we only consider blocks that can be further optimized, we just analyze directly the corresponding info
     if args.assembly_generation:
