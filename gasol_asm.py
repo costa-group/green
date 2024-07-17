@@ -554,6 +554,31 @@ def block_has_been_optimized(original_block: AsmBlock, optimized_block: AsmBlock
         (criteria == "gas" and improves_criterion(saved_gas, saved_size))
 
 
+def replace_repeated_input_stack(sfs: Dict) -> Dict:
+    """
+    Replaces all the repeated elements in the initial stack of the sfs by an extra variable that is removed
+    in the greedy algorithm, only keeping the initial one
+    """
+    already_traversed = set()
+    to_replace = False
+
+    # Element that is introduced to be removed
+    sink_element = f"sink"
+    new_input_stack = []
+
+    for input_stack_elem in sfs["src_ws"]:
+        if input_stack_elem in already_traversed:
+            to_replace = True
+            new_input_stack.append(sink_element)
+        else:
+            already_traversed.add(input_stack_elem)
+            new_input_stack.append(input_stack_elem)
+    sfs["src_ws"] = new_input_stack
+    if to_replace:
+        sfs["vars"].append(sink_element)
+    return sfs
+
+
 # Given an asm_block and its contract name, returns the asm block after the optimization
 def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: OptimizationParams, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> \
 Tuple[AsmBlock, Dict, List[Dict]]:
@@ -618,7 +643,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
     else:
         try:
             contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,opt_info)
-            if (opt_info.get("dependences",False) or opt_info.get("context",False)):
+            if opt_info.get("dependences", False) or opt_info.get("context", False):
                 old_val = parsed_args.debug_flag
                 parsed_args.debug_flag = False
                 if parsed_args.debug_flag:
