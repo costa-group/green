@@ -13,6 +13,7 @@ import pandas as pd
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/gasol_ml")
 
+from ethir_complete.ethir.optimizer.optimizer_connector import OptimizableBlockInfo
 import global_params.constants as constants
 import global_params.paths as paths
 import sfs_generator.ir_block as ir_block
@@ -88,7 +89,11 @@ def create_ml_models(parsed_args: Namespace) -> None:
         parsed_args.optimized_predictor_model = None
 
 
-def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: OptimizationParams, dep_mem_info: Dict = {}, opt_info: Dict = {}):
+def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: OptimizationParams,
+                                              dep_mem_info: Optional[OptimizableBlockInfo], opt_info: Dict = None):
+    if opt_info is None:
+        opt_info = {}
+
     stack_size = block.source_stack
     block_name = block.block_name
     block_id = block.block_id
@@ -113,9 +118,10 @@ def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: Opti
     exit_code, subblocks_list = \
         ir_block.evm2rbr_compiler(file_name=fname, block=block_data, block_name=block_name, block_id=block_id,
                                   simplification=not parsed_args.no_simp, storage=parsed_args.split_storage,
-                                  size=parsed_args.criteria=="size", part=parsed_args.split_partition,
+                                  size=parsed_args.criteria == "size", part=parsed_args.split_partition,
                                   pop=parsed_args.pop_uninterpreted, push=not parsed_args.push_basic, revert=revert_flag,
-                                  extra_dependences_info=dep_mem_info,extra_opt_info=opt_info,debug_info=parsed_args.debug_flag)
+                                  extra_dependences_info=dep_mem_info, extra_opt_info=opt_info,
+                                  debug_info=parsed_args.debug_flag)
 
     sfs_dict = get_sfs_dict()
 
@@ -219,12 +225,14 @@ def choose_best_solution(original_asm: List[AsmBytecode], optimized_asm: List[As
     return optimized_asm, chosen_solution_tag
 
 
-
 # Given the sequence of bytecodes, the initial stack size, the contract name and the
 # block id, returns the output given by the solver, the name given to that block and current gas associated
 # to that sequence.
-def optimize_block(sfs_dict, timeout, parsed_args: OptimizationParams, dep_mem_info = {}, opt_info: Dict = {}) -> \
-        List[Tuple[AsmBlock, OptimizeOutcome, float, List[AsmBytecode], str, int, int, List[str], List[str]]]:
+def optimize_block(sfs_dict, timeout, parsed_args: OptimizationParams, dep_mem_info: Optional[OptimizableBlockInfo],
+                   opt_info=None) -> List[Tuple[AsmBlock, OptimizeOutcome, float, List[AsmBytecode], str, int, int, List[str], List[str]]]:
+    if opt_info is None:
+        opt_info = {}
+
     block_solutions = []
     # SFS dict of syrup contract contains all sub-blocks derived from a block after splitting
     for block_name in sfs_dict:
@@ -588,11 +596,14 @@ def replace_repeated_input_stack(sfs: Dict) -> Dict:
 
 
 # Given an asm_block and its contract name, returns the asm block after the optimization
-def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: OptimizationParams, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> \
-Tuple[AsmBlock, Dict, List[Dict]]:
+def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: OptimizationParams,
+                                  dep_mem_info: Optional[OptimizableBlockInfo], opt_info=None) -> Tuple[AsmBlock, Dict, List[Dict]]:
     global equal_aliasing
     global sfs_information
-    
+
+    if opt_info is None:
+        opt_info = {}
+
     csv_statistics = []
     new_block = deepcopy(block)
     
@@ -641,7 +652,8 @@ Tuple[AsmBlock, Dict, List[Dict]]:
 
             else:
                 try:
-                    contracts_dict, _ = compute_original_sfs_with_simplifications(new_block, parsed_args, dep_mem_info,opt_info)
+                    contracts_dict, _ = compute_original_sfs_with_simplifications(new_block, parsed_args,
+                                                                                  dep_mem_info, opt_info)
                 except Exception as e:
                     failed_row = {'instructions': instructions, 'exception': str(e)}
                     return new_block, {}, []
@@ -651,7 +663,8 @@ Tuple[AsmBlock, Dict, List[Dict]]:
 
     else:
         try:
-            contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args, dep_mem_info,opt_info)
+            contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args,
+                                                                                       dep_mem_info, opt_info)
             if opt_info.get("dependences", False) or opt_info.get("context", False):
                 old_val = parsed_args.debug_flag
                 parsed_args.debug_flag = False
@@ -710,7 +723,10 @@ Tuple[AsmBlock, Dict, List[Dict]]:
 
 
 def compare_asm_block_asm_format(old_block: AsmBlock, new_block: AsmBlock, parsed_args: OptimizationParams,
-                                 dep_mem_info: Dict = {}, opt_info: Dict = {}) -> Tuple[bool, str]:
+                                 dep_mem_info: Optional[OptimizableBlockInfo], opt_info: Dict = None) -> Tuple[bool, str]:
+    if opt_info is None:
+        opt_info = {}
+
     new_block.set_block_name("alreadyOptimized_" + new_block.get_block_name())
 
     old_val = parsed_args.debug_flag

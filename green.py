@@ -840,7 +840,6 @@ def print_blocks(opt_blocks, asm_inputs):
         json.dump(asm_inputs, f)
     for c in opt_blocks:
         asm_contract = build_asm_contract(c, asm_inputs[c])
-        new_contract = copy.deepcopy(asm_contract)
 
         print("CONTRACT", c)
         assert len(asm_contract.get_data_ids_with_code()) == 1
@@ -861,7 +860,7 @@ def print_blocks(opt_blocks, asm_inputs):
                 print(' '.join(abstract_instructions))
 
 
-def optimize_all_blocks(opt_blocks, asm_inputs):
+def optimize_all_blocks(opt_blocks: Dict[str, OptimizableBlockInfo], asm_inputs: Dict[str, Dict]):
     """
     Optimizes all the blocks from contracts stored in the asm inputs. Note that opt blocks only records the blocks
     for which some of the analysis have inferred some extra information
