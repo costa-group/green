@@ -566,21 +566,22 @@ def replace_repeated_input_stack(sfs: Dict) -> Dict:
     to_replace = False
 
     # Element that is introduced to be removed
-    sink_element = f"sink"
+    sink_idx = 0
     new_input_stack = []
 
     for input_stack_elem in sfs["src_ws"]:
         if input_stack_elem in already_traversed:
             to_replace = True
-            new_input_stack.append(sink_element)
+            new_input_stack.append(f"sink_{sink_idx}")
+            sink_idx += 1
         else:
             already_traversed.add(input_stack_elem)
             new_input_stack.append(input_stack_elem)
 
     if to_replace:
         # print("REPLACED", sfs["src_ws"], new_input_stack)
-        sfs["vars"].append(sink_element)
-
+        sfs["vars"].extend(f"sink_{idx}" for idx in range(sink_idx))
+        # print(sfs["vars"])
     sfs["src_ws"] = new_input_stack
 
     return sfs
