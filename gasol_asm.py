@@ -149,6 +149,9 @@ def search_optimal(sfs_block: Dict, params: OptimizationParams, tout: int,
 
     # Greedy standalone configuration
     if params.greedy:
+        # TODO: maybe add as an option?
+        # We only replace the corresponding input stack for the greedy algorithm
+        replace_repeated_input_stack(sfs_block)
         optimization_outcome_str, solver_time, optimized_ids = greedy_standalone(sfs_block)
         optimization_outcome = OptimizeOutcome.non_optimal if optimization_outcome_str == "non_optimal" else OptimizeOutcome.error
 
@@ -220,8 +223,8 @@ def choose_best_solution(original_asm: List[AsmBytecode], optimized_asm: List[As
 # Given the sequence of bytecodes, the initial stack size, the contract name and the
 # block id, returns the output given by the solver, the name given to that block and current gas associated
 # to that sequence.
-def optimize_block(sfs_dict, timeout, parsed_args: OptimizationParams, dep_mem_info: Dict = {}, opt_info: Dict = {}) -> List[Tuple[AsmBlock, OptimizeOutcome, float,
-List[AsmBytecode], str, int, int, List[str], List[str]]]:
+def optimize_block(sfs_dict, timeout, parsed_args: OptimizationParams, dep_mem_info = {}, opt_info: Dict = {}) -> \
+        List[Tuple[AsmBlock, OptimizeOutcome, float, List[AsmBytecode], str, int, int, List[str], List[str]]]:
     block_solutions = []
     # SFS dict of syrup contract contains all sub-blocks derived from a block after splitting
     for block_name in sfs_dict:
@@ -573,9 +576,13 @@ def replace_repeated_input_stack(sfs: Dict) -> Dict:
         else:
             already_traversed.add(input_stack_elem)
             new_input_stack.append(input_stack_elem)
-    sfs["src_ws"] = new_input_stack
+
     if to_replace:
+        # print("REPLACED", sfs["src_ws"], new_input_stack)
         sfs["vars"].append(sink_element)
+
+    sfs["src_ws"] = new_input_stack
+
     return sfs
 
 
