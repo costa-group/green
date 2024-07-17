@@ -122,7 +122,7 @@ def compute_original_sfs_with_simplifications(block: AsmBlock, parsed_args: Opti
     return sfs_dict, subblocks_list
 
 
-def search_optimal(sfs_block: Dict, params: Namespace, tout: int,
+def search_optimal(sfs_block: Dict, params: OptimizationParams, tout: int,
                    block_name: str) -> Tuple[OptimizeOutcome, float, List[str], Optional[List[str]]]:
     """
     Decides which superoptimization algorithm (or greedy standalone) is applied, using the bound by the greedy if
@@ -334,7 +334,7 @@ def optimize_asm_block_from_log(block, sfs_dict, sub_block_list, instr_sequence_
     return new_block
 
 
-def optimize_asm_from_log(file_name, json_log, output_file, parsed_args: Namespace):
+def optimize_asm_from_log(file_name, json_log, output_file, parsed_args: OptimizationParams):
     asm = parse_asm(file_name)
 
     # Blocks from all contracts are checked together. Thus, we first will obtain the needed
@@ -415,7 +415,7 @@ def optimize_asm_from_log(file_name, json_log, output_file, parsed_args: Namespa
     print("Optimized code stored at " + output_file)
 
 
-def optimize_isolated_asm_block(file_name, output_file, csv_file, parsed_args: Namespace, timeout=10, block_name="",
+def optimize_isolated_asm_block(file_name, output_file, csv_file, parsed_args: OptimizationParams, timeout=10, block_name="",
                                 block_name_prefix=""):
     statistics_rows = []
 
@@ -606,7 +606,8 @@ Tuple[AsmBlock, Dict, List[Dict]]:
 
         instructions_to_optimize = block.instructions_to_optimize_plain()
         block_data = {"instructions": instructions_to_optimize, "input": stack_size}
-        sub_block_list = ir_block.get_subblocks(block_data, storage=parsed_args.storage, part=parsed_args.partition)
+        sub_block_list = ir_block.get_subblocks(block_data, storage=parsed_args.split_storage,
+                                                part=parsed_args.split_partition)
         subblocks2analyze = [instructions for instructions in process_blocks_split(sub_block_list)]
 
         for i, subblock in enumerate(subblocks2analyze):
@@ -700,7 +701,7 @@ Tuple[AsmBlock, Dict, List[Dict]]:
     return new_block, log_dicts, csv_statistics
 
 
-def compare_asm_block_asm_format(old_block: AsmBlock, new_block: AsmBlock, parsed_args: Namespace,
+def compare_asm_block_asm_format(old_block: AsmBlock, new_block: AsmBlock, parsed_args: OptimizationParams,
                                  dep_mem_info: Dict = {}, opt_info: Dict = {}) -> Tuple[bool, str]:
     new_block.set_block_name("alreadyOptimized_" + new_block.get_block_name())
 
@@ -729,7 +730,7 @@ def compare_asm_block_asm_format(old_block: AsmBlock, new_block: AsmBlock, parse
            final_instructions_new == final_instructions_old, reason
 
 
-def optimize_asm_in_asm_format(file_name, output_file, csv_file, log_file, parsed_args: Namespace, timeout=10):
+def optimize_asm_in_asm_format(file_name, output_file, csv_file, log_file, parsed_args: OptimizationParams, timeout=10):
     statistics_rows = []
 
     asm = parse_asm(file_name)
@@ -815,7 +816,7 @@ def optimize_asm_in_asm_format(file_name, output_file, csv_file, log_file, parse
     new_asm = deepcopy(asm)
     new_asm.contracts = contracts
 
-    if parsed_args.log:
+    if parsed_args.log_file:
         with open(log_file, "w") as log_f:
             json.dump(log_dicts, log_f)
 
@@ -827,7 +828,7 @@ def optimize_asm_in_asm_format(file_name, output_file, csv_file, log_file, parse
         df.to_csv(csv_file)
 
 
-def optimize_from_sfs(json_file: str, output_file: str, csv_file: str, parsed_args: Namespace):
+def optimize_from_sfs(json_file: str, output_file: str, csv_file: str, parsed_args: OptimizationParams):
     block_name = 'isolated_block_sfs'
 
     with open(json_file, 'r') as f:
@@ -837,7 +838,7 @@ def optimize_from_sfs(json_file: str, output_file: str, csv_file: str, parsed_ar
 
     csv_statistics = []
     for original_block, optimization_outcome, solver_time, optimized_asm, tag, tout, initial_solver_bound, rules, optimized_log_rep \
-            in optimize_block(sfs_dict, parsed_args.tout, parsed_args):
+            in optimize_block(sfs_dict, parsed_args.timeout, parsed_args):
 
         optimal_block = AsmBlock('optimized', original_block.block_id, original_block.block_name,
                                  original_block.is_init_block)
@@ -1051,6 +1052,7 @@ if __name__ == '__main__':
 
     init()
     parsed_args = parse_encoding_args()
+    optimization_params = OptimizationParams().parse_args(parsed_args)
     create_ml_models(parsed_args)
 
     # If storage or partition flag are activated, the blocks are split using store instructions
@@ -1074,9 +1076,9 @@ if __name__ == '__main__':
     if parsed_args.block:
         optimize_isolated_asm_block(parsed_args.input_path, output_file, csv_file, parsed_args, parsed_args.tout)
     elif parsed_args.sfs:
-        optimize_from_sfs(parsed_args.input_path, output_file, csv_file, parsed_args)
+        optimize_from_sfs(parsed_args.input_path, output_file, csv_file, optimization_params)
     else:
-        optimize_asm_in_asm_format(parsed_args.input_path, output_file, csv_file, log_file, parsed_args,
+        optimize_asm_in_asm_format(parsed_args.input_path, output_file, csv_file, log_file, optimization_params,
                                    parsed_args.tout)
 
     y = dtimer()
