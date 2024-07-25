@@ -18,7 +18,7 @@ sys.path.append(os.path.dirname(os.path.realpath(__file__))+"/gasol_optimizer")
 import ethir_complete.ethir.oyente_ethir as ethir_main
 import ethir_complete.ethir.symExec as symExec
 from ethir_complete.ethir.input_helper import InputHelper
-from ethir_complete.ethir.optimizer.optimizer_connector import OptimizableBlockInfo
+from ethir_complete.ethir.optimizer.optimizer_connector import OptimizableBlockInfo, OptimizableBlocks
 import ethir_complete.ethir.global_params_ethir as global_params
 import gasol_asm as gasol_main
 from timeit import default_timer as dtimer
@@ -425,7 +425,7 @@ def run_gasol_from_blocks(blocks, contract_name, block_id, output_file, csv_file
         asm_block, _, statistics_csv = gasol_main.optimize_asm_block_asm_format(old_block, timeout, optimization_params, dep_information, opt_info)
 
         storage_gas += asm_block.gas_spent_by_storage()
-        if gasol_main.equal_aliasing:
+        if opt_info.get("equal_aliasing", True) and gasol_main.equal_aliasing:
             print("BLOCK "+args.source+"_"+contract_name+"_"+str(block_id)+" FILTERED WITH EQUAL SFS WITH AND WITHOUT HEAP ANALYSIS INFORMATION")
             return [asm_block], []
         
@@ -732,12 +732,12 @@ def initialize_args_for_gasol(c: str) -> None:
     gasol_main.init()
 
 
-def optimize_optimizable_blocks(opt_blocks):
+def optimize_optimizable_blocks(opt_blocks: Dict[str, OptimizableBlocks]):
     """
     Optimizes only the blocks from the optimizable blocks. Ignores the asm json generation, as it is not needed
     """
     opt_dict = {"useless": args.useless_info, "dependences": args.aliasing_info, "context": args.context_info,
-                "non_aliasing_disabled": args.non_aliasing_disabled and args.aliasing_info}
+                "non_aliasing_disabled": args.non_aliasing_disabled and args.aliasing_info, "equal_aliasing": True}
     optimize = args.aliasing_info or args.useless_info or args.context_info
 
     for c in opt_blocks:
@@ -860,14 +860,14 @@ def print_blocks(opt_blocks, asm_inputs):
                 print(' '.join(abstract_instructions))
 
 
-def optimize_all_blocks(opt_blocks: Dict[str, OptimizableBlockInfo], asm_inputs: Dict[str, Dict]):
+def optimize_all_blocks(opt_blocks: Dict[str, OptimizableBlocks], asm_inputs: Dict[str, Dict]):
     """
     Optimizes all the blocks from contracts stored in the asm inputs. Note that opt blocks only records the blocks
     for which some of the analysis have inferred some extra information
     """
     contracts, csv_dict = dict(), dict()
     opt_dict = {"useless": args.useless_info, "dependences": args.aliasing_info, "context": args.context_info,
-                "non_aliasing_disabled": args.non_aliasing_disabled and args.aliasing_info}
+                "non_aliasing_disabled": args.non_aliasing_disabled and args.aliasing_info, "equal_aliasing": False}
 
     # Named temporary files to avoid storing the information
     output_file = tempfile.NamedTemporaryFile()
