@@ -258,11 +258,11 @@ def optimize_block(sfs_dict, timeout, parsed_args: OptimizationParams, dep_mem_i
         if parsed_args.direct_timeout:
             tout = parsed_args.timeout
         else:
-            if opt_info.get("dependences",False) and not opt_info.get("non_aliasing_disabled",False):
+            if opt_info.get("dependences",False) and not opt_info.get("non_aliasing_disabled",False) and dep_mem_info:
                 taux = 2.5*(len(dep_mem_info.get_equal_pairs_memory())+len(dep_mem_info.get_nonequal_pairs_memory()))
-            elif opt_info.get("context",False):
+            elif opt_info.get("context",False) and dep_mem_info:
                 taux = 2*(len(dep_mem_info.get_aliasing_context())+len(dep_mem_info.get_constancy_context()))
-            elif opt_info.get("useless",False):
+            elif opt_info.get("useless",False) and dep_mem_info:
                 taux = len(dep_mem_info.get_useless_info())
             else:
                 taux = 0
@@ -665,7 +665,8 @@ def optimize_asm_block_asm_format(block: AsmBlock, timeout: int, parsed_args: Op
         try:
             contracts_dict, sub_block_list = compute_original_sfs_with_simplifications(block, parsed_args,
                                                                                        dep_mem_info, opt_info)
-            if opt_info.get("dependences", False) or opt_info.get("context", False):
+            # Disable this check for overall execution
+            if opt_info.get("equal_aliasing", True) and (opt_info.get("dependences", False) or opt_info.get("context", False)):
                 old_val = parsed_args.debug_flag
                 parsed_args.debug_flag = False
                 if parsed_args.debug_flag:
