@@ -74,6 +74,7 @@ def parse_args():
     output.add_argument("-intermediate", "--intermediate", action="store_true",
                         help="Keeps temporary intermediate files. "
                              "These files contain the sfs representation, smt encoding...")
+    output.add_argument("-dot", "--dot", dest='dot_generation', action="store_true")
 
     log_generation = parser.add_argument_group('Log generation options', 'Options for managing the log generation')
 
